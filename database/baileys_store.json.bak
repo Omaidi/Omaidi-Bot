@@ -1109,6 +1109,81 @@
               "messageSecret": "quojEDNWRz8Lca2zrA7JRcS4q92i1KSTqp6NdKeS8sw="
             }
           }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "ACA154558D5026F9E19FF8C2298833F3",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093236,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".owner",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "sxq8JNwhq2yZo6DZdMZTDUBl+lSEk8ipFbGFWyxV0p4="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC9C51267F835287B54EDA809A61888A",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093240,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".menu",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "/+2PYJTg+Exn7D2c4AcWJH6zCJSclWk7U/i7ZphjyPQ="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC1F97AAB598C0298C19A896565362A1",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093249,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".susunkata",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "C89zJLwSokhIyhlEUacx9vGyNCk4KL3Qiu0LH+4D5ys="
+            }
+          }
         }
       ],
       "keyId": {}
@@ -1819,6 +1894,113 @@
             }
           },
           "messageTimestamp": "1775093169",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB0126902811C03EACA83"
+          },
+          "message": {
+            "contactsArrayMessage": {
+              "displayName": "2 Kontak",
+              "contacts": [
+                {
+                  "displayName": "Humaidi Muhammad",
+                  "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:Humaidi Muhammad\nFN:Humaidi Muhammad\nitem1.TEL;waid=6283853027516:6283853027516\nitem1.X-ABLabel:Ponsel\nitem2.ADR:;;Indonesia;;;;\nitem2.X-ABLabel:Region\nEND:VCARD"
+                },
+                {
+                  "displayName": "+62 831-3308-1460",
+                  "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:+62 831-3308-1460\nFN:+62 831-3308-1460\nitem1.TEL;waid=6283133081460:6283133081460\nitem1.X-ABLabel:Ponsel\nitem2.ADR:;;Indonesia;;;;\nitem2.X-ABLabel:Region\nEND:VCARD"
+                }
+              ],
+              "contextInfo": {
+                "stanzaId": "ACA154558D5026F9E19FF8C2298833F3",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ".owner"
+                },
+                "remoteJid": "19409007554574@lid"
+              }
+            }
+          },
+          "messageTimestamp": "1775093238",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB05DAB26CBC35A6C2BCC"
+          },
+          "message": {
+            "documentMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7119-24/559718895_1320279783483162_6720432585947124611_n.enc?ccb=11-4&oh=01_Q5Aa4AEhs6MHTmJz69Vhf2rMpxTksbPJQ6ccpOynrMZ4sJiMiw&oe=69F5356A&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+              "fileSha256": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+              "fileLength": "100000000000000",
+              "pageCount": 999,
+              "mediaKey": "3hQwlD3M8xWwbpRRcRxZqQi+OydC1XA6/ADzEG7t/9s=",
+              "fileName": "Selamat Pagi 🌄",
+              "fileEncSha256": "83261db9phgtPqpfJJ1WJ8uZnrvWtgNEf2hyesDNkmo=",
+              "directPath": "/v/t62.7119-24/559718895_1320279783483162_6720432585947124611_n.enc?ccb=11-4&oh=01_Q5Aa4AEhs6MHTmJz69Vhf2rMpxTksbPJQ6ccpOynrMZ4sJiMiw&oe=69F5356A&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1775093242",
+              "contextInfo": {
+                "stanzaId": "AC9C51267F835287B54EDA809A61888A",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ".menu"
+                },
+                "remoteJid": "19409007554574@lid",
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net",
+                  "0@s.whatsapp.net",
+                  "6283853027516@s.whatsapp.net"
+                ],
+                "forwardingScore": 10,
+                "isForwarded": true,
+                "externalAdReply": {
+                  "title": "Omaidi",
+                  "body": "Bot WhatsApp",
+                  "mediaType": "IMAGE",
+                  "thumbnailUrl": "https://pps.whatsapp.net/v/t61.24694-24/582415542_775171728721800_7418751431619858732_n.jpg?ccb=11-4&oh=01_Q5Aa4AHONYm7_nDVvgOl2pt2BrzB4b2rwXPys6Ca0U088I812g&oe=69DAC12F&_nc_sid=5e03e0&_nc_cat=109",
+                  "mediaUrl": "https://github.com/Omaidi",
+                  "sourceUrl": "https://github.com/Omaidi",
+                  "renderLargerThumbnail": true,
+                  "showAdAttribution": false
+                },
+                "forwardedNewsletterMessageInfo": {
+                  "newsletterJid": "120363406992512254@newsletter",
+                  "newsletterName": "Join For More Info"
+                }
+              },
+              "caption": "\n╭──❍「 *USER INFO* 」❍\n├ *Nama* : Humaidi Muhammad\n├ *Id* : @6283853027516\n├ *User* : VIP\n├ *Limit* : VIP\n├ *Uang* : 10.000\n╰─┬────❍\n╭─┴─❍「 *BOT INFO* 」❍\n├ *Nama Bot* : Omaidi Bot\n├ *Powered* : @0\n├ *Owner* : @6283853027516\n├ *Mode* : Public\n├ *Prefix* : *.*\n╰─┬────❍\n╭─┴─❍「 *ABOUT* 」❍\n├ *Date* : 02/04/2026\n├ *Day* : Thursday\n├ *Time* : 08:27:20\n╰──────❍\n╭──❍「 *TOP MENU* 」❍\n│■ .ai\n│■ .brat\n│■ .tiktok\n│■ .cekmati\n│■ .susunkata\n╰──────❍"
+            }
+          },
+          "messageTimestamp": "1775093242",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB08FAB7A868BC8FDCA69"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Error: Error\nLog Error Telah dikirim ke Owner\n\n",
+              "contextInfo": {
+                "stanzaId": "AC1F97AAB598C0298C19A896565362A1",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                },
+                "remoteJid": "19409007554574@lid"
+              }
+            }
+          },
+          "messageTimestamp": "1775093249",
           "status": "PENDING"
         }
       ],
