@@ -18,7 +18,7 @@
     },
     "19409007554574@lid": {
       "19409007554574@lid": {
-        "lastKnownPresence": "available"
+        "lastKnownPresence": "composing"
       }
     },
     "120363028046545127@g.us": {
@@ -1209,6 +1209,56 @@
               "messageSecret": "Qi1dQRnAb7T3EmDq40VdsJw77DIPiY/nL1/4V5/k2eM="
             }
           }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC5BB2926C8AB2CBDE4C00B70BD17845",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093408,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".susunkata",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "bvvtxqurDC4gZ7UTa77HQoSKLKFxwB6mTjZ18LPoHXE="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC2228DE4B42FC76459EC95D85E5BA47",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093504,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".susunkata",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "LBBfSSWo/0t7IItpKCZln8CTcnGeN+AD6XADsBbCh6M="
+            }
+          }
         }
       ],
       "keyId": {}
@@ -2048,6 +2098,50 @@
             }
           },
           "messageTimestamp": "1775093326",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB0BEA6F7BB23483DE4DD"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Error: Error\nLog Error Telah dikirim ke Owner\n\n",
+              "contextInfo": {
+                "stanzaId": "AC5BB2926C8AB2CBDE4C00B70BD17845",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                },
+                "remoteJid": "19409007554574@lid"
+              }
+            }
+          },
+          "messageTimestamp": "1775093410",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB03109C4684558941819"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Error: Error\nLog Error Telah dikirim ke Owner\n\n",
+              "contextInfo": {
+                "stanzaId": "AC2228DE4B42FC76459EC95D85E5BA47",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                },
+                "remoteJid": "19409007554574@lid"
+              }
+            }
+          },
+          "messageTimestamp": "1775093506",
           "status": "PENDING"
         }
       ],

@@ -1,11 +1,11 @@
 {
   "hit": {
-    "totalcmd": 23,
-    "todaycmd": 23,
+    "totalcmd": 25,
+    "todaycmd": 25,
     "setapikey": 2,
     "owner": 7,
     "menu": 7,
-    "susunkata": 7
+    "susunkata": 9
   },
   "set": {
     "6283133081460@s.whatsapp.net": {

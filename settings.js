@@ -51,7 +51,7 @@ global.money = {
 }
 
 global.mess = {
-	key: "Apikey limit! Silahkan Upgrade: https://nazedev.biz.id",
+	key: "Apikey limit! Silahkan Upgrade: https://naze.biz.id",
 	owner: "Khusus Owner!",
 	admin: "Khusus Admin!",
 	botAdmin: "Bot harus Admin!",
@@ -70,11 +70,11 @@ global.mess = {
 }
 
 global.APIs = {
-	Omaidi: 'https://api.nazedev.biz.id',
+	Omaidi: 'https://api.naze.biz.id',
 	neosantara: 'https://api.neosantara.xyz/v1',
 }
 global.APIKeys = {
-	'https://api.nazedev.biz.id': 'nz-b342468ff9',
+	'https://api.naze.biz.id': 'nz-b342468ff9',
 	'https://api.neosantara.xyz/v1': 'API_KEY_NEOSANTARA_AI',
 }
 

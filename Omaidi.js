@@ -268,7 +268,7 @@ module.exports = Omaidi = async (Omaidi, m, msg, store) => {
 		
 		// Filter Set Api Key
 		if (cases.includes(command) && isCmd && (command !== 'setapikey') && global.APIKeys[global.APIs.Omaidi] === 'YOUR_API_KEY') {
-			return m.reply('Silahkan Ganti Apikey yang ada\ndi File settings.js dengan apikey mu\nAgar semua fitur bisa digunakan dengan normal\n\nAmbil Key di : https://nazedev.biz.id/profile\nKemudian Gunakan Perintah\n.setapikey key_nya');
+			return m.reply('Silahkan Ganti Apikey yang ada\ndi File settings.js dengan apikey mu\nAgar semua fitur bisa digunakan dengan normal\n\nAmbil Key di : https://naze.biz.id/profile\nKemudian Gunakan Perintah\n.setapikey key_nya');
 		}
 		
 		// Mengetik & Anti Spam & Hit
@@ -1335,7 +1335,7 @@ module.exports = Omaidi = async (Omaidi, m, msg, store) => {
 					});
 					m.reply(`*Apikey telah di ganti dari ${old_key} menjadi ${q}*`)
 				} else {
-					if (!text.startsWith('nz-')) return m.reply('Apikey Tidak Valid!\nAmbil Apikey di : https://nazedev.biz.id/profile');
+					if (!text.startsWith('nz-')) return m.reply('Apikey Tidak Valid!\nAmbil Apikey di : https://naze.biz.id/profile');
 					let old_key = global.APIKeys[global.APIs.Omaidi];
 					await updateSettings({
 						filePath: settingsPath,
@@ -4747,18 +4747,18 @@ Select Bot Settings:
 		} else*/ if (statusCode === 500) {
 			m.reply('Server API Error: Terjadi gangguan pada server tujuan.');
 		} else if (statusCode === 429) {
-			if (errorUrl.includes('api.nazedev.biz.id')) {
+			if (errorUrl.includes('api.naze.biz.id')) {
 				return m.reply('Limit Reached: ' + mess.key);
 			} else m.reply('Limit Reached (Sistem/WA): Terlalu banyak permintaan.\nLog Error Telah dikirim ke Owner');
 		} else if (statusCode === 403) {
 			if (isAxiosError) {
-				if (errorUrl.includes('api.nazedev.biz.id')) {
+				if (errorUrl.includes('api.naze.biz.id')) {
 					return m.reply('Akses Khusus Premium!');
 				} else m.reply('API Error: Akses ke server API ditolak (403 Forbidden).');
 			} else console.log(chalk.yellowBright('[SYSTEM] Akses grup ditolak (Baileys 403 / Forbidden).'));
 		} else if (statusCode === 401) {
 			if (isAxiosError) {
-				if (errorUrl.includes('api.nazedev.biz.id')) {
+				if (errorUrl.includes('api.naze.biz.id')) {
 					return m.reply('Invalid Apikey!');
 				} else m.reply('API Error: Akses ke server API ditolak (401 Unauthorized).');
 			} else console.log(chalk.yellowBright('[SYSTEM] Akses ditolak (401 Unauthorized).'));
