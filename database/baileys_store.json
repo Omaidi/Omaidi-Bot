@@ -1034,6 +1034,31 @@
               "messageSecret": "U3aYLazD+T5v4Pm9vD0J/zrW55XgBm/7QXjNcKR1Uv4="
             }
           }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC68AC1DC6F657ACCCC4BF15D292AA58",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093038,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".susunkata",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "Hf5HPkHT2BkXJrbUqJTmA9/Hdeu6+Dxhl45Mxry3TnU="
+            }
+          }
         }
       ],
       "keyId": {}
@@ -1678,6 +1703,28 @@
             }
           },
           "messageTimestamp": "1775092972",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB0CAA05A62F15C838A2B"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Error: Error\nLog Error Telah dikirim ke Owner\n\n",
+              "contextInfo": {
+                "stanzaId": "AC68AC1DC6F657ACCCC4BF15D292AA58",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                },
+                "remoteJid": "19409007554574@lid"
+              }
+            }
+          },
+          "messageTimestamp": "1775093040",
           "status": "PENDING"
         }
       ],
