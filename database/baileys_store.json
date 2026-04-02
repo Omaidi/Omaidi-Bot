@@ -2,12 +2,18 @@
   "contacts": {
     "6283133081460@s.whatsapp.net": {
       "id": "129528345186543@lid",
-      "phoneNumber": "6283133081460@s.whatsapp.net"
+      "phoneNumber": "6283133081460@s.whatsapp.net",
+      "name": "Omaidi"
     },
     "6283853027516@s.whatsapp.net": {
       "id": "19409007554574@lid",
       "phoneNumber": "6283853027516@s.whatsapp.net",
       "name": "Humaidi Muhammad"
+    },
+    "6283857980436@s.whatsapp.net": {
+      "id": "139827139850431@lid",
+      "phoneNumber": "6283857980436@s.whatsapp.net",
+      "name": "Mil"
     }
   },
   "presences": {
@@ -23,6 +29,14 @@
     },
     "120363028046545127@g.us": {
       "19409007554574@lid": {
+        "lastKnownPresence": "composing"
+      }
+    },
+    "120363424723850342@g.us": {
+      "19409007554574@lid": {
+        "lastKnownPresence": "composing"
+      },
+      "139827139850431@lid": {
         "lastKnownPresence": "composing"
       }
     }
@@ -1338,6 +1352,106 @@
               "messageSecret": "5Ardq5HtmVWtclse/9AGkTMsZtWHSAcL/OkG6USQfs0="
             }
           }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC8F4289E6C7147C2608F0B404B95FA9",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093933,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".profile",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "UmjoD5OUkQdeCBhNDFuI/WYtJiCmHHm6rgT/eng05FQ="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC9462E4E1F4DCA5F63EA63BF1E23A91",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094051,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": "> db.users[m.sender].money = 1000000000",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "aVvBWDEbD228w5DVkb+MV2WXAzL/IMFXhJdZxKxQOAk="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC246E8AD8733A7C39B5963E8B7DE4EE",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094060,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ". profile",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "85g2vIjhnthO1fyOXQ4QYc1Lu552iCqgDJE3K05n4lI="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC7F1B808312CEAEABF48BF2706EE498",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094169,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": "> db.users[m.sender].money = 1000000000; db.users[m.sender].limit = 1000000000; fs.writeFileSync('./database.json', JSON.stringify(db, null, 2)); require('child_process').execSync('git add database.json && git commit -m \"Update: Sultan Balance\" && git push')",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "Wlh/fYyaWaqWMphnXnQznqIp9ZK9SQKiFdcbl/KnD4s="
+            }
+          }
         }
       ],
       "keyId": {}
@@ -2295,6 +2409,100 @@
           },
           "messageTimestamp": "1775093805",
           "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB046CD700F85859F896A"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*👤Profile @6283853027516* :\n🐋User Bot : True\n🔥User : VIP\n⏳Expired : -\n🎫Limit : 20\n💰Uang : 12.989",
+              "contextInfo": {
+                "stanzaId": "AC8F4289E6C7147C2608F0B404B95FA9",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ".profile"
+                },
+                "remoteJid": "19409007554574@lid",
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net"
+                ]
+              }
+            }
+          },
+          "messageTimestamp": "1775093943",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB02A4EA76FC72554809B"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "1000000000",
+              "contextInfo": {
+                "stanzaId": "AC9462E4E1F4DCA5F63EA63BF1E23A91",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": "> db.users[m.sender].money = 1000000000"
+                },
+                "remoteJid": "19409007554574@lid"
+              }
+            }
+          },
+          "messageTimestamp": "1775094052",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB0F84CBD7916979414B8"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*👤Profile @6283853027516* :\n🐋User Bot : True\n🔥User : VIP\n⏳Expired : -\n🎫Limit : 20\n💰Uang : 1.000.000.000",
+              "contextInfo": {
+                "stanzaId": "AC246E8AD8733A7C39B5963E8B7DE4EE",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ". profile"
+                },
+                "remoteJid": "19409007554574@lid",
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net"
+                ]
+              }
+            }
+          },
+          "messageTimestamp": "1775094061",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB050B4A49A3FEBC35F2F"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "<Buffer 5b 6d 61 69 6e 20 39 63 65 34 35 31 62 5d 20 55 70 64 61 74 65 3a 20 53 75 6c 74 61 6e 20 42 61 6c 61 6e 63 65 0a 20 31 20 66 69 6c 65 20 63 68 61 6e ... 57 more bytes>",
+              "contextInfo": {
+                "stanzaId": "AC7F1B808312CEAEABF48BF2706EE498",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": "> db.users[m.sender].money = 1000000000; db.users[m.sender].limit = 1000000000; fs.writeFileSync('./database.json', JSON.stringify(db, null, 2)); require('child_process').execSync('git add database.json && git commit -m \"Update: Sultan Balance\" && git push')"
+                },
+                "remoteJid": "19409007554574@lid"
+              }
+            }
+          },
+          "messageTimestamp": "1775094171",
+          "status": "PENDING"
         }
       ],
       "keyId": {}
@@ -2354,6 +2562,3249 @@
         }
       ],
       "keyId": {}
+    },
+    "120363424723850342@g.us": {
+      "array": [
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "2912440337",
+            "participant": "19409007554574@lid"
+          },
+          "messageTimestamp": "1775094425",
+          "participant": "19409007554574@lid",
+          "messageStubType": "GROUP_CREATE",
+          "messageStubParameters": [
+            "Sayang♥️"
+          ]
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC64D32543965B909F7D7D44F510660F",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094431,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".menu",
+            "senderKeyDistributionMessage": {
+              "groupId": "120363424723850342@g.us",
+              "axolotlSenderKeyDistributionMessage": "MwiTwvyUAxABGiB3fR5lyuToM6WdDjo0Xl0K0bssn/SiWtlD7LiDp+wxbiIhBQd7rnEG9vStWPoBAtzvLRGy0lp14Lub+A3fmPxbYIYf"
+            },
+            "messageContextInfo": {
+              "messageSecret": "TmJokc3188tstn3wkPw0pFMibfjUA4n7t8Cuo15OUyc="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB04C0EB1A95347F59BA6"
+          },
+          "message": {
+            "documentMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7119-24/564522998_1455572149400925_7922857034884214587_n.enc?ccb=11-4&oh=01_Q5Aa4AEOSm6M0QrRJa64jmSVbyDiVJLBCOykFZbrih32xWVwWQ&oe=69F53109&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+              "fileSha256": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+              "fileLength": "100000000000000",
+              "pageCount": 999,
+              "mediaKey": "u3cBSe1S4BYCw8nQuZr4rUX5TrJwq3RNkGcsvI8hEGE=",
+              "fileName": "Selamat Pagi 🌄",
+              "fileEncSha256": "/77VEkvU1T9Q3Y8Rgoh1SbXNc1m2bI+X0F76iHwd1HA=",
+              "directPath": "/v/t62.7119-24/564522998_1455572149400925_7922857034884214587_n.enc?ccb=11-4&oh=01_Q5Aa4AEOSm6M0QrRJa64jmSVbyDiVJLBCOykFZbrih32xWVwWQ&oe=69F53109&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1775094433",
+              "contextInfo": {
+                "stanzaId": "AC64D32543965B909F7D7D44F510660F",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".menu"
+                },
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net",
+                  "0@s.whatsapp.net",
+                  "6283853027516@s.whatsapp.net"
+                ],
+                "forwardingScore": 10,
+                "isForwarded": true,
+                "externalAdReply": {
+                  "title": "Omaidi",
+                  "body": "Bot WhatsApp",
+                  "mediaType": "IMAGE",
+                  "thumbnailUrl": "https://pps.whatsapp.net/v/t61.24694-24/582415542_775171728721800_7418751431619858732_n.jpg?ccb=11-4&oh=01_Q5Aa4AEwyaqhIE-PB1b4FHjlpknLBZOvJi3DZudAVw4HAbZBbg&oe=69DAF96F&_nc_sid=5e03e0&_nc_cat=109",
+                  "mediaUrl": "https://github.com/Omaidi",
+                  "sourceUrl": "https://github.com/Omaidi",
+                  "renderLargerThumbnail": true,
+                  "showAdAttribution": false
+                },
+                "forwardedNewsletterMessageInfo": {
+                  "newsletterJid": "120363406992512254@newsletter",
+                  "newsletterName": "Join For More Info"
+                }
+              },
+              "caption": "\n╭──❍「 *USER INFO* 」❍\n├ *Nama* : Humaidi Muhammad\n├ *Id* : @6283853027516\n├ *User* : VIP\n├ *Limit* : VIP\n├ *Uang* : 1.000.000.000\n╰─┬────❍\n╭─┴─❍「 *BOT INFO* 」❍\n├ *Nama Bot* : Omaidi Bot\n├ *Powered* : @0\n├ *Owner* : @6283853027516\n├ *Mode* : Public\n├ *Prefix* : *.*\n╰─┬────❍\n╭─┴─❍「 *ABOUT* 」❍\n├ *Date* : 02/04/2026\n├ *Day* : Thursday\n├ *Time* : 08:47:12\n╰──────❍\n╭──❍「 *TOP MENU* 」❍\n│♡ .susunkata: 10 hits\n│♡ .menu: 8 hits\n│♡ .owner: 7 hits\n│♡ .profile: 3 hits\n│♡ .setapikey: 2 hits\n╰──────❍"
+            }
+          },
+          "messageTimestamp": "1775094433",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACCE41EC2015EEA30924F69779999E88",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094453,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".owner",
+            "messageContextInfo": {
+              "messageSecret": "dhHf+O2wFkpthx4oQrDS+8XwSociJKUwlOQxo/ntWB8="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0FAE8C2E2850BF197A6"
+          },
+          "message": {
+            "contactsArrayMessage": {
+              "displayName": "2 Kontak",
+              "contacts": [
+                {
+                  "displayName": "Humaidi Muhammad",
+                  "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:Humaidi Muhammad\nFN:Humaidi Muhammad\nitem1.TEL;waid=6283853027516:6283853027516\nitem1.X-ABLabel:Ponsel\nitem2.ADR:;;Indonesia;;;;\nitem2.X-ABLabel:Region\nEND:VCARD"
+                },
+                {
+                  "displayName": "Omaidi",
+                  "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:Omaidi\nFN:Omaidi\nitem1.TEL;waid=6283133081460:6283133081460\nitem1.X-ABLabel:Ponsel\nitem2.ADR:;;Indonesia;;;;\nitem2.X-ABLabel:Region\nEND:VCARD"
+                }
+              ],
+              "contextInfo": {
+                "stanzaId": "ACCE41EC2015EEA30924F69779999E88",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".owner"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094454",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC2D4DBAD49EED28E02A27B463B0154F",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094485,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".susunkata",
+            "messageContextInfo": {
+              "messageSecret": "tBg0XXz2ZYCoopSxen5mJpeIfOmZvPJ8JU3jcKidfEY="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0541445DDBFB5AF9A89"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "🎮 Susun Kata Berikut :\n\nL-E-V-I-T-I-E-S\nTipe : Benda\n\nWaktu : 60s\nHadiah *+2989*",
+              "contextInfo": {
+                "stanzaId": "AC2D4DBAD49EED28E02A27B463B0154F",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094487",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC7086E0AD364E4D560965F4621C91F8",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094514,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Velities",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "abjyKhAVBnewDWJHqGBGjMY+DuKj24dSE/ixLlpWvmU="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0D0B9856F581102C84A"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*Jawaban Salah!*",
+              "contextInfo": {
+                "stanzaId": "AC7086E0AD364E4D560965F4621C91F8",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Velities",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094515",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0609D002D51BCA72311"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Waktu Habis\nJawaban: televisi",
+              "contextInfo": {
+                "stanzaId": "AC2D4DBAD49EED28E02A27B463B0154F",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094548",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACA59AB8E7D257B75ADAB62A49697CA1",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094559,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".susunkata",
+            "messageContextInfo": {
+              "messageSecret": "kKig/ZcZ/fHznWTY3eUCRrK1YglJaYIywDgXVInVm5U="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0ECDAA53D30672A2994"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "🎮 Susun Kata Berikut :\n\nB-U-N-R-A-K-U\nTipe : Tempat\n\nWaktu : 60s\nHadiah *+2989*",
+              "contextInfo": {
+                "stanzaId": "ACA59AB8E7D257B75ADAB62A49697CA1",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094562",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC03F705DDAA2B29698F9BD4B0536535",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094572,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Kuburan",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "eE2kBzRkgM6cbQrfHcRoKpqgw7nlnucDFkynFNJZ7Bg="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0FA174F5181AA316A4E"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Jawaban Benar 🎉\nBonus Money 💰 *+2989*",
+              "contextInfo": {
+                "stanzaId": "AC03F705DDAA2B29698F9BD4B0536535",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Kuburan",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094573",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACE44199038B8934130D5BB03E6EC215",
+            "participant": "139827139850431@lid",
+            "participantAlt": "6283857980436@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094574,
+          "pushName": "Mil",
+          "broadcast": false,
+          "message": {
+            "senderKeyDistributionMessage": {
+              "groupId": "120363424723850342@g.us",
+              "axolotlSenderKeyDistributionMessage": "MwiyuP/XBBAAGiCkCNlDxz+/NA/fn5sTB15cBptI1lStdzTa5UorsBkRgiIhBfZNZEY7cVGYv7fRySqZYYUubwkTaZ78lL3F82ZL9Mh9"
+            },
+            "extendedTextMessage": {
+              "text": "Kuburan",
+              "previewType": "NONE",
+              "contextInfo": {
+                "stanzaId": "3EB0ECDAA53D30672A2994",
+                "participant": "6283133081460@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": "🎮 Susun Kata Berikut :\n\nB-U-N-R-A-K-U\nTipe : Tempat\n\nWaktu : 60s\nHadiah *+2989*"
+                },
+                "quotedType": "EXPLICIT"
+              },
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "iWRvRkmS+Ysl0VyeY3Mtc9UvsfnplDdCoEbjqg4z2G8=",
+              "threadId": [
+                {
+                  "threadType": "VIEW_REPLIES",
+                  "threadKey": {
+                    "remoteJid": "120363424723850342@g.us",
+                    "fromMe": false,
+                    "id": "ACA59AB8E7D257B75ADAB62A49697CA1",
+                    "participant": "19409007554574@lid"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC3A43DB82D6AF009F4C645C3BB2E9AC",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094593,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".profile",
+            "messageContextInfo": {
+              "messageSecret": "LalfDxe9MAXGGGeu/PDQa+9CS/q5DyThS4dCsXYcLBY="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0406739D56F303095EA"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*👤Profile @6283853027516* :\n🐋User Bot : True\n🔥User : VIP\n⏳Expired : -\n🎫Limit : 1000000000\n💰Uang : 1.000.002.989",
+              "contextInfo": {
+                "stanzaId": "AC3A43DB82D6AF009F4C645C3BB2E9AC",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".profile"
+                },
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net"
+                ]
+              }
+            }
+          },
+          "messageTimestamp": "1775094593",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC35FB1D93336807CCD7F73BC8A43B95",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094611,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".susunkata",
+            "messageContextInfo": {
+              "messageSecret": "Jy3OqSFP58qz7g73Wg6RRKL4m9TVuhAF2IuDw2ny+HM="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0975DA9004D644092E7"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "🎮 Susun Kata Berikut :\n\nS-I-M-I-A-N-S\nTipe : Profesi\n\nWaktu : 60s\nHadiah *+2989*",
+              "contextInfo": {
+                "stanzaId": "AC35FB1D93336807CCD7F73BC8A43B95",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094613",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC9DE79C5D9764DF7BF7337D75D95C93",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094627,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": "Simanis",
+            "messageContextInfo": {
+              "messageSecret": "G4469qnbfuOrfoGi5t/VSmIrfvgx8fSLRWczM1BYe8I="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC962C207E1104BA3EBDBC789040E014",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094632,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Simanis",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "grHm2fazqZkUZf3VEvxQ5UbrWLU4yICzogA2gMus9vA="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0D546A54F04F1C0A421"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*Jawaban Salah!*",
+              "contextInfo": {
+                "stanzaId": "AC962C207E1104BA3EBDBC789040E014",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Simanis",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094633",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC48D97CA6C1C0793E661DC07AA7B647",
+            "participant": "139827139850431@lid",
+            "participantAlt": "6283857980436@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094651,
+          "pushName": "Mil",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Sinimans",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "cPQ6vKK+P3llCZUBn2VoHVXvNN2ANa/fJK4z1qvIGQQ=",
+              "threadId": [
+                {
+                  "threadType": "VIEW_REPLIES",
+                  "threadKey": {
+                    "remoteJid": "120363424723850342@g.us",
+                    "fromMe": false,
+                    "id": "AC35FB1D93336807CCD7F73BC8A43B95",
+                    "participant": "19409007554574@lid"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0BF1578F440010C0252"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*Jawaban Salah!*",
+              "contextInfo": {
+                "stanzaId": "AC48D97CA6C1C0793E661DC07AA7B647",
+                "participant": "6283857980436@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Sinimans",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094652",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0086275D1CE176752C7"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Waktu Habis\nJawaban: masinis",
+              "contextInfo": {
+                "stanzaId": "AC35FB1D93336807CCD7F73BC8A43B95",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094673",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC119442B0314852BE0D09728CA2F4DA",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094692,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".allmenu",
+            "messageContextInfo": {
+              "messageSecret": "/ymmHOt/2YLIQgzIhyCEECs2l7Ulb4X0JiVRg6UG2sw="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB029176225D05A187E15"
+          },
+          "message": {
+            "documentMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7119-24/555539974_1418855133257587_6457643188144837311_n.enc?ccb=11-4&oh=01_Q5Aa4AHVmEH4lxULRhVeJ7acVsi1a-nMqpt1R7iRkjJiZKQXwg&oe=69F52607&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "application/pdf",
+              "fileSha256": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+              "fileLength": "100000000000000",
+              "pageCount": 999,
+              "mediaKey": "hp4EyWNt5+N4jJFJKfsRrOwQIgL82JUsJAowg5ibBY4=",
+              "fileName": "Selamat Pagi 🌄",
+              "fileEncSha256": "s4R7LiAE0DyVAdMkblLNVJgMwbEUIKEd8kiM5+YKmH4=",
+              "directPath": "/v/t62.7119-24/555539974_1418855133257587_6457643188144837311_n.enc?ccb=11-4&oh=01_Q5Aa4AHVmEH4lxULRhVeJ7acVsi1a-nMqpt1R7iRkjJiZKQXwg&oe=69F52607&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1775094694",
+              "contextInfo": {
+                "stanzaId": "AC119442B0314852BE0D09728CA2F4DA",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".allmenu"
+                },
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net",
+                  "0@s.whatsapp.net",
+                  "6283853027516@s.whatsapp.net"
+                ],
+                "forwardingScore": 10,
+                "isForwarded": true,
+                "externalAdReply": {
+                  "title": "Omaidi",
+                  "body": "Bot WhatsApp",
+                  "mediaType": "IMAGE",
+                  "thumbnailUrl": "https://pps.whatsapp.net/v/t61.24694-24/582415542_775171728721800_7418751431619858732_n.jpg?ccb=11-4&oh=01_Q5Aa4AEwyaqhIE-PB1b4FHjlpknLBZOvJi3DZudAVw4HAbZBbg&oe=69DAF96F&_nc_sid=5e03e0&_nc_cat=109",
+                  "mediaUrl": "https://github.com/Omaidi",
+                  "sourceUrl": "https://github.com/Omaidi",
+                  "renderLargerThumbnail": true,
+                  "showAdAttribution": false
+                },
+                "forwardedNewsletterMessageInfo": {
+                  "newsletterJid": "120363406992512254@newsletter",
+                  "newsletterName": "Join For More Info"
+                }
+              },
+              "caption": "\n╭──❍「 *USER INFO* 」❍\n├ *Nama* : Humaidi Muhammad\n├ *Id* : @6283853027516\n├ *User* : VIP\n├ *Limit* : VIP\n├ *Money* : 1.000.002.989\n╰─┬────❍\n╭─┴─❍「 *BOT INFO* 」❍\n├ *Nama Bot* : Omaidi Bot\n├ *Powered* : @0\n├ *Owner* : @6283853027516\n├ *Mode* : Public\n├ *Prefix* : *.*\n├ *Premium Feature* : 🔸️\n╰─┬────❍\n╭─┴─❍「 *ABOUT* 」❍\n├ *Date* : 02/04/2026\n├ *Day* : Thursday\n├ *Time* : 08:51:33\n╰──────❍\n╭──❍「 *BOT* 」❍\n│♡ .profile\n│♡ .claim\n│♡ .buy [item] (nominal)\n│♡ .transfer\n│♡ .leaderboard\n│♡ .request (text)\n│♡ .react (emoji)\n│♡ .tagme\n│♡ .runtime\n│♡ .totalfitur\n│♡ .speed\n│♡ .ping\n│♡ .afk\n│♡ .rvo (reply pesan viewone)\n│♡ .inspect (url gc)\n│♡ .addmsg\n│♡ .delmsg\n│♡ .getmsg\n│♡ .listmsg\n│♡ .setcmd\n│♡ .delcmd\n│♡ .listcmd\n│♡ .lockcmd\n│♡ .q (reply pesan)\n│♡ .menfes (62xxx|fake name)\n│♡ .confes (62xxx|fake name)\n│♡ .roomai\n│♡ .jadibot 🔸️\n│♡ .stopjadibot\n│♡ .listjadibot\n│♡ .donasi\n│♡ .addsewa\n│♡ .delsewa\n│♡ .listsewa\n╰─┬────❍\n╭─┴❍「 *GROUP* 」❍\n│♡ .add (62xxx)\n│♡ .kick (@tag/62xxx)\n│♡ .promote (@tag/62xxx)\n│♡ .demote (@tag/62xxx)\n│♡ .warn (@tag/62xxx)\n│♡ .unwarn (@tag/62xxx)\n│♡ .setname (nama baru gc)\n│♡ .setdesc (desk)\n│♡ .setppgc (reply imgnya)\n│♡ .delete (reply pesan)\n│♡ .linkgrup\n│♡ .revoke\n│♡ .tagall\n│♡ .pin\n│♡ .unpin\n│♡ .hidetag\n│♡ .totag (reply pesan)\n│♡ .listonline\n│♡ .group set\n│♡ .group (khusus admin)\n╰─┬────❍\n╭─┴❍「 *SEARCH* 」❍\n│♡ .ytsearch (query)\n│♡ .spotify (query)\n│♡ .pixiv (query)\n│♡ .pinterest (query)\n│♡ .wallpaper (query)\n│♡ .ringtone (query)\n│♡ .google (query)\n│♡ .gimage (query)\n│♡ .npm (query)\n│♡ .style (query)\n│♡ .cuaca (kota)\n│♡ .tenor (query)\n│♡ .urban (query)\n╰─┬────❍\n╭─┴❍「 *DOWNLOAD* 」❍\n│♡ .ytmp3 (url)\n│♡ .ytmp4 (url)\n│♡ .instagram (url)\n│♡ .tiktok (url)\n│♡ .tiktokmp3 (url)\n│♡ .facebook (url)\n│♡ .spotifydl (url)\n│♡ .mediafire (url)\n╰─┬────❍\n╭─┴❍「 *QUOTES* 」❍\n│♡ .motivasi\n│♡ .quotes\n│♡ .truth\n│♡ .bijak\n│♡ .dare\n│♡ .bucin\n│♡ .renungan\n╰─┬────❍\n╭─┴❍「 *TOOLS* 」❍\n│♡ .get (url) 🔸️\n│♡ .hd (reply pesan)\n│♡ .toaudio (reply pesan)\n│♡ .tomp3 (reply pesan)\n│♡ .tovn (reply pesan)\n│♡ .toimage (reply pesan)\n│♡ .toptv (reply pesan)\n│♡ .tourl (reply pesan)\n│♡ .tts (textnya)\n│♡ .toqr (textnya)\n│♡ .brat (textnya)\n│♡ .bratvid (textnya)\n│♡ .ssweb (url) 🔸️\n│♡ .sticker (send/reply img)\n│♡ .colong (reply stiker)\n│♡ .smeme (send/reply img)\n│♡ .dehaze (send/reply img)\n│♡ .colorize (send/reply img)\n│♡ .hitamkan (send/reply img)\n│♡ .emojimix 🙃+💀\n│♡ .nulis\n│♡ .readmore text1|text2\n│♡ .qc (pesannya)\n│♡ .translate\n│♡ .wasted (send/reply img)\n│♡ .triggered (send/reply img)\n│♡ .shorturl (urlnya)\n│♡ .gitclone (urlnya)\n│♡ .fat (reply audio)\n│♡ .fast (reply audio)\n│♡ .bass (reply audio)\n│♡ .slow (reply audio)\n│♡ .tupai (reply audio)\n│♡ .deep (reply audio)\n│♡ .robot (reply audio)\n│♡ .blown (reply audio)\n│♡ .reverse (reply audio)\n│♡ .smooth (reply audio)\n│♡ .earrape (reply audio)\n│♡ .nightcore (reply audio)\n│♡ .getexif (reply sticker)\n╰─┬────❍\n╭─┴❍「 *AI* 」❍\n│♡ .ai (query)\n│♡ .gemini (query)\n│♡ .glm (query)\n│♡ .grok (query)\n│♡ .claude (query)\n│♡ .archipelago (query)\n│♡ .deepseek (query)\n│♡ .txt2img (query)\n╰─┬────❍\n╭─┴❍「 *ANIME* 」❍\n│♡ .waifu\n│♡ .neko\n╰─┬────❍\n╭─┴❍「 *GAME* 」❍\n│♡ .tictactoe\n│♡ .suit\n│♡ .slot\n│♡ .math (level)\n│♡ .begal\n│♡ .ulartangga\n│♡ .blackjack\n│♡ .catur\n│♡ .casino (nominal)\n│♡ .samgong (nominal)\n│♡ .rampok (@tag)\n│♡ .tekateki\n│♡ .tebaklirik\n│♡ .tebakkata\n│♡ .tebakbom\n│♡ .susunkata\n│♡ .colorblind\n│♡ .tebakkimia\n│♡ .caklontong\n│♡ .tebakangka\n│♡ .tebaknegara\n│♡ .tebakgambar\n│♡ .tebakbendera\n╰─┬────❍\n╭─┴❍「 *FUN* 」❍\n│♡ .coba\n│♡ .dadu\n│♡ .bisakah (text)\n│♡ .apakah (text)\n│♡ .kapan (text)\n│♡ .siapa (text)\n│♡ .kerangajaib (text)\n│♡ .cekmati (nama lu)\n│♡ .ceksifat\n│♡ .cekkhodam (nama lu)\n│♡ .rate (reply pesan)\n│♡ .jodohku\n│♡ .jadian\n│♡ .fitnah\n│♡ .halah (text)\n│♡ .hilih (text)\n│♡ .huluh (text)\n│♡ .heleh (text)\n│♡ .holoh (text)\n╰─┬────❍\n╭─┴❍「 *RANDOM* 」❍\n│♡ .coffe\n╰─┬────❍\n╭─┴❍「 *STALKER* 」❍\n│♡ .wastalk\n│♡ .githubstalk\n╰─┬────❍\n╭─┴❍「 *OWNER* 」❍\n│♡ .bot [set]\n│♡ .setbio\n│♡ .setppbot\n│♡ .join\n│♡ .leave\n│♡ .block\n│♡ .listblock\n│♡ .openblock\n│♡ .listpc\n│♡ .listgc\n│♡ .ban\n│♡ .unban\n│♡ .mute\n│♡ .unmute\n│♡ .creategc\n│♡ .clearchat\n│♡ .addprem\n│♡ .delprem\n│♡ .listprem\n│♡ .addlimit\n│♡ .adduang\n│♡ .setbotmessages\n│♡ .setbotauthor\n│♡ .setbotname\n│♡ .setbotpackname\n│♡ .setapikey\n│♡ .setbotlimit\n│♡ .setbotmoney\n│♡ .setlocale\n│♡ .settimezone\n│♡ .addprefix\n│♡ .delprefix\n│♡ .addbadword\n│♡ .delbadword\n│♡ .addowner\n│♡ .delowner\n│♡ .getmsgstore\n│♡ .bot --settings\n│♡ .bot settings\n│♡ .getsession\n│♡ .delsession\n│♡ .delsampah\n│♡ .upsw\n│♡ .backup\n│♡ $\n│♡ >\n│♡ <\n╰──────❍"
+            }
+          },
+          "messageTimestamp": "1775094694",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACD66AE391F773EFD5E3519C7B795112",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094743,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".tekateki",
+            "messageContextInfo": {
+              "messageSecret": "NisMD716EMA+sYjQ8g/JaQ9zFs6RrS5IyWiKb14kx9Y="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB048DE4912AB8E04AF20"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "🎮 Teka Teki Berikut :\n\nKera apa yang bisa masuk botol\n\nWaktu : 60s\nHadiah *+3499*",
+              "contextInfo": {
+                "stanzaId": "ACD66AE391F773EFD5E3519C7B795112",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".tekateki"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094745",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC0B9E0B574234A834006EF6AD6B4F5C",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094754,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Kerangka",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "5pCyjL6DJf6Uk8ClORGU58IHz7Dykn9D8XKOe5o52Q0="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB01741D292881B45190D"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*Jawaban Salah!*",
+              "contextInfo": {
+                "stanzaId": "AC0B9E0B574234A834006EF6AD6B4F5C",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Kerangka",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094755",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC791A35A9629B4C00280838FD8F3892",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094762,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Kerangjang",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "tDxiZ93ksi9vvu4lYXIuojMzcYe7K7eRrX2YwK48vwg="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB02F6D375D5445160954"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Command Tidak Ditemukan!\nMungkin yang kamu maksud:\n- kerangajaib\n- Similarity: 72%",
+              "contextInfo": {
+                "stanzaId": "AC791A35A9629B4C00280838FD8F3892",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Kerangjang",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094763",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC20148E0929D1FEAF0543DCB6462BB4",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094773,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Keranjang",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "J+mQBujBllZvhzcZdbt+BJl7z9GrQhor+folaT7UBag="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0334054D3FC29FEC0D3"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*Jawaban Salah!*",
+              "contextInfo": {
+                "stanzaId": "AC20148E0929D1FEAF0543DCB6462BB4",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Keranjang",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094773",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC86A05825F0D26D0837A94FBC854EFF",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094785,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Kerang mainan",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "gaVfQBG3t4gg9r84JQkjOHDuHr7fbcEF5VPFBcxAftI="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB09DD4C7E7B2F94ADDAB"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*Jawaban Salah!*",
+              "contextInfo": {
+                "stanzaId": "AC86A05825F0D26D0837A94FBC854EFF",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Kerang mainan",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094786",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB02AA8C96727AC56635D"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*Pertanyaan : mainan*\n*Jawab : Tidak keduanya*",
+              "contextInfo": {
+                "stanzaId": "AC86A05825F0D26D0837A94FBC854EFF",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Kerang mainan",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094786",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0FA753F8E1D35566548"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Waktu Habis\nJawaban: keratingdaeng",
+              "contextInfo": {
+                "stanzaId": "ACD66AE391F773EFD5E3519C7B795112",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".tekateki"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094806",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC176D117AB3BF6B21E23062987817F7",
+            "participant": "139827139850431@lid",
+            "participantAlt": "6283857980436@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094836,
+          "pushName": "Mil",
+          "broadcast": false,
+          "message": {
+            "conversation": ". Ceksifat",
+            "messageContextInfo": {
+              "messageSecret": "vV2n+GG3IhysIGCGYsYAakN3WJh0wDLFPq5qw5p5WEE="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB09F218F5C8614A33B75"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "╭──❍「 *Cek Sifat* 」❍\n│• Sifat Ceksifat\n│• Orang yang : *Mandiri*\n│• Kekurangan : *Tamak*\n│• Keberanian : *21%*\n│• Kepedulian : *18%*\n│• Kecemasan : *55%*\n│• Ketakutan : *22%*\n│• Akhlak Baik : *82%*\n│• Akhlak Buruk : *35%*\n╰──────❍",
+              "contextInfo": {
+                "stanzaId": "AC176D117AB3BF6B21E23062987817F7",
+                "participant": "6283857980436@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ". Ceksifat"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094837",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACAD9F5ADF851DECAF9065597C8B8F58",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094874,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".ceksifat",
+            "messageContextInfo": {
+              "messageSecret": "LIipme5W6PX3NVqIaBDaDl9VizVqi+OfNVgsWFrTb9Y="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0F0492F48E6A30C9AAE"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "╭──❍「 *Cek Sifat* 」❍\n│• Sifat @6283853027516\n│• Nama : *Humaidi Muhammad*\n│• Orang yang : *Bisa diandalkan*\n│• Kekurangan : *Labil*\n│• Keberanian : *95%*\n│• Kepedulian : *22%*\n│• Kecemasan : *19%*\n│• Ketakutan : *24%*\n│• Akhlak Baik : *30%*\n│• Akhlak Buruk : *36%*\n╰──────❍",
+              "contextInfo": {
+                "stanzaId": "ACAD9F5ADF851DECAF9065597C8B8F58",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".ceksifat"
+                },
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net"
+                ]
+              }
+            }
+          },
+          "messageTimestamp": "1775094875",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACB06B11EA55A6F26AAD642E5F7C4101",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094909,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".jodohku",
+            "messageContextInfo": {
+              "messageSecret": "CHQAScyRLIrTJSNC30zvgs6jkGbBgxxXkCY3x8UWi2w="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0111EE56CDEF6901B0D"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "👫Jodoh mu adalah\n@6283853027516 ❤ @6283857980436",
+              "contextInfo": {
+                "stanzaId": "ACB06B11EA55A6F26AAD642E5F7C4101",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".jodohku"
+                },
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net",
+                  "6283857980436@s.whatsapp.net"
+                ]
+              }
+            }
+          },
+          "messageTimestamp": "1775094910",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACD635FEB6C427841EF93D33F616DEDF",
+            "participant": "139827139850431@lid",
+            "participantAlt": "6283857980436@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094930,
+          "pushName": "Mil",
+          "broadcast": false,
+          "message": {
+            "conversation": ". Jodohku",
+            "messageContextInfo": {
+              "messageSecret": "Qn3vNzHO/LDRKdmhOej1omvd+u5kviHZh1CP+ARmbD8="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0574A697CAC94AB705D"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "👫Jodoh mu adalah\n@6283857980436 ❤ @6283853027516",
+              "contextInfo": {
+                "stanzaId": "ACD635FEB6C427841EF93D33F616DEDF",
+                "participant": "6283857980436@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ". Jodohku"
+                },
+                "mentionedJid": [
+                  "6283857980436@s.whatsapp.net",
+                  "6283853027516@s.whatsapp.net"
+                ]
+              }
+            }
+          },
+          "messageTimestamp": "1775094931",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC515E0DDE27D1C6B8C2D6B76B1E1E45",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094953,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".fitnah",
+            "messageContextInfo": {
+              "messageSecret": "DMe/gUgmKbo6q9vF9lfoK4V01B0lxSmC7WB0dO98u6M="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0C1ECEDC9BF8781D771"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Example : .fitnah pesan target|pesan mu|nomer/tag target",
+              "contextInfo": {
+                "stanzaId": "AC515E0DDE27D1C6B8C2D6B76B1E1E45",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".fitnah"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094954",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC961ACD9C0EB65265D9041BB198834F",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094984,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".tebakangka",
+            "messageContextInfo": {
+              "messageSecret": "5YUy6RtOpaZ179TFIQHhwp84IbYg+wLq73Ud7B+lIY8="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB097FC7CBDD7944D0871"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Pilih Jawaban Yang Benar!\nPilihan: 75, 73, 79, 76, 78",
+              "contextInfo": {
+                "stanzaId": "AC961ACD9C0EB65265D9041BB198834F",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".tebakangka"
+                },
+                "externalAdReply": {
+                  "body": "Level : 2",
+                  "mediaType": "IMAGE",
+                  "thumbnailUrl": "https://i.ibb.co.com/bbprsqD/ishihara-75.png",
+                  "renderLargerThumbnail": true
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775094987",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC54CE46D08DFA6E7133F0E2A588AAA8",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775094999,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "76",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "fGC5q9hAES6oMpz4nboTKEG3EFbwtUBbqca8wp8V7HE="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0F895916E673B201B8D"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Jawaban Benar 🎉\nBonus Money 💰 *+3499*",
+              "contextInfo": {
+                "stanzaId": "AC54CE46D08DFA6E7133F0E2A588AAA8",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "76",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095000",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC7B89DBCBE6E03AD61F13835DE02AA1",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095658,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".coffe",
+            "messageContextInfo": {
+              "messageSecret": "FbvNM6tzlCkGW+91PyLDuOc7zs+x+xOaG7FAbrXS2kI="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB076A6BC9F59264A1528"
+          },
+          "message": {
+            "imageMessage": {
+              "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m232/AQMUi1v2D9zdiiec1ILFQMgyPJ3EiSpzTOTXBq5R7jVMyT7RVTU9jHY4HL8Ea_r59A4JvcmkKTNHv1HFRtF-ATrGDBVXwJjfSAH9Nf7ngQ?ccb=9-4&oh=01_Q5Aa4AEErXCh4-ZMUENsbVw9BjD2gxyoaDQmCk2ZfkqVWEp_Hg&oe=69F55C52&_nc_sid=e6ed6c&mms3=true",
+              "mimetype": "image/jpeg",
+              "caption": "☕ Random Coffe",
+              "fileSha256": "Dwoet8RIn/6jUViVULfyXgo1U7fQiA0a8n5jwFZH/u0=",
+              "fileLength": "62795",
+              "mediaKey": "T8XxZfLo1Nm4tOAT1HMQ1m+oR/HVw1bMjFutAkTKGPU=",
+              "fileEncSha256": "+HO01daxrYl5JIUdAs73Ho0W9q3KtJydgtZb7J7wYac=",
+              "directPath": "/o1/v/t24/f2/m232/AQMUi1v2D9zdiiec1ILFQMgyPJ3EiSpzTOTXBq5R7jVMyT7RVTU9jHY4HL8Ea_r59A4JvcmkKTNHv1HFRtF-ATrGDBVXwJjfSAH9Nf7ngQ?ccb=9-4&oh=01_Q5Aa4AEErXCh4-ZMUENsbVw9BjD2gxyoaDQmCk2ZfkqVWEp_Hg&oe=69F55C52&_nc_sid=e6ed6c",
+              "mediaKeyTimestamp": "1775095664",
+              "contextInfo": {
+                "stanzaId": "AC7B89DBCBE6E03AD61F13835DE02AA1",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".coffe"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095664",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACFB330140036DA43C2A2DB04C557CE0",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095686,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".coba",
+            "messageContextInfo": {
+              "messageSecret": "2jcKLWjuGQpt6QJm9gjxuxM/U0YvvTZXVEfZd9NxOCc="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC653AE06BE932F78EF2584F992858F0",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095691,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "messageContextInfo": {
+              "messageSecret": "IgU73LEUZK+lbIV3XZUk81sOQrQxSv/LcsRy4fBa63c="
+            },
+            "buttonsResponseMessage": {
+              "selectedButtonId": "teshoki",
+              "selectedDisplayText": "\nAku Hitam",
+              "contextInfo": {
+                "stanzaId": "3EB074488D47FFB4C4CFC3",
+                "participant": "6283133081460@s.whatsapp.net",
+                "quotedMessage": {
+                  "buttonsMessage": {
+                    "contentText": "Semoga Hoki😹",
+                    "footerText": "",
+                    "buttons": [
+                      {
+                        "buttonId": "teshoki",
+                        "buttonText": {
+                          "displayText": "\nAku Hitam"
+                        },
+                        "type": "RESPONSE"
+                      },
+                      {
+                        "buttonId": "cobacoba",
+                        "buttonText": {
+                          "displayText": "\nAku Kaya"
+                        },
+                        "type": "RESPONSE"
+                      }
+                    ],
+                    "headerType": "EMPTY"
+                  }
+                },
+                "quotedType": "EXPLICIT"
+              },
+              "type": "DISPLAY_TEXT"
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACDD7214438EDD26135F048EA6D1E4A3",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095702,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "messageContextInfo": {
+              "messageSecret": "Er07TI5eRyyhM9932Nnmk/IMT5HfxnUktkuAdnWt8PQ="
+            },
+            "buttonsResponseMessage": {
+              "selectedButtonId": "cobacoba",
+              "selectedDisplayText": "\nAku Kaya",
+              "contextInfo": {
+                "stanzaId": "3EB074488D47FFB4C4CFC3",
+                "participant": "6283133081460@s.whatsapp.net",
+                "quotedMessage": {
+                  "buttonsMessage": {
+                    "contentText": "Semoga Hoki😹",
+                    "footerText": "",
+                    "buttons": [
+                      {
+                        "buttonId": "teshoki",
+                        "buttonText": {
+                          "displayText": "\nAku Hitam"
+                        },
+                        "type": "RESPONSE"
+                      },
+                      {
+                        "buttonId": "cobacoba",
+                        "buttonText": {
+                          "displayText": "\nAku Kaya"
+                        },
+                        "type": "RESPONSE"
+                      }
+                    ],
+                    "headerType": "EMPTY"
+                  }
+                },
+                "quotedType": "EXPLICIT"
+              },
+              "type": "DISPLAY_TEXT"
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACAC68520C763855E484F32A2C97EF36",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095713,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".coba",
+            "messageContextInfo": {
+              "messageSecret": "I/WQ/klvM+XNXSUWBZWbTzrZhP55JznjHYvx43ljyho="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC00A19D343331F09B3880BD59E3D632",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095718,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "messageContextInfo": {
+              "messageSecret": "t5lhE7XBZzJPK5uHMqjZOgM8fKRyFU6QlVrWJI1AKQk="
+            },
+            "buttonsResponseMessage": {
+              "selectedButtonId": "teshoki",
+              "selectedDisplayText": "\nAku Suki",
+              "contextInfo": {
+                "stanzaId": "3EB0D0220F3CEA3B1FBC42",
+                "participant": "6283133081460@s.whatsapp.net",
+                "quotedMessage": {
+                  "buttonsMessage": {
+                    "contentText": "Semoga Hoki😹",
+                    "footerText": "",
+                    "buttons": [
+                      {
+                        "buttonId": "teshoki",
+                        "buttonText": {
+                          "displayText": "\nAku Suki"
+                        },
+                        "type": "RESPONSE"
+                      },
+                      {
+                        "buttonId": "cobacoba",
+                        "buttonText": {
+                          "displayText": "\nAku Sultan"
+                        },
+                        "type": "RESPONSE"
+                      }
+                    ],
+                    "headerType": "EMPTY"
+                  }
+                },
+                "quotedType": "EXPLICIT"
+              },
+              "type": "DISPLAY_TEXT"
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACA2664C98B14920DAF54DEF4E777D31",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095721,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "messageContextInfo": {
+              "messageSecret": "ViE5LVgk8s+07J/J+mml1B3Nw2C8pCRgy1ZSPzCfm7Q="
+            },
+            "buttonsResponseMessage": {
+              "selectedButtonId": "cobacoba",
+              "selectedDisplayText": "\nAku Sultan",
+              "contextInfo": {
+                "stanzaId": "3EB0D0220F3CEA3B1FBC42",
+                "participant": "6283133081460@s.whatsapp.net",
+                "quotedMessage": {
+                  "buttonsMessage": {
+                    "contentText": "Semoga Hoki😹",
+                    "footerText": "",
+                    "buttons": [
+                      {
+                        "buttonId": "teshoki",
+                        "buttonText": {
+                          "displayText": "\nAku Suki"
+                        },
+                        "type": "RESPONSE"
+                      },
+                      {
+                        "buttonId": "cobacoba",
+                        "buttonText": {
+                          "displayText": "\nAku Sultan"
+                        },
+                        "type": "RESPONSE"
+                      }
+                    ],
+                    "headerType": "EMPTY"
+                  }
+                },
+                "quotedType": "EXPLICIT"
+              },
+              "type": "DISPLAY_TEXT"
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC8A5F2F544E2B8BD95C317BB352F051",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095726,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".dadu",
+            "messageContextInfo": {
+              "messageSecret": "zN17gkm0Kd+I2njTT5vN8TMzBAiIIFnkVucUt88Ffgk="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB07E3A039B9831EF5565"
+          },
+          "message": {
+            "stickerMessage": {
+              "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m234/AQM5Fu0wagWxXXcqMk5PSwHhBV6YxU9UZlZdR7Ros4injkn14m-TqUsI30ueCvgRlAKJmH4sKuWGuyH5LOzeFZmm75r0BhQ58vV0kXnMpg?ccb=9-4&oh=01_Q5Aa4AEfnPJNCvvNWeFVQeJMg0pH1jKmpl49ZQYpoULkAn8Rhw&oe=69F55269&_nc_sid=e6ed6c&mms3=true",
+              "fileSha256": "yhrFdnGeZk7uaHIq/Ps2KIMUrVP3yfcOaCWByNDfvP8=",
+              "fileEncSha256": "WfaLK8y/wnSjSmyQpO4nbGO3QVHd8lQ2g1oezLZqQtw=",
+              "mediaKey": "Br8Oyhsf1qfDaTG1Gm1eMXRhW8r9jZjlgplJdl96j6g=",
+              "mimetype": "image/webp",
+              "directPath": "/o1/v/t24/f2/m234/AQM5Fu0wagWxXXcqMk5PSwHhBV6YxU9UZlZdR7Ros4injkn14m-TqUsI30ueCvgRlAKJmH4sKuWGuyH5LOzeFZmm75r0BhQ58vV0kXnMpg?ccb=9-4&oh=01_Q5Aa4AEfnPJNCvvNWeFVQeJMg0pH1jKmpl49ZQYpoULkAn8Rhw&oe=69F55269&_nc_sid=e6ed6c",
+              "fileLength": "2934",
+              "mediaKeyTimestamp": "1775095732",
+              "contextInfo": {
+                "stanzaId": "AC8A5F2F544E2B8BD95C317BB352F051",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".dadu"
+                }
+              },
+              "isAvatar": true
+            }
+          },
+          "messageTimestamp": "1775095732",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACDE3B02DBECC423EFA9A68D0D8793AF",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095743,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".dadu",
+            "messageContextInfo": {
+              "messageSecret": "mTt0zG2hb6CyPcGVq1ciav1hQUJSG9UWBEuW9GGwH38="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0F3A5383A0BF601FD11"
+          },
+          "message": {
+            "stickerMessage": {
+              "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m269/AQNuNDLJ9j4UxDVT9zdmig8b9vHhWNctktDABckD-04NkIui-HA2LbPT8-UEN3cbTEKueoWnz-1eHYXuA-Xps5NBpWEszurlOeVgffduzw?ccb=9-4&oh=01_Q5Aa4AG0fl5qP7mv_5Kp44WjCwDqFbsayWahQ6EaUDXdvXPz5g&oe=69F543B3&_nc_sid=e6ed6c&mms3=true",
+              "fileSha256": "/UTBDUgSSsfsoJs6IuBk1xnxb53xPNi5mQOYbN+DZo8=",
+              "fileEncSha256": "Nh3aPT/wzJI17MtUNvBc74xU1H/vdpBSOH8BHlFguDo=",
+              "mediaKey": "oroWDWW9LFVp8FQtCEZiwcvEfOCg8TdBBN4fWGb81u0=",
+              "mimetype": "image/webp",
+              "directPath": "/o1/v/t24/f2/m269/AQNuNDLJ9j4UxDVT9zdmig8b9vHhWNctktDABckD-04NkIui-HA2LbPT8-UEN3cbTEKueoWnz-1eHYXuA-Xps5NBpWEszurlOeVgffduzw?ccb=9-4&oh=01_Q5Aa4AG0fl5qP7mv_5Kp44WjCwDqFbsayWahQ6EaUDXdvXPz5g&oe=69F543B3&_nc_sid=e6ed6c",
+              "fileLength": "2398",
+              "mediaKeyTimestamp": "1775095746",
+              "contextInfo": {
+                "stanzaId": "ACDE3B02DBECC423EFA9A68D0D8793AF",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".dadu"
+                }
+              },
+              "isAvatar": true
+            }
+          },
+          "messageTimestamp": "1775095746",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC7D3C03958576B32AFB960C031571C7",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095764,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".bisakah",
+            "messageContextInfo": {
+              "messageSecret": "3hYt1TdlZ5b9U1+kUygJQOOQVGFWsV9V6wjwhW4ioYk="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB012D102CF23E652C353"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Example : .bisakah saya menang?",
+              "contextInfo": {
+                "stanzaId": "AC7D3C03958576B32AFB960C031571C7",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".bisakah"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095764",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC2B9FBC37CF5C6568AA94F0E8A4D015",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095775,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".bisakah saya kurus?",
+            "messageContextInfo": {
+              "messageSecret": "813QNsgLRvcM2frawTX78d1cVTMEVithSDxta+jYm6M="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0FADB277BC03088E0FA"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*Bisakah saya kurus?*\nJawab : Tidak Mungkin",
+              "contextInfo": {
+                "stanzaId": "AC2B9FBC37CF5C6568AA94F0E8A4D015",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".bisakah saya kurus?"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095775",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC20012558621A3FA2239A667EF1F1F9",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095802,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".apakah saya akan kaya?",
+            "messageContextInfo": {
+              "messageSecret": "P30G0oCeUVGDsZ7aiPFBYV4uLXuCxGnQxwV0vzNy4lk="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0100E3A34F3BC14E2D4"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*apakah saya akan kaya?*\nJawab : Coba Ulangi",
+              "contextInfo": {
+                "stanzaId": "AC20012558621A3FA2239A667EF1F1F9",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".apakah saya akan kaya?"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095802",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACE41B38684B513783BEFDAA5BC58531",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095855,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".cekkhodam Mila Ardila",
+            "messageContextInfo": {
+              "messageSecret": "BouMHw65jP0kRkCZ1X581r1tnWH5WiEhRGbj5zenzjw="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0579F6B2EF026696C3C"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Khodam dari *Mila Ardila* adalah *Ular Julid*\n_Khodam ular yang suka ngomentarin kehidupan orang lain. Sering bikin drama di kalangan khodam lain._",
+              "contextInfo": {
+                "stanzaId": "ACE41B38684B513783BEFDAA5BC58531",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".cekkhodam Mila Ardila"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095858",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC092CDEADE057B9C73D01F27E3CEEFE",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095908,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".nulis",
+            "messageContextInfo": {
+              "messageSecret": "1InIOtf9nj+8MwnQGg9ysJbmrjQIUxIW5heslnJLeVg="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0667EA90E1BF736842A"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*Example*\n.nuliskiri\n.nuliskanan\n.foliokiri\n.foliokanan",
+              "contextInfo": {
+                "stanzaId": "AC092CDEADE057B9C73D01F27E3CEEFE",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".nulis"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095908",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC76062FBAEDF2DA08CEFF76276F9B55",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095915,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".nuliskiri",
+            "messageContextInfo": {
+              "messageSecret": "ZS+xlRSJEaAvExRN7LbYNoXHmb9n+0NQ6j7DhM3EPYg="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0813C7DFFE496E2B068"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Kirim perintah *.nuliskiri* Teksnya",
+              "contextInfo": {
+                "stanzaId": "AC76062FBAEDF2DA08CEFF76276F9B55",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".nuliskiri"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095915",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC2B87B77176309F1EB408C68BB62C52",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095930,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".nulirkiri Humaidi",
+            "messageContextInfo": {
+              "messageSecret": "VYk3n0lp3bmyketTo7Sc6vQpwH5I6MSPAxpJGy4wWuw="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB049295C892AAE03CF18"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Command Tidak Ditemukan!\nMungkin yang kamu maksud:\n- .nuliskiri\n- Similarity: 88%",
+              "contextInfo": {
+                "stanzaId": "AC2B87B77176309F1EB408C68BB62C52",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".nulirkiri Humaidi"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095930",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACBE8917B8B6566C22EDB8B8C3270FF2",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095936,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".nuliskiri Humaidi",
+            "messageContextInfo": {
+              "messageSecret": "4l+v1estnCoAMZCum7LpQE+NvDN6CKkAgfxV5gG7RLw="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0D59076F339C6CD86B9"
+          },
+          "message": {
+            "reactionMessage": {
+              "key": {
+                "remoteJid": "120363424723850342@g.us",
+                "fromMe": false,
+                "id": "ACBE8917B8B6566C22EDB8B8C3270FF2",
+                "participant": "19409007554574@lid"
+              },
+              "text": "⏳",
+              "senderTimestampMs": "1775095937033"
+            }
+          },
+          "messageTimestamp": "1775095937",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0869E74C6AC065724AE"
+          },
+          "message": {
+            "imageMessage": {
+              "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m234/AQN6_csz7XudUAjILmpWN16Mu501Twyt3h3VP6TxN2uODUsNbZahKPy9Oz3lRxe3yWc_tn2HtnQFj0y0aOrqJUjq2yRiw8QQlvQ3WH9ovg?ccb=9-4&oh=01_Q5Aa4AGiQ7vCtE6SDdB3_wZ44_8vlF90RWNw_UUhXncHZlOOEg&oe=69F53CD5&_nc_sid=e6ed6c&mms3=true",
+              "mimetype": "image/jpeg",
+              "caption": "Jangan Malas Lord. Jadilah siswa yang rajin ರ_ರ",
+              "fileSha256": "hhKnhMhOxqHA0WpYqV229oL469WAlPJEKnIjM/bxsJs=",
+              "fileLength": "588391",
+              "mediaKey": "wV0xd3NKxGsL1SF7bpIc0ODvSDdCwDSe/TR7JlbMWNA=",
+              "fileEncSha256": "qf2bxLnuoL1zMUOS5GJElzJme6E6k/tvl3dE1qO5oRs=",
+              "directPath": "/o1/v/t24/f2/m234/AQN6_csz7XudUAjILmpWN16Mu501Twyt3h3VP6TxN2uODUsNbZahKPy9Oz3lRxe3yWc_tn2HtnQFj0y0aOrqJUjq2yRiw8QQlvQ3WH9ovg?ccb=9-4&oh=01_Q5Aa4AGiQ7vCtE6SDdB3_wZ44_8vlF90RWNw_UUhXncHZlOOEg&oe=69F53CD5&_nc_sid=e6ed6c",
+              "mediaKeyTimestamp": "1775095941",
+              "contextInfo": {
+                "stanzaId": "ACBE8917B8B6566C22EDB8B8C3270FF2",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".nuliskiri Humaidi"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095941",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC66F6829FC1A7735AA920C1FCAE5A0B",
+            "participant": "139827139850431@lid",
+            "participantAlt": "6283857980436@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095948,
+          "pushName": "Mil",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Bagus🤣",
+              "previewType": "NONE",
+              "contextInfo": {
+                "stanzaId": "ACE41B38684B513783BEFDAA5BC58531",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".cekkhodam Mila Ardila"
+                },
+                "quotedType": "EXPLICIT"
+              },
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "0xISIW4mJmTUKOGsEqJDp/sOeb/ty8LD264HTMVzsdA=",
+              "threadId": [
+                {
+                  "threadType": "VIEW_REPLIES",
+                  "threadKey": {
+                    "remoteJid": "120363424723850342@g.us",
+                    "fromMe": false,
+                    "id": "ACE41B38684B513783BEFDAA5BC58531",
+                    "participant": "19409007554574@lid"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACDBA19921A4654377D61B490A328677",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095958,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "reactionMessage": {
+              "key": {
+                "remoteJid": "120363424723850342@g.us",
+                "fromMe": false,
+                "id": "AC66F6829FC1A7735AA920C1FCAE5A0B",
+                "participant": "139827139850431@lid"
+              },
+              "text": "😂",
+              "senderTimestampMs": "1775095958102"
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC447068423275836D47882CF13A1646",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775095978,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".nuliskiri Humaidi & Mila Ardila",
+            "messageContextInfo": {
+              "messageSecret": "tHAe3PyVPpIXcUI46QKzOhsAH7aReZ1GPcQGiL0XAYs="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0AB64870C4DB80D2CB0"
+          },
+          "message": {
+            "reactionMessage": {
+              "key": {
+                "remoteJid": "120363424723850342@g.us",
+                "fromMe": false,
+                "id": "AC447068423275836D47882CF13A1646",
+                "participant": "19409007554574@lid"
+              },
+              "text": "⏳",
+              "senderTimestampMs": "1775095979497"
+            }
+          },
+          "messageTimestamp": "1775095979",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB03D7A68399942D2FE5D"
+          },
+          "message": {
+            "imageMessage": {
+              "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m231/AQPnNoPsrXw1PNpgoxLv3WzFuTx-ChVh-N41Nu0-dVvGIvHl9qFrUONXu-8ypCwTyHLbMKjdNyckKYtBFr28OcVuzJa-UQEntasX2jHvww?ccb=9-4&oh=01_Q5Aa4AFMZntf79RL0VM_9xePcd1Que2F7WQ41szuTvSpE2ZAzg&oe=69F52FE8&_nc_sid=e6ed6c&mms3=true",
+              "mimetype": "image/jpeg",
+              "caption": "Jangan Malas Lord. Jadilah siswa yang rajin ರ_ರ",
+              "fileSha256": "GS131w8qSNze40qAZ79595vTMTpIzrX+eesqnryJOts=",
+              "fileLength": "590445",
+              "mediaKey": "dvVClCVgTdXcrpVpFqOJ8HDsWZ6LZbA3fyeG5ccT+L8=",
+              "fileEncSha256": "vUTOtQX35OKmFeyUB9+vAPc2db/dFzy+X3SNmm4vU3s=",
+              "directPath": "/o1/v/t24/f2/m231/AQPnNoPsrXw1PNpgoxLv3WzFuTx-ChVh-N41Nu0-dVvGIvHl9qFrUONXu-8ypCwTyHLbMKjdNyckKYtBFr28OcVuzJa-UQEntasX2jHvww?ccb=9-4&oh=01_Q5Aa4AFMZntf79RL0VM_9xePcd1Que2F7WQ41szuTvSpE2ZAzg&oe=69F52FE8&_nc_sid=e6ed6c",
+              "mediaKeyTimestamp": "1775095983",
+              "contextInfo": {
+                "stanzaId": "AC447068423275836D47882CF13A1646",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".nuliskiri Humaidi & Mila Ardila"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775095983",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC54AACB32CAFFADCFE0687C70522F45",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096017,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "sae manabi nuga malas nulis🤣🤣 @139827139850431",
+              "previewType": "NONE",
+              "contextInfo": {
+                "mentionedJid": [
+                  "139827139850431@lid"
+                ]
+              },
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "LTpopbW7ryVf0l6iCeJcoNMXD6GA07vdDjyZKVJv+Bk="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC1CEF2B6372B4DB77E583D437FF8CA2",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096031,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".allmenu",
+            "messageContextInfo": {
+              "messageSecret": "6jl/+UvZd+2cXbp1tkmC6G0UarkABuDoRGpAMLTjY3A="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0D9E40390ECCDCA3E6F"
+          },
+          "message": {
+            "documentMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7119-24/593726542_1616271029712382_8568929943842712044_n.enc?ccb=11-4&oh=01_Q5Aa4AFdvUXW59WYOg6YVI7-fCed-LMVE1-Aoq-VQN4VbsjHsw&oe=69F55A85&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+              "fileSha256": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+              "fileLength": "100000000000000",
+              "pageCount": 999,
+              "mediaKey": "I0z+W2EzJb4N36tKlfma7ecUO99qbZmeSrYiJyC6RVQ=",
+              "fileName": "Selamat Pagi 🌄",
+              "fileEncSha256": "G+skWGL5Wg5o+5cfl8DcEVTljdz63CnCLn+iKi0g4ps=",
+              "directPath": "/v/t62.7119-24/593726542_1616271029712382_8568929943842712044_n.enc?ccb=11-4&oh=01_Q5Aa4AFdvUXW59WYOg6YVI7-fCed-LMVE1-Aoq-VQN4VbsjHsw&oe=69F55A85&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1775096033",
+              "contextInfo": {
+                "stanzaId": "AC1CEF2B6372B4DB77E583D437FF8CA2",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".allmenu"
+                },
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net",
+                  "0@s.whatsapp.net",
+                  "6283853027516@s.whatsapp.net"
+                ],
+                "forwardingScore": 10,
+                "isForwarded": true,
+                "externalAdReply": {
+                  "title": "Omaidi",
+                  "body": "Bot WhatsApp",
+                  "mediaType": "IMAGE",
+                  "thumbnailUrl": "https://pps.whatsapp.net/v/t61.24694-24/582415542_775171728721800_7418751431619858732_n.jpg?ccb=11-4&oh=01_Q5Aa4AEwyaqhIE-PB1b4FHjlpknLBZOvJi3DZudAVw4HAbZBbg&oe=69DAF96F&_nc_sid=5e03e0&_nc_cat=109",
+                  "mediaUrl": "https://github.com/Omaidi",
+                  "sourceUrl": "https://github.com/Omaidi",
+                  "renderLargerThumbnail": true,
+                  "showAdAttribution": false
+                },
+                "forwardedNewsletterMessageInfo": {
+                  "newsletterJid": "120363406992512254@newsletter",
+                  "newsletterName": "Join For More Info"
+                }
+              },
+              "caption": "\n╭──❍「 *USER INFO* 」❍\n├ *Nama* : Humaidi Muhammad\n├ *Id* : @6283853027516\n├ *User* : VIP\n├ *Limit* : VIP\n├ *Money* : 1.000.006.488\n╰─┬────❍\n╭─┴─❍「 *BOT INFO* 」❍\n├ *Nama Bot* : Omaidi Bot\n├ *Powered* : @0\n├ *Owner* : @6283853027516\n├ *Mode* : Public\n├ *Prefix* : *.*\n├ *Premium Feature* : 🔸️\n╰─┬────❍\n╭─┴─❍「 *ABOUT* 」❍\n├ *Date* : 02/04/2026\n├ *Day* : Thursday\n├ *Time* : 09:13:52\n╰──────❍\n╭──❍「 *BOT* 」❍\n│➩ .profile\n│➩ .claim\n│➩ .buy [item] (nominal)\n│➩ .transfer\n│➩ .leaderboard\n│➩ .request (text)\n│➩ .react (emoji)\n│➩ .tagme\n│➩ .runtime\n│➩ .totalfitur\n│➩ .speed\n│➩ .ping\n│➩ .afk\n│➩ .rvo (reply pesan viewone)\n│➩ .inspect (url gc)\n│➩ .addmsg\n│➩ .delmsg\n│➩ .getmsg\n│➩ .listmsg\n│➩ .setcmd\n│➩ .delcmd\n│➩ .listcmd\n│➩ .lockcmd\n│➩ .q (reply pesan)\n│➩ .menfes (62xxx|fake name)\n│➩ .confes (62xxx|fake name)\n│➩ .roomai\n│➩ .jadibot 🔸️\n│➩ .stopjadibot\n│➩ .listjadibot\n│➩ .donasi\n│➩ .addsewa\n│➩ .delsewa\n│➩ .listsewa\n╰─┬────❍\n╭─┴❍「 *GROUP* 」❍\n│➩ .add (62xxx)\n│➩ .kick (@tag/62xxx)\n│➩ .promote (@tag/62xxx)\n│➩ .demote (@tag/62xxx)\n│➩ .warn (@tag/62xxx)\n│➩ .unwarn (@tag/62xxx)\n│➩ .setname (nama baru gc)\n│➩ .setdesc (desk)\n│➩ .setppgc (reply imgnya)\n│➩ .delete (reply pesan)\n│➩ .linkgrup\n│➩ .revoke\n│➩ .tagall\n│➩ .pin\n│➩ .unpin\n│➩ .hidetag\n│➩ .totag (reply pesan)\n│➩ .listonline\n│➩ .group set\n│➩ .group (khusus admin)\n╰─┬────❍\n╭─┴❍「 *SEARCH* 」❍\n│➩ .ytsearch (query)\n│➩ .spotify (query)\n│➩ .pixiv (query)\n│➩ .pinterest (query)\n│➩ .wallpaper (query)\n│➩ .ringtone (query)\n│➩ .google (query)\n│➩ .gimage (query)\n│➩ .npm (query)\n│➩ .style (query)\n│➩ .cuaca (kota)\n│➩ .tenor (query)\n│➩ .urban (query)\n╰─┬────❍\n╭─┴❍「 *DOWNLOAD* 」❍\n│➩ .ytmp3 (url)\n│➩ .ytmp4 (url)\n│➩ .instagram (url)\n│➩ .tiktok (url)\n│➩ .tiktokmp3 (url)\n│➩ .facebook (url)\n│➩ .spotifydl (url)\n│➩ .mediafire (url)\n╰─┬────❍\n╭─┴❍「 *QUOTES* 」❍\n│➩ .motivasi\n│➩ .quotes\n│➩ .truth\n│➩ .bijak\n│➩ .dare\n│➩ .bucin\n│➩ .renungan\n╰─┬────❍\n╭─┴❍「 *TOOLS* 」❍\n│➩ .get (url) 🔸️\n│➩ .hd (reply pesan)\n│➩ .toaudio (reply pesan)\n│➩ .tomp3 (reply pesan)\n│➩ .tovn (reply pesan)\n│➩ .toimage (reply pesan)\n│➩ .toptv (reply pesan)\n│➩ .tourl (reply pesan)\n│➩ .tts (textnya)\n│➩ .toqr (textnya)\n│➩ .brat (textnya)\n│➩ .bratvid (textnya)\n│➩ .ssweb (url) 🔸️\n│➩ .sticker (send/reply img)\n│➩ .colong (reply stiker)\n│➩ .smeme (send/reply img)\n│➩ .dehaze (send/reply img)\n│➩ .colorize (send/reply img)\n│➩ .hitamkan (send/reply img)\n│➩ .emojimix 🙃+💀\n│➩ .nulis\n│➩ .readmore text1|text2\n│➩ .qc (pesannya)\n│➩ .translate\n│➩ .wasted (send/reply img)\n│➩ .triggered (send/reply img)\n│➩ .shorturl (urlnya)\n│➩ .gitclone (urlnya)\n│➩ .fat (reply audio)\n│➩ .fast (reply audio)\n│➩ .bass (reply audio)\n│➩ .slow (reply audio)\n│➩ .tupai (reply audio)\n│➩ .deep (reply audio)\n│➩ .robot (reply audio)\n│➩ .blown (reply audio)\n│➩ .reverse (reply audio)\n│➩ .smooth (reply audio)\n│➩ .earrape (reply audio)\n│➩ .nightcore (reply audio)\n│➩ .getexif (reply sticker)\n╰─┬────❍\n╭─┴❍「 *AI* 」❍\n│➩ .ai (query)\n│➩ .gemini (query)\n│➩ .glm (query)\n│➩ .grok (query)\n│➩ .claude (query)\n│➩ .archipelago (query)\n│➩ .deepseek (query)\n│➩ .txt2img (query)\n╰─┬────❍\n╭─┴❍「 *ANIME* 」❍\n│➩ .waifu\n│➩ .neko\n╰─┬────❍\n╭─┴❍「 *GAME* 」❍\n│➩ .tictactoe\n│➩ .suit\n│➩ .slot\n│➩ .math (level)\n│➩ .begal\n│➩ .ulartangga\n│➩ .blackjack\n│➩ .catur\n│➩ .casino (nominal)\n│➩ .samgong (nominal)\n│➩ .rampok (@tag)\n│➩ .tekateki\n│➩ .tebaklirik\n│➩ .tebakkata\n│➩ .tebakbom\n│➩ .susunkata\n│➩ .colorblind\n│➩ .tebakkimia\n│➩ .caklontong\n│➩ .tebakangka\n│➩ .tebaknegara\n│➩ .tebakgambar\n│➩ .tebakbendera\n╰─┬────❍\n╭─┴❍「 *FUN* 」❍\n│➩ .coba\n│➩ .dadu\n│➩ .bisakah (text)\n│➩ .apakah (text)\n│➩ .kapan (text)\n│➩ .siapa (text)\n│➩ .kerangajaib (text)\n│➩ .cekmati (nama lu)\n│➩ .ceksifat\n│➩ .cekkhodam (nama lu)\n│➩ .rate (reply pesan)\n│➩ .jodohku\n│➩ .jadian\n│➩ .fitnah\n│➩ .halah (text)\n│➩ .hilih (text)\n│➩ .huluh (text)\n│➩ .heleh (text)\n│➩ .holoh (text)\n╰─┬────❍\n╭─┴❍「 *RANDOM* 」❍\n│➩ .coffe\n╰─┬────❍\n╭─┴❍「 *STALKER* 」❍\n│➩ .wastalk\n│➩ .githubstalk\n╰─┬────❍\n╭─┴❍「 *OWNER* 」❍\n│➩ .bot [set]\n│➩ .setbio\n│➩ .setppbot\n│➩ .join\n│➩ .leave\n│➩ .block\n│➩ .listblock\n│➩ .openblock\n│➩ .listpc\n│➩ .listgc\n│➩ .ban\n│➩ .unban\n│➩ .mute\n│➩ .unmute\n│➩ .creategc\n│➩ .clearchat\n│➩ .addprem\n│➩ .delprem\n│➩ .listprem\n│➩ .addlimit\n│➩ .adduang\n│➩ .setbotmessages\n│➩ .setbotauthor\n│➩ .setbotname\n│➩ .setbotpackname\n│➩ .setapikey\n│➩ .setbotlimit\n│➩ .setbotmoney\n│➩ .setlocale\n│➩ .settimezone\n│➩ .addprefix\n│➩ .delprefix\n│➩ .addbadword\n│➩ .delbadword\n│➩ .addowner\n│➩ .delowner\n│➩ .getmsgstore\n│➩ .bot --settings\n│➩ .bot settings\n│➩ .getsession\n│➩ .delsession\n│➩ .delsampah\n│➩ .upsw\n│➩ .backup\n│➩ $\n│➩ >\n│➩ <\n╰──────❍"
+            }
+          },
+          "messageTimestamp": "1775096033",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC078B4B433AD0C072D282C917394BCE",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096043,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".totalfitur",
+            "messageContextInfo": {
+              "messageSecret": "kgCtr7uFEmnXgLY5i2EuipNp2WSRNfMeI/w0DnofrqQ="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB059A33391887EDD6B38"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Total Fitur : 508",
+              "contextInfo": {
+                "stanzaId": "AC078B4B433AD0C072D282C917394BCE",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".totalfitur"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096044",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC6F2E7F2B1CE2259566696BDC81FB65",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096056,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".menfes",
+            "messageContextInfo": {
+              "messageSecret": "ZjLAtwytdUuDUVxDPjDpjOoc5pu7KgrAzI1WeNGtiNo="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB01DC456B18BFBD9D3E3"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Khusus Private Chat!",
+              "contextInfo": {
+                "stanzaId": "AC6F2E7F2B1CE2259566696BDC81FB65",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".menfes"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096056",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC059906F7569C0810901B64FC2E7DB1",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096088,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".caklontong",
+            "messageContextInfo": {
+              "messageSecret": "oj5t8kYgf/wFqzK8R6aoa66nUDgG3Owjjp4mcgKnR8A="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0C6D4EADCD47BE226D7"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "🎮 Jawab Pertanyaan Berikut :\n\nMahluk hidup yang mempunyai persediaan air\n\nWaktu : 60s\nHadiah *+9999*",
+              "contextInfo": {
+                "stanzaId": "AC059906F7569C0810901B64FC2E7DB1",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".caklontong"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096090",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC1F60B908CC2E37E9F7793A3AE32C2D",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096131,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Sapi",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "9Rcg6YazqpTkgw6mp06bYva1/3sDyXuuA9VqhD8vDAo="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB05DE2C990B3745401DC"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*Jawaban Salah!*",
+              "contextInfo": {
+                "stanzaId": "AC1F60B908CC2E37E9F7793A3AE32C2D",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Sapi",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096132",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0052953AEB248172621"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Waktu Habis\nJawaban: unta\n\"…\"",
+              "contextInfo": {
+                "stanzaId": "AC059906F7569C0810901B64FC2E7DB1",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".caklontong"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096151",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC62332BED34B3E0D72DE2682E81EF59",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096151,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".addsewa",
+            "messageContextInfo": {
+              "messageSecret": "adrYfGJoTB76fESj0YG5g/8NtaHpB/asluuqNQ9DY64="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB035E3F1276F0559400B"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Example:\n.addsewa https://chat.whatsapp.com/xxx | waktu\n.addsewa https://chat.whatsapp.com/xxx | 30 hari",
+              "contextInfo": {
+                "stanzaId": "AC62332BED34B3E0D72DE2682E81EF59",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".addsewa"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096152",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC6509843BB7B19155814BD2B8F366B8",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096203,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".suit",
+            "messageContextInfo": {
+              "messageSecret": "EqNuluRJe9RrTX3EXCWdyed6uj4RAWFp70VRBRF2FGc="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB05ED23F423BBD27B09F"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "_Siapa yang ingin kamu tantang?_\nTag orangnya..\n\nExample : .suit @6283853027516",
+              "contextInfo": {
+                "stanzaId": "AC6509843BB7B19155814BD2B8F366B8",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".suit"
+                },
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net"
+                ]
+              }
+            }
+          },
+          "messageTimestamp": "1775096204",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACEABBB461BABC173565C4DC67EAEC67",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096214,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "@139827139850431",
+              "previewType": "NONE",
+              "contextInfo": {
+                "stanzaId": "3EB05ED23F423BBD27B09F",
+                "participant": "6283133081460@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "_Siapa yang ingin kamu tantang?_\nTag orangnya..\n\nExample : .suit @6283853027516",
+                    "previewType": "NONE",
+                    "contextInfo": {
+                      "mentionedJid": [
+                        "6283853027516@s.whatsapp.net"
+                      ]
+                    },
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                },
+                "mentionedJid": [
+                  "139827139850431@lid"
+                ],
+                "quotedType": "EXPLICIT"
+              },
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "o4zM/tcjvsSizx2zrUuP44IRKovoAmSnF8tYBCd5foQ="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACD5A0A805BA4909B35F7874876E80FB",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096228,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": ".suit @139827139850431",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "l0RARU0WNVkYGiLj5sRSNGCoIwn6hpCNE9YSi0S4MOw="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0DA991C9BD33AB8A719"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "_*SUIT PvP*_\n\n@6283853027516 menantang @6283857980436 untuk bermain suit\n\nSilahkan @6283857980436 untuk ketik terima/tolak",
+              "contextInfo": {
+                "stanzaId": "ACD5A0A805BA4909B35F7874876E80FB",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": ".suit @139827139850431",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                },
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net",
+                  "6283857980436@s.whatsapp.net"
+                ]
+              }
+            }
+          },
+          "messageTimestamp": "1775096229",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC02C3338EC6332CD3604167A32180EC",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096255,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".colong",
+            "messageContextInfo": {
+              "messageSecret": "kkzNTFXuHPydZu+PsSnEYxmsH8Aln+T6MZjRC511CZE="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB09F992E790E7C257FD2"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Kirim/reply gambar/video/gif dengan caption .colong\nDurasi Image/Video/Gif 1-9 Detik",
+              "contextInfo": {
+                "stanzaId": "AC02C3338EC6332CD3604167A32180EC",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".colong"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096255",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACA0654D967D8E68E48B2F9FB78D8466",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096277,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "imageMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7118-24/562967445_4543870495847058_2235558648094066230_n.enc?ccb=11-4&oh=01_Q5Aa4AEqVWlPU4Q9Q6e0lrY2b_excT2NcQQSs7CRBxEHiKBG7w&oe=69F5427B&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "image/jpeg",
+              "caption": ".colong 5 detik",
+              "fileSha256": "98O+tu+SXOPCI02EN1S2K8gX79eAKs9VwIPPlhJBQ2Y=",
+              "fileLength": "73424",
+              "height": 1280,
+              "width": 720,
+              "mediaKey": "fbcFNXDvFRRegCeIyET/+gAHyWLAU02Jr9IaDZ0qcHI=",
+              "fileEncSha256": "v8W3vgLBTE/gSS1AhvonQxpOvm3BXT0Lnu/1RbW9bqA=",
+              "directPath": "/v/t62.7118-24/562967445_4543870495847058_2235558648094066230_n.enc?ccb=11-4&oh=01_Q5Aa4AEqVWlPU4Q9Q6e0lrY2b_excT2NcQQSs7CRBxEHiKBG7w&oe=69F5427B&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1775096274",
+              "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEgAKAMBIgACEQEDEQH/xAAwAAACAwEBAAAAAAAAAAAAAAAABAEDBQIGAQEBAQEBAAAAAAAAAAAAAAACAAEDBP/aAAwDAQACEAMQAAAAbVrwCvW6GHu1BJZgL6fJ7K+hzG9F5Ihk1z0PXDyjOi8rOnmy2K+ufsLMl+DpmCN6YWJshTIBf//EACQQAAEEAgEDBQEAAAAAAAAAAAEAAgMREjEhBAUQEyJBQmFi/9oACAEBAAE/AGgDaM8JfiHhMGkNDx1ryyE0VZu12+UysAOwhoeOrhM1C+EO3Mxv1F0kDoJeDbShpFEBxKAYDj8J2LMQFE/63ZCKcTkRabjZtZ5fXgKKt1Se/EBAe5YbPymtoKF2wpjUTircQKTOE99cDajf6fLlkJI3fqApF4CfK4ziig4OZ7kXuI3SI/pSyNZxazEkgoJkmTyLRIolf//EABkRAQEBAQEBAAAAAAAAAAAAAAEAERACMf/aAAgBAgEBPwAI5rD0jyvdSyfrLl//xAAaEQEAAgMBAAAAAAAAAAAAAAABAAIQESES/9oACAEDAQE/AMlRlq41zkuci6ZuLueCekIPDH//2Q==",
+              "scansSidecar": "lLHFG8uqDkuT3Pjx5UyYBSujpKnfxjy618CONmSO4Hfgv8XKCoyInA==",
+              "scanLengths": [
+                9387,
+                24376,
+                15489,
+                24172
+              ],
+              "midQualityFileSha256": "1H8cAWad85sM5dFVn7gt5KOZTWXnXg5p7M2i1XvYCxg="
+            },
+            "messageContextInfo": {
+              "messageSecret": "Z7IhCEmZkoHJGODD4IyYvWpKK4rDFgWp4KGZPKO0jNE="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0F17A3B6A4FE20BCD3A"
+          },
+          "message": {
+            "reactionMessage": {
+              "key": {
+                "remoteJid": "120363424723850342@g.us",
+                "fromMe": false,
+                "id": "ACA0654D967D8E68E48B2F9FB78D8466",
+                "participant": "19409007554574@lid"
+              },
+              "text": "⏳",
+              "senderTimestampMs": "1775096278268"
+            }
+          },
+          "messageTimestamp": "1775096278",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB099F98106DDD107395B"
+          },
+          "message": {
+            "stickerMessage": {
+              "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m231/AQPWt0-NRZC2NL-gT5gqwV7zq-esHJqVK09XWQvUfC1jbfO2BiflwXqPZtbqrBU6r7WXOSI52CXpa2mOBpdq7CLGUQk3aUP2qRWMA40qKg?ccb=9-4&oh=01_Q5Aa4AG9kcsS15l1B3QQbQBtOXBs4M3uUBM29LNEhm4ewGqapA&oe=69F53E06&_nc_sid=e6ed6c&mms3=true",
+              "fileSha256": "Xe0j381TQKZBLX7qX67NvK89Iynnl4K/UyND1aGfIOo=",
+              "fileEncSha256": "gGANuuKhHtNSx/Cm2XvQ+789bgHu9vJcigum7SUSfr0=",
+              "mediaKey": "zMcaz1qyZ1dp8LDjAFAtIePghR1jDEyjOTm49ZRhFuk=",
+              "mimetype": "image/webp",
+              "directPath": "/o1/v/t24/f2/m231/AQPWt0-NRZC2NL-gT5gqwV7zq-esHJqVK09XWQvUfC1jbfO2BiflwXqPZtbqrBU6r7WXOSI52CXpa2mOBpdq7CLGUQk3aUP2qRWMA40qKg?ccb=9-4&oh=01_Q5Aa4AG9kcsS15l1B3QQbQBtOXBs4M3uUBM29LNEhm4ewGqapA&oe=69F53E06&_nc_sid=e6ed6c",
+              "fileLength": "12974",
+              "mediaKeyTimestamp": "1775096280",
+              "contextInfo": {
+                "stanzaId": "ACA0654D967D8E68E48B2F9FB78D8466",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "imageMessage": {
+                    "url": "https://mmg.whatsapp.net/v/t62.7118-24/562967445_4543870495847058_2235558648094066230_n.enc?ccb=11-4&oh=01_Q5Aa4AEqVWlPU4Q9Q6e0lrY2b_excT2NcQQSs7CRBxEHiKBG7w&oe=69F5427B&_nc_sid=5e03e0&mms3=true",
+                    "mimetype": "image/jpeg",
+                    "caption": ".colong 5 detik",
+                    "fileSha256": "98O+tu+SXOPCI02EN1S2K8gX79eAKs9VwIPPlhJBQ2Y=",
+                    "fileLength": "73424",
+                    "height": 1280,
+                    "width": 720,
+                    "mediaKey": "fbcFNXDvFRRegCeIyET/+gAHyWLAU02Jr9IaDZ0qcHI=",
+                    "fileEncSha256": "v8W3vgLBTE/gSS1AhvonQxpOvm3BXT0Lnu/1RbW9bqA=",
+                    "directPath": "/v/t62.7118-24/562967445_4543870495847058_2235558648094066230_n.enc?ccb=11-4&oh=01_Q5Aa4AEqVWlPU4Q9Q6e0lrY2b_excT2NcQQSs7CRBxEHiKBG7w&oe=69F5427B&_nc_sid=5e03e0",
+                    "mediaKeyTimestamp": "1775096274",
+                    "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEgAKAMBIgACEQEDEQH/xAAwAAACAwEBAAAAAAAAAAAAAAAABAEDBQIGAQEBAQEBAAAAAAAAAAAAAAACAAEDBP/aAAwDAQACEAMQAAAAbVrwCvW6GHu1BJZgL6fJ7K+hzG9F5Ihk1z0PXDyjOi8rOnmy2K+ufsLMl+DpmCN6YWJshTIBf//EACQQAAEEAgEDBQEAAAAAAAAAAAEAAgMREjEhBAUQEyJBQmFi/9oACAEBAAE/AGgDaM8JfiHhMGkNDx1ryyE0VZu12+UysAOwhoeOrhM1C+EO3Mxv1F0kDoJeDbShpFEBxKAYDj8J2LMQFE/63ZCKcTkRabjZtZ5fXgKKt1Se/EBAe5YbPymtoKF2wpjUTircQKTOE99cDajf6fLlkJI3fqApF4CfK4ziig4OZ7kXuI3SI/pSyNZxazEkgoJkmTyLRIolf//EABkRAQEBAQEBAAAAAAAAAAAAAAEAERACMf/aAAgBAgEBPwAI5rD0jyvdSyfrLl//xAAaEQEAAgMBAAAAAAAAAAAAAAABAAIQESES/9oACAEDAQE/AMlRlq41zkuci6ZuLueCekIPDH//2Q==",
+                    "scansSidecar": "lLHFG8uqDkuT3Pjx5UyYBSujpKnfxjy618CONmSO4Hfgv8XKCoyInA==",
+                    "scanLengths": [
+                      9387,
+                      24376,
+                      15489,
+                      24172
+                    ],
+                    "midQualityFileSha256": "1H8cAWad85sM5dFVn7gt5KOZTWXnXg5p7M2i1XvYCxg="
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096280",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC4565A615ADE80506A972EF0E3A16B4",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096343,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".hd",
+            "messageContextInfo": {
+              "messageSecret": "IaFiI6C6hvnH9EtKCT4GclA4udblVclVgXZPQbRmS4Q="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0F0D24FD9061860CE9F"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Kirim/Reply Gambar dengan format\nExample: .hd",
+              "contextInfo": {
+                "stanzaId": "AC4565A615ADE80506A972EF0E3A16B4",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "conversation": ".hd"
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096343",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC7CAC14692B2213FBC482BB26962123",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096360,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "imageMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7118-24/562967445_4543870495847058_2235558648094066230_n.enc?ccb=11-4&oh=01_Q5Aa4AEqVWlPU4Q9Q6e0lrY2b_excT2NcQQSs7CRBxEHiKBG7w&oe=69F5427B&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "image/jpeg",
+              "caption": ".hd",
+              "fileSha256": "98O+tu+SXOPCI02EN1S2K8gX79eAKs9VwIPPlhJBQ2Y=",
+              "fileLength": "73424",
+              "height": 1280,
+              "width": 720,
+              "mediaKey": "fbcFNXDvFRRegCeIyET/+gAHyWLAU02Jr9IaDZ0qcHI=",
+              "fileEncSha256": "v8W3vgLBTE/gSS1AhvonQxpOvm3BXT0Lnu/1RbW9bqA=",
+              "directPath": "/v/t62.7118-24/562967445_4543870495847058_2235558648094066230_n.enc?ccb=11-4&oh=01_Q5Aa4AEqVWlPU4Q9Q6e0lrY2b_excT2NcQQSs7CRBxEHiKBG7w&oe=69F5427B&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1775096274",
+              "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEgAKAMBIgACEQEDEQH/xAAwAAACAwEBAAAAAAAAAAAAAAAABAEDBQIGAQEBAQEBAAAAAAAAAAAAAAACAAEDBP/aAAwDAQACEAMQAAAAbVrwCvW6GHu1BJZgL6fJ7K+hzG9F5Ihk1z0PXDyjOi8rOnmy2K+ufsLMl+DpmCN6YWJshTIBf//EACQQAAEEAgEDBQEAAAAAAAAAAAEAAgMREjEhBAUQEyJBQmFi/9oACAEBAAE/AGgDaM8JfiHhMGkNDx1ryyE0VZu12+UysAOwhoeOrhM1C+EO3Mxv1F0kDoJeDbShpFEBxKAYDj8J2LMQFE/63ZCKcTkRabjZtZ5fXgKKt1Se/EBAe5YbPymtoKF2wpjUTircQKTOE99cDajf6fLlkJI3fqApF4CfK4ziig4OZ7kXuI3SI/pSyNZxazEkgoJkmTyLRIolf//EABkRAQEBAQEBAAAAAAAAAAAAAAEAERACMf/aAAgBAgEBPwAI5rD0jyvdSyfrLl//xAAaEQEAAgMBAAAAAAAAAAAAAAABAAIQESES/9oACAEDAQE/AMlRlq41zkuci6ZuLueCekIPDH//2Q==",
+              "scansSidecar": "lLHFG8uqDkuT3Pjx5UyYBSujpKnfxjy618CONmSO4Hfgv8XKCoyInA==",
+              "scanLengths": [
+                9387,
+                24376,
+                15489,
+                24172
+              ],
+              "midQualityFileSha256": "1H8cAWad85sM5dFVn7gt5KOZTWXnXg5p7M2i1XvYCxg="
+            },
+            "messageContextInfo": {
+              "messageSecret": "fXAKUj8nRdy4K+cJS8zcIPr5tRVV6naoq7F+Gu0X2Qo="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0700592D3E3B1D9ABD0"
+          },
+          "message": {
+            "reactionMessage": {
+              "key": {
+                "remoteJid": "120363424723850342@g.us",
+                "fromMe": false,
+                "id": "AC7CAC14692B2213FBC482BB26962123",
+                "participant": "19409007554574@lid"
+              },
+              "text": "⏳",
+              "senderTimestampMs": "1775096360887"
+            }
+          },
+          "messageTimestamp": "1775096360",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB063E214D792232F7324"
+          },
+          "message": {
+            "imageMessage": {
+              "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m238/AQOdfwN_tL2ecBnVIPvAeHjcfRzK7d2mpWcDB-ZRbuOrYKcf8hyYOd8egS6-HOsnTi72QI5vV35z5BbeKyGsngOjUM7Vkgkpb1B7DT0fzQ?ccb=9-4&oh=01_Q5Aa4AExYeNWmLTvW8AhDA-NWPWIxvLg9xFgAzAeTY-Ob_TXKA&oe=69F538C0&_nc_sid=e6ed6c&mms3=true",
+              "mimetype": "image/jpeg",
+              "caption": "Selesai!",
+              "fileSha256": "+nAvPiHlTa76Dwf2J+biC/JJdPn7ZBqC9FboSkwrwg4=",
+              "fileLength": "660018",
+              "mediaKey": "qrI2c+dx1T6weAADqo7FRxiB7KIlpifqEENpmbtdJIk=",
+              "fileEncSha256": "BMhe9nuCng88S8PfWqiWB3BQouXRxUPDqScrAdgvMZg=",
+              "directPath": "/o1/v/t24/f2/m238/AQOdfwN_tL2ecBnVIPvAeHjcfRzK7d2mpWcDB-ZRbuOrYKcf8hyYOd8egS6-HOsnTi72QI5vV35z5BbeKyGsngOjUM7Vkgkpb1B7DT0fzQ?ccb=9-4&oh=01_Q5Aa4AExYeNWmLTvW8AhDA-NWPWIxvLg9xFgAzAeTY-Ob_TXKA&oe=69F538C0&_nc_sid=e6ed6c",
+              "mediaKeyTimestamp": "1775096382",
+              "contextInfo": {
+                "stanzaId": "AC7CAC14692B2213FBC482BB26962123",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "imageMessage": {
+                    "url": "https://mmg.whatsapp.net/v/t62.7118-24/562967445_4543870495847058_2235558648094066230_n.enc?ccb=11-4&oh=01_Q5Aa4AEqVWlPU4Q9Q6e0lrY2b_excT2NcQQSs7CRBxEHiKBG7w&oe=69F5427B&_nc_sid=5e03e0&mms3=true",
+                    "mimetype": "image/jpeg",
+                    "caption": ".hd",
+                    "fileSha256": "98O+tu+SXOPCI02EN1S2K8gX79eAKs9VwIPPlhJBQ2Y=",
+                    "fileLength": "73424",
+                    "height": 1280,
+                    "width": 720,
+                    "mediaKey": "fbcFNXDvFRRegCeIyET/+gAHyWLAU02Jr9IaDZ0qcHI=",
+                    "fileEncSha256": "v8W3vgLBTE/gSS1AhvonQxpOvm3BXT0Lnu/1RbW9bqA=",
+                    "directPath": "/v/t62.7118-24/562967445_4543870495847058_2235558648094066230_n.enc?ccb=11-4&oh=01_Q5Aa4AEqVWlPU4Q9Q6e0lrY2b_excT2NcQQSs7CRBxEHiKBG7w&oe=69F5427B&_nc_sid=5e03e0",
+                    "mediaKeyTimestamp": "1775096274",
+                    "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEgAKAMBIgACEQEDEQH/xAAwAAACAwEBAAAAAAAAAAAAAAAABAEDBQIGAQEBAQEBAAAAAAAAAAAAAAACAAEDBP/aAAwDAQACEAMQAAAAbVrwCvW6GHu1BJZgL6fJ7K+hzG9F5Ihk1z0PXDyjOi8rOnmy2K+ufsLMl+DpmCN6YWJshTIBf//EACQQAAEEAgEDBQEAAAAAAAAAAAEAAgMREjEhBAUQEyJBQmFi/9oACAEBAAE/AGgDaM8JfiHhMGkNDx1ryyE0VZu12+UysAOwhoeOrhM1C+EO3Mxv1F0kDoJeDbShpFEBxKAYDj8J2LMQFE/63ZCKcTkRabjZtZ5fXgKKt1Se/EBAe5YbPymtoKF2wpjUTircQKTOE99cDajf6fLlkJI3fqApF4CfK4ziig4OZ7kXuI3SI/pSyNZxazEkgoJkmTyLRIolf//EABkRAQEBAQEBAAAAAAAAAAAAAAEAERACMf/aAAgBAgEBPwAI5rD0jyvdSyfrLl//xAAaEQEAAgMBAAAAAAAAAAAAAAABAAIQESES/9oACAEDAQE/AMlRlq41zkuci6ZuLueCekIPDH//2Q==",
+                    "scansSidecar": "lLHFG8uqDkuT3Pjx5UyYBSujpKnfxjy618CONmSO4Hfgv8XKCoyInA==",
+                    "scanLengths": [
+                      9387,
+                      24376,
+                      15489,
+                      24172
+                    ],
+                    "midQualityFileSha256": "1H8cAWad85sM5dFVn7gt5KOZTWXnXg5p7M2i1XvYCxg="
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096382",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC877A73C7CAD932B59C77F28C3861E6",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096400,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Jadi jelas @139827139850431 🤣🤣",
+              "previewType": "NONE",
+              "contextInfo": {
+                "stanzaId": "3EB063E214D792232F7324",
+                "participant": "6283133081460@s.whatsapp.net",
+                "quotedMessage": {
+                  "imageMessage": {
+                    "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m238/AQOdfwN_tL2ecBnVIPvAeHjcfRzK7d2mpWcDB-ZRbuOrYKcf8hyYOd8egS6-HOsnTi72QI5vV35z5BbeKyGsngOjUM7Vkgkpb1B7DT0fzQ?ccb=9-4&oh=01_Q5Aa4AExYeNWmLTvW8AhDA-NWPWIxvLg9xFgAzAeTY-Ob_TXKA&oe=69F538C0&_nc_sid=e6ed6c&mms3=true",
+                    "mimetype": "image/jpeg",
+                    "caption": "Selesai!",
+                    "fileSha256": "+nAvPiHlTa76Dwf2J+biC/JJdPn7ZBqC9FboSkwrwg4=",
+                    "fileLength": "660018",
+                    "height": 2882,
+                    "width": 1621,
+                    "mediaKey": "qrI2c+dx1T6weAADqo7FRxiB7KIlpifqEENpmbtdJIk=",
+                    "fileEncSha256": "BMhe9nuCng88S8PfWqiWB3BQouXRxUPDqScrAdgvMZg=",
+                    "directPath": "/o1/v/t24/f2/m238/AQOdfwN_tL2ecBnVIPvAeHjcfRzK7d2mpWcDB-ZRbuOrYKcf8hyYOd8egS6-HOsnTi72QI5vV35z5BbeKyGsngOjUM7Vkgkpb1B7DT0fzQ?ccb=9-4&oh=01_Q5Aa4AExYeNWmLTvW8AhDA-NWPWIxvLg9xFgAzAeTY-Ob_TXKA&oe=69F538C0&_nc_sid=e6ed6c",
+                    "mediaKeyTimestamp": "1775096382",
+                    "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABaADIDASIAAhEBAxEB/8QAHAAAAQQDAQAAAAAAAAAAAAAABgADBQcBBAgC/8QANRAAAgEDAwIFAQUHBQAAAAAAAQIDAAQRBRIhMUEGE1FhcSIHFDKBkRUjNEKhovBScoKx0f/EABoBAAIDAQEAAAAAAAAAAAAAAAMEAAEFAgb/xAAhEQACAgMBAAIDAQAAAAAAAAAAAQIRAxIhBBMxFEFRYv/aAAwDAQACEQMRAD8ALLOFEmIZGWNuQDyV/Olrccay/STyAefzrV1XVWs7G5v2jDLbxNKyjHIUE4rlzxZ4h1HxFqj3epztI5J2oOEjHoq9AOB898nmloRc+jL5w6dtYdwABHzRN4YTbq9tnOQWH9jVzD9mnjq80bU7Wy1C5eTSZGEZEhz5OeAVJ6KOMjpjOBmuofCx36xAeg3MP7Gq3HWSsn6DUpTbrjpWy4wKbYcUVgTW20qcxSqqIUH9rd8lv4L1FfO2yS7Ik4wWJcEg/wDEN+QrmyTLNXUvijTLfWZrWG4jWaCC5Nw6yJt8zCPgMPkjjpxXvwldWMFybS1TTTECAws25jJ6blxxn1zQY5tFSQ9Hz/J26OVsFTkV2N9jupftrR9C1AsxkljIlLAAs6qyucDjlgT8elQ2stYalqL2N/Bpkix5KRXEJdm5AyCRgfiA/MetS/2V+Ho/DWoXUNojizNw8yITnYGjUbRn3B/WuvlU2lRU/O8au7LZYZppxTiyKwGMg+9YccUYSqma+KVZPXpSqFlUyymTUN8iBRgjDdxWdVe2t7a3eKJfMaQHapAPHetXV7qa2vIoJI4pd8iAeVJkBS2N2So6egzUbeW9nqGppaXchjnh+tMkjcueuM8jjHzms6S709BgxSjG2uMMtBljnRzLFGkikkDcGOM8Z4FR8qW2o6xJaXCxyRxksY3BxuI64PBwPTpk+9aMSWWiRyzWoE9468Krfiz0Htk15t9Ss4NSS7u4lW63LLvjiJ3ps254BP8ApBPx6irii5Qb7EsrQL9JfNto5Xl+7lQJGB5B7bj+IjHX3Hep1+lC+gWlpaov7PtYbcOhJ8tNnJO7GOo5JOPepq+vfu1hPPhS8akgO20E9gTg4Gcc4OKdxvhjeiFOx+lQ2PGejEZFxIwPdIHYH4IGCPcUqJqxbZf0rdneW83sgYbVIBXADA5/XOaV/DDqBRJEZ5Y85yOhJ7fJxx7fFZUcT3LyKFVsNvOf5gPStmyuIbuR2t0JihYhZVAG5uvfnAxmlKPYPqpkbPbSefZ2kAjQK6Tuw4CbWGzPOfxAHp/KRU/bp5SxwxuwRAoVw+3kADdkD0H9f1dZFikDptaTOOM5DZzx68mmLy9+6xE72G9TGFDZJzk4H+HrVqCRxFJLVBzokgnsYrgSO/BXDYHc9cDr/wC1JywxXcE0E6K8cg2srDIOaEfCEyiOaNZGzksUJPQ9x+efyxRJbXRkuLhIoXDIQhldcKMjOQe457dxTEfow/VDWcoorxvE1naMbd4Ybd4T5Zhdow0ZHG0gNgEdOKVVt4ttb5vFetNHZ3TIb2YqwhcgjzGwc4pVpLy42r3MZyyJ8gTttpkl1pohM8kUbfUyKQDkkkkZGe/ToO2KINPtEsbSFIkxFGD9Dc9Qe/r79eleYI9mEmUBUIYFeMDPc9+OlepJOcsMRgFhuOC3XB59qyNUj2McjkSMt0kdoxYvwudq8NwcA+me/ahfTZH8QatLKs4itrYGIKQN7Ek7iD2B4/TORml4p1zbayxW8ymbbuMi4+gAccngk84yegPtmtPs7PnXQKzyi5Mm3H3lkDKB02hSeAD/AErmXUDyZHF6r7Lpu9STw66XccYlMp8pYkVQzMR65ye57+vQVMeE9bfyNusTRRlt0iTMxyGJJIBYnA5OB2xih5dRtobdxcypJJCfwZUtznaOpPOO+M4Jobv5F1BpVuXdoxIzxxjKBQTxnHU9+e5NXibE3BZLv7LGu77wi91M1xNA8xdi7DzSC2eTkcdfTilVWm2ss8wLn4NKi2ifj/6YZXdpqMVs7T3FnYxxt5TO25juPYLj4xk9wBmh+/iht53e41KOQAfS7ELwR2Bbj46/pUiHa41llnYyq0X1BzuBwvGc1A/ayq2/hm7a3URMogwUG0j6h0xUlFPhIeiUHsD9/r9lHAV1H6RKDJsChi/GBz3BwOcdv5scwHhJoptRuLuFPLhZiVB/z5oKLFkLMSSe5ox8Ljbart4+jtUyw1jSA4MzyzbYUaNqsuozsrTyPbo5CRlyVGOOhoviityiGfkkHAV8Ef4aqvwAxYSliSff4qxta/caQ8kH7uTyo/qTg8queR8muWq4MY5uUTZYqGIW1BAPB3ClQjefxc/+9v8AulQ/kC0f/9k=",
+                    "contextInfo": {
+                      "pairedMediaType": "NOT_PAIRED_MEDIA"
+                    }
+                  }
+                },
+                "mentionedJid": [
+                  "139827139850431@lid"
+                ],
+                "quotedType": "EXPLICIT"
+              },
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "vqUBC6gLjoNVQPel9/jmqoMYm8ETGahqRdwJWK7y7d0="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB037BF19F06F0041129F"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "_Waktu suit habis_",
+              "contextInfo": {
+                "stanzaId": "ACD5A0A805BA4909B35F7874876E80FB",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": ".suit @139827139850431",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096409",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC903D0D5E614300490B24981B4B5FBE",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096460,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "imageMessage": {
+              "url": "https://mmg.whatsapp.net/v/t62.7118-24/612755603_2721304414934869_2952202313126653891_n.enc?ccb=11-4&oh=01_Q5Aa4AEPqWuogGqtA3O0YHR6carO5oxfnQmFlS0kpdKqbg80Ng&oe=69F5330C&_nc_sid=5e03e0&mms3=true",
+              "mimetype": "image/jpeg",
+              "caption": ".hd",
+              "fileSha256": "UfbtKlMppJRp355TwhR/YzY5nALwrzOqquEge8koKwA=",
+              "fileLength": "72275",
+              "height": 1280,
+              "width": 719,
+              "mediaKey": "bDu8l4bggpxazvnX5fpFVNMNMefucaPnJA+HruweEK8=",
+              "fileEncSha256": "W+qZ/Kbw0apMlouweJ/qjDPeGzv/P/di0sSWKX8Rd6I=",
+              "directPath": "/v/t62.7118-24/612755603_2721304414934869_2952202313126653891_n.enc?ccb=11-4&oh=01_Q5Aa4AEPqWuogGqtA3O0YHR6carO5oxfnQmFlS0kpdKqbg80Ng&oe=69F5330C&_nc_sid=5e03e0",
+              "mediaKeyTimestamp": "1775096444",
+              "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEgAJwMBIgACEQEDEQH/xAAuAAACAwEAAAAAAAAAAAAAAAAABAIDBQEBAAMBAAAAAAAAAAAAAAAAAAECAwD/2gAMAwEAAhADEAAAANaPeReylXhDxcUTOplCNOzpfLPlQ8869NlGqZqVyuGKPjYRYnrchvNO6PlBJkJ5BcMZAOP/xAAjEAACAwACAQMFAAAAAAAAAAABAgADEQQSIRMyQSIjMUOh/9oACAEBAAE/AGgJ+RFAnNb7QE4S5XsBJHkZCQI9juxVTgmuqlWOgzjr1qURmVFscuQBFtZ0DfJi0OLN2ILHtCsME0Io2GslcYePmBOlQAgtbQdnGYuQZfata+Yrm1AYqBhhj0L3gIqrJBzIWHK6f2cVsrGz1CfaIoOkmcq79YMutetF6MRKHYnoIpAGRrMBM7baSZyz7ROPSELGaZc/jJ2+smU3UKALlB2cFiyGN4/MtYeTEAl6j09E/8QAHREAAgIBBQAAAAAAAAAAAAAAAAECMSEQESAyQf/aAAgBAgEBPwDcUuDb0VmR2ITwT7M8I0f/xAAaEQEBAAMBAQAAAAAAAAAAAAABAAIQESFR/9oACAEDAQE/AJxU7psvCC5915MTETf/2Q==",
+              "scansSidecar": "sf4CrjPXtSAH35aZ7W3ZHN6dSHcdTcx9oabCSV/1/NiK318QItjGQA==",
+              "scanLengths": [
+                9880,
+                26112,
+                11050,
+                25233
+              ],
+              "midQualityFileSha256": "zutB1G6dIP2/F2EXrnsfEA6eT9+4MKmqK3mlVnz5em0="
+            },
+            "messageContextInfo": {
+              "messageSecret": "M10bv8W1QxV0AygA6YgdIF6U3D3YSyiM6DMEmWz2Rvs="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB00451EB7F13AF92086C"
+          },
+          "message": {
+            "reactionMessage": {
+              "key": {
+                "remoteJid": "120363424723850342@g.us",
+                "fromMe": false,
+                "id": "AC903D0D5E614300490B24981B4B5FBE",
+                "participant": "19409007554574@lid"
+              },
+              "text": "⏳",
+              "senderTimestampMs": "1775096460915"
+            }
+          },
+          "messageTimestamp": "1775096460",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": true,
+            "id": "3EB0998271B1A64B4987C1"
+          },
+          "message": {
+            "imageMessage": {
+              "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m237/AQOZw-OGnYcqnr3xPU8bMoK-SBbHsq2t7Oxh_JJXtwIJyGvmEhCb0Mh5DKq2mksF69j6tFg499f5CZI9mebuw6MxJ67_-gNbn64y6QbqNQ?ccb=9-4&oh=01_Q5Aa4AGjwk55SpH4WlxIciAz-c9K5RXrSblMRmc7q82TzYwp7g&oe=69F55D2B&_nc_sid=e6ed6c&mms3=true",
+              "mimetype": "image/jpeg",
+              "caption": "Selesai!",
+              "fileSha256": "aQBVyqo3/dOvDYiPML0bOHtkzUdffArJRbj8WliHw74=",
+              "fileLength": "629697",
+              "mediaKey": "ueLs9nL5otXnIsMDMaLV17tBUhAb0O7Cpg9bUChhHhM=",
+              "fileEncSha256": "c2UAEaSDx1pAa6sSp4J0iE8kFQUsLwQSzqe4HHf/mS4=",
+              "directPath": "/o1/v/t24/f2/m237/AQOZw-OGnYcqnr3xPU8bMoK-SBbHsq2t7Oxh_JJXtwIJyGvmEhCb0Mh5DKq2mksF69j6tFg499f5CZI9mebuw6MxJ67_-gNbn64y6QbqNQ?ccb=9-4&oh=01_Q5Aa4AGjwk55SpH4WlxIciAz-c9K5RXrSblMRmc7q82TzYwp7g&oe=69F55D2B&_nc_sid=e6ed6c",
+              "mediaKeyTimestamp": "1775096481",
+              "contextInfo": {
+                "stanzaId": "AC903D0D5E614300490B24981B4B5FBE",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "imageMessage": {
+                    "url": "https://mmg.whatsapp.net/v/t62.7118-24/612755603_2721304414934869_2952202313126653891_n.enc?ccb=11-4&oh=01_Q5Aa4AEPqWuogGqtA3O0YHR6carO5oxfnQmFlS0kpdKqbg80Ng&oe=69F5330C&_nc_sid=5e03e0&mms3=true",
+                    "mimetype": "image/jpeg",
+                    "caption": ".hd",
+                    "fileSha256": "UfbtKlMppJRp355TwhR/YzY5nALwrzOqquEge8koKwA=",
+                    "fileLength": "72275",
+                    "height": 1280,
+                    "width": 719,
+                    "mediaKey": "bDu8l4bggpxazvnX5fpFVNMNMefucaPnJA+HruweEK8=",
+                    "fileEncSha256": "W+qZ/Kbw0apMlouweJ/qjDPeGzv/P/di0sSWKX8Rd6I=",
+                    "directPath": "/v/t62.7118-24/612755603_2721304414934869_2952202313126653891_n.enc?ccb=11-4&oh=01_Q5Aa4AEPqWuogGqtA3O0YHR6carO5oxfnQmFlS0kpdKqbg80Ng&oe=69F5330C&_nc_sid=5e03e0",
+                    "mediaKeyTimestamp": "1775096444",
+                    "jpegThumbnail": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEgAJwMBIgACEQEDEQH/xAAuAAACAwEAAAAAAAAAAAAAAAAABAIDBQEBAAMBAAAAAAAAAAAAAAAAAAECAwD/2gAMAwEAAhADEAAAANaPeReylXhDxcUTOplCNOzpfLPlQ8869NlGqZqVyuGKPjYRYnrchvNO6PlBJkJ5BcMZAOP/xAAjEAACAwACAQMFAAAAAAAAAAABAgADEQQSIRMyQSIjMUOh/9oACAEBAAE/AGgJ+RFAnNb7QE4S5XsBJHkZCQI9juxVTgmuqlWOgzjr1qURmVFscuQBFtZ0DfJi0OLN2ILHtCsME0Io2GslcYePmBOlQAgtbQdnGYuQZfata+Yrm1AYqBhhj0L3gIqrJBzIWHK6f2cVsrGz1CfaIoOkmcq79YMutetF6MRKHYnoIpAGRrMBM7baSZyz7ROPSELGaZc/jJ2+smU3UKALlB2cFiyGN4/MtYeTEAl6j09E/8QAHREAAgIBBQAAAAAAAAAAAAAAAAECMSEQESAyQf/aAAgBAgEBPwDcUuDb0VmR2ITwT7M8I0f/xAAaEQEBAAMBAQAAAAAAAAAAAAABAAIQESFR/9oACAEDAQE/AJxU7psvCC5915MTETf/2Q==",
+                    "scansSidecar": "sf4CrjPXtSAH35aZ7W3ZHN6dSHcdTcx9oabCSV/1/NiK318QItjGQA==",
+                    "scanLengths": [
+                      9880,
+                      26112,
+                      11050,
+                      25233
+                    ],
+                    "midQualityFileSha256": "zutB1G6dIP2/F2EXrnsfEA6eT9+4MKmqK3mlVnz5em0="
+                  }
+                }
+              }
+            }
+          },
+          "messageTimestamp": "1775096481",
+          "status": "PENDING",
+          "participant": "6283133081460:8@s.whatsapp.net"
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC516E6BBAD2DB0587D7D448678532E3",
+            "participant": "139827139850431@lid",
+            "participantAlt": "6283857980436@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096489,
+          "pushName": "Mil",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Engghi🤣",
+              "previewType": "NONE",
+              "contextInfo": {
+                "stanzaId": "AC877A73C7CAD932B59C77F28C3861E6",
+                "participant": "6283853027516@s.whatsapp.net",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Jadi jelas @139827139850431 🤣🤣",
+                    "previewType": "NONE",
+                    "contextInfo": {
+                      "mentionedJid": [
+                        "139827139850431@lid"
+                      ]
+                    },
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                },
+                "quotedType": "EXPLICIT"
+              },
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "messageSecret": "tF3O3i8n/9PfO6VLgscUIH9BXYJc7dKEn5O3G8Ms3Is=",
+              "threadId": [
+                {
+                  "threadType": "VIEW_REPLIES",
+                  "threadKey": {
+                    "remoteJid": "120363424723850342@g.us",
+                    "fromMe": false,
+                    "id": "AC7CAC14692B2213FBC482BB26962123",
+                    "participant": "19409007554574@lid"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "AC0B3447107ADDE24D53AB4A98A4998D",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096520,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": "Kalau punya foto gak hd nanti kirim kesini",
+            "messageContextInfo": {
+              "messageSecret": "Pj3uyrmY30yzMHe+PGAuX9puZoHOPgkisjbZX10e+g4="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "120363424723850342@g.us",
+            "fromMe": false,
+            "id": "ACA1EF561C58C5780F8632B9711D55E4",
+            "participant": "19409007554574@lid",
+            "participantAlt": "6283853027516@s.whatsapp.net",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775096525,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": "Ketik .hd",
+            "messageContextInfo": {
+              "messageSecret": "LWp59cA123CWIe8CZF5rdaEIto5k75q7G4bk2YWYVgM="
+            }
+          }
+        }
+      ],
+      "keyId": {}
     }
   },
   "groupMetadata": {
@@ -2386,6 +5837,43 @@
           "id": "129528345186543@lid",
           "phoneNumber": "6283133081460@s.whatsapp.net",
           "admin": "admin"
+        }
+      ]
+    },
+    "120363424723850342@g.us": {
+      "id": "120363424723850342@g.us",
+      "addressingMode": "lid",
+      "subject": "Sayang♥️",
+      "subjectOwner": "19409007554574@lid",
+      "subjectOwnerPn": "6283853027516@s.whatsapp.net",
+      "subjectTime": 1775094371,
+      "size": 3,
+      "creation": 1775094371,
+      "owner": "19409007554574@lid",
+      "ownerPn": "6283853027516@s.whatsapp.net",
+      "owner_country_code": "ID",
+      "descTime": null,
+      "restrict": false,
+      "announce": false,
+      "isCommunity": false,
+      "isCommunityAnnounce": false,
+      "joinApprovalMode": false,
+      "memberAddMode": true,
+      "participants": [
+        {
+          "id": "139827139850431@lid",
+          "phoneNumber": "6283857980436@s.whatsapp.net",
+          "admin": null
+        },
+        {
+          "id": "19409007554574@lid",
+          "phoneNumber": "6283853027516@s.whatsapp.net",
+          "admin": "superadmin"
+        },
+        {
+          "id": "129528345186543@lid",
+          "phoneNumber": "6283133081460@s.whatsapp.net",
+          "admin": null
         }
       ]
     }

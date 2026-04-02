@@ -1,12 +1,34 @@
 {
   "hit": {
-    "totalcmd": 27,
-    "todaycmd": 27,
+    "totalcmd": 69,
+    "todaycmd": 69,
     "setapikey": 2,
-    "owner": 7,
-    "menu": 7,
-    "susunkata": 10,
-    "profile": 1
+    "owner": 8,
+    "menu": 8,
+    "susunkata": 13,
+    "profile": 4,
+    "allmenu": 2,
+    "tekateki": 1,
+    "kerang": 1,
+    "ceksifat": 2,
+    "jodohku": 2,
+    "fitnah": 1,
+    "tebakangka": 1,
+    "coffe": 1,
+    "coba": 2,
+    "dadu": 2,
+    "bisakah": 2,
+    "apakah": 1,
+    "cekkhodam": 1,
+    "nulis": 1,
+    "nuliskiri": 3,
+    "totalfitur": 1,
+    "menfes": 1,
+    "caklontong": 1,
+    "addsewa": 1,
+    "suit": 2,
+    "colong": 2,
+    "hd": 3
   },
   "set": {
     "6283133081460@s.whatsapp.net": {
@@ -61,11 +83,23 @@
       "afkTime": -1,
       "afkReason": "",
       "register": false,
-      "limit": 20,
-      "money": 12989,
+      "limit": 999999996,
+      "money": 1000006488,
       "lastclaim": 1775090603412,
       "lastbegal": 1775090603412,
       "lastrampok": 1775090603412
+    },
+    "6283857980436@s.whatsapp.net": {
+      "vip": false,
+      "ban": false,
+      "afkTime": -1,
+      "afkReason": "",
+      "register": false,
+      "limit": 20,
+      "money": 10000,
+      "lastclaim": 1775094574862,
+      "lastbegal": 1775094574862,
+      "lastrampok": 1775094574862
     }
   },
   "game": {
@@ -93,6 +127,26 @@
   },
   "groups": {
     "120363028046545127@g.us": {
+      "url": "",
+      "text": {},
+      "warn": {},
+      "tagsw": {},
+      "nsfw": false,
+      "mute": false,
+      "leave": false,
+      "setinfo": false,
+      "antilink": false,
+      "demote": false,
+      "antitoxic": false,
+      "promote": false,
+      "welcome": false,
+      "antivirtex": false,
+      "antitagsw": false,
+      "antidelete": false,
+      "antihidetag": false,
+      "waktusholat": false
+    },
+    "120363424723850342@g.us": {
       "url": "",
       "text": {},
       "warn": {},
