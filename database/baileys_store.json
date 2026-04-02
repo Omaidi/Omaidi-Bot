@@ -1259,6 +1259,85 @@
               "messageSecret": "LBBfSSWo/0t7IItpKCZln8CTcnGeN+AD6XADsBbCh6M="
             }
           }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC8855A5D4337C3987D7A20C80D2F331",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093781,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".susunkata",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "IryWq/0bGNnsQ4gg0G1Az49ckTHX4cQwhGAAKsOD1EE="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "AC7FFAA4530C237474FB7FF725F17604",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093797,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "extendedTextMessage": {
+              "text": "Tomat",
+              "previewType": "NONE",
+              "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "dOqwUJUjEJHRrw6X9I7OYdKSgIS55VS2xMRxBuM4Abw="
+            }
+          }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "ACA8F8E93E007CDE786712434D5249F6",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093804,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".profile",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "5Ardq5HtmVWtclse/9AGkTMsZtWHSAcL/OkG6USQfs0="
+            }
+          }
         }
       ],
       "keyId": {}
@@ -2142,6 +2221,79 @@
             }
           },
           "messageTimestamp": "1775093506",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB0E19E8FD80D6FD920FB"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "🎮 Susun Kata Berikut :\n\nM-O-T-A-T\nTipe : Buah\n\nWaktu : 60s\nHadiah *+2989*",
+              "contextInfo": {
+                "stanzaId": "AC8855A5D4337C3987D7A20C80D2F331",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                },
+                "remoteJid": "19409007554574@lid"
+              }
+            }
+          },
+          "messageTimestamp": "1775093784",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB0C52C9E98CCABB531A5"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Jawaban Benar 🎉\nBonus Money 💰 *+2989*",
+              "contextInfo": {
+                "stanzaId": "AC7FFAA4530C237474FB7FF725F17604",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "extendedTextMessage": {
+                    "text": "Tomat",
+                    "previewType": "NONE",
+                    "inviteLinkGroupTypeV2": "DEFAULT"
+                  }
+                },
+                "remoteJid": "19409007554574@lid"
+              }
+            }
+          },
+          "messageTimestamp": "1775093798",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB0A19FD082B5B87A36EE"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "*👤Profile @6283853027516* :\n🐋User Bot : True\n🔥User : VIP\n⏳Expired : -\n🎫Limit : 20\n💰Uang : 1000000000",
+              "contextInfo": {
+                "stanzaId": "ACA8F8E93E007CDE786712434D5249F6",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ".profile"
+                },
+                "remoteJid": "19409007554574@lid",
+                "mentionedJid": [
+                  "6283853027516@s.whatsapp.net"
+                ]
+              }
+            }
+          },
+          "messageTimestamp": "1775093805",
           "status": "PENDING"
         }
       ],

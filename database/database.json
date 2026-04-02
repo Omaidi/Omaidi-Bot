@@ -1,11 +1,12 @@
 {
   "hit": {
-    "totalcmd": 25,
-    "todaycmd": 25,
+    "totalcmd": 27,
+    "todaycmd": 27,
     "setapikey": 2,
     "owner": 7,
     "menu": 7,
-    "susunkata": 9
+    "susunkata": 10,
+    "profile": 1
   },
   "set": {
     "6283133081460@s.whatsapp.net": {
@@ -61,7 +62,7 @@
       "afkReason": "",
       "register": false,
       "limit": 20,
-      "money": 10000,
+      "money": 12989,
       "lastclaim": 1775090603412,
       "lastbegal": 1775090603412,
       "lastrampok": 1775090603412
