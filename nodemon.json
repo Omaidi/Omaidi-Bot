@@ -1,0 +1,3 @@
+{
+  "ignore": ["Omaidi", "node_modules", "database", "logs"]
+}
