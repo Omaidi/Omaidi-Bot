@@ -18,7 +18,7 @@
     },
     "19409007554574@lid": {
       "19409007554574@lid": {
-        "lastKnownPresence": "composing"
+        "lastKnownPresence": "available"
       }
     },
     "120363028046545127@g.us": {
@@ -1184,6 +1184,31 @@
               "messageSecret": "C89zJLwSokhIyhlEUacx9vGyNCk4KL3Qiu0LH+4D5ys="
             }
           }
+        },
+        {
+          "key": {
+            "remoteJid": "19409007554574@lid",
+            "remoteJidAlt": "6283853027516@s.whatsapp.net",
+            "fromMe": false,
+            "id": "ACE8C0A418B0E3DB659230614A6911BA",
+            "participant": "",
+            "addressingMode": "lid"
+          },
+          "messageTimestamp": 1775093321,
+          "pushName": "Humaidi Muhammad",
+          "broadcast": false,
+          "message": {
+            "conversation": ".susunkata",
+            "messageContextInfo": {
+              "deviceListMetadata": {
+                "senderTimestamp": "1773075779",
+                "recipientKeyHash": "iUriqjEUuriywQ==",
+                "recipientTimestamp": "1775092044"
+              },
+              "deviceListMetadataVersion": 2,
+              "messageSecret": "Qi1dQRnAb7T3EmDq40VdsJw77DIPiY/nL1/4V5/k2eM="
+            }
+          }
         }
       ],
       "keyId": {}
@@ -2001,6 +2026,28 @@
             }
           },
           "messageTimestamp": "1775093249",
+          "status": "PENDING"
+        },
+        {
+          "key": {
+            "remoteJid": "6283853027516@s.whatsapp.net",
+            "fromMe": true,
+            "id": "3EB09F9B20EAD3F5667DB9"
+          },
+          "message": {
+            "extendedTextMessage": {
+              "text": "Error: Error\nLog Error Telah dikirim ke Owner\n\n",
+              "contextInfo": {
+                "stanzaId": "ACE8C0A418B0E3DB659230614A6911BA",
+                "participant": "19409007554574@lid",
+                "quotedMessage": {
+                  "conversation": ".susunkata"
+                },
+                "remoteJid": "19409007554574@lid"
+              }
+            }
+          },
+          "messageTimestamp": "1775093326",
           "status": "PENDING"
         }
       ],
