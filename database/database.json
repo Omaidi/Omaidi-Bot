@@ -1,7 +1,7 @@
 {
   "hit": {
-    "totalcmd": 69,
-    "todaycmd": 69,
+    "totalcmd": 74,
+    "todaycmd": 74,
     "setapikey": 2,
     "owner": 8,
     "menu": 8,
@@ -28,7 +28,9 @@
     "addsewa": 1,
     "suit": 2,
     "colong": 2,
-    "hd": 3
+    "hd": 3,
+    "ulartangga": 4,
+    "create": 1
   },
   "set": {
     "6283133081460@s.whatsapp.net": {
@@ -100,6 +102,18 @@
       "lastclaim": 1775094574862,
       "lastbegal": 1775094574862,
       "lastrampok": 1775094574862
+    },
+    "6283114910939@s.whatsapp.net": {
+      "vip": false,
+      "ban": false,
+      "afkTime": -1,
+      "afkReason": "",
+      "register": false,
+      "limit": 20,
+      "money": 10000,
+      "lastclaim": 1775099323183,
+      "lastbegal": 1775099323183,
+      "lastrampok": 1775099323183
     }
   },
   "game": {
@@ -117,7 +131,46 @@
     "family100": {},
     "susunkata": {},
     "tebakbom": {},
-    "ulartangga": {},
+    "ulartangga": {
+      "120363424723850342@g.us": {
+        "turn": 0,
+        "host": "6283853027516@s.whatsapp.net",
+        "start": false,
+        "players": [
+          {
+            "id": "6283853027516@s.whatsapp.net",
+            "move": 0
+          },
+          {
+            "id": "6283857980436@s.whatsapp.net",
+            "move": 0
+          }
+        ],
+        "map": {
+          "url": "https://raw.githubusercontent.com/Omaidi/database/master/games/images/map/map7.jpg",
+          "move": {
+            "1": 38,
+            "4": 14,
+            "9": 31,
+            "17": 7,
+            "21": 42,
+            "28": 84,
+            "51": 67,
+            "54": 34,
+            "62": 19,
+            "64": 60,
+            "71": 91,
+            "80": 100,
+            "87": 24,
+            "93": 73,
+            "95": 75,
+            "98": 79
+          },
+          "mode": ""
+        },
+        "time": 1775099831221
+      }
+    },
     "tebakkimia": {},
     "caklontong": {},
     "tebakangka": {},
@@ -147,6 +200,26 @@
       "waktusholat": false
     },
     "120363424723850342@g.us": {
+      "url": "",
+      "text": {},
+      "warn": {},
+      "tagsw": {},
+      "nsfw": false,
+      "mute": false,
+      "leave": false,
+      "setinfo": false,
+      "antilink": false,
+      "demote": false,
+      "antitoxic": false,
+      "promote": false,
+      "welcome": false,
+      "antivirtex": false,
+      "antitagsw": false,
+      "antidelete": false,
+      "antihidetag": false,
+      "waktusholat": false
+    },
+    "120363413143978014@g.us": {
       "url": "",
       "text": {},
       "warn": {},
