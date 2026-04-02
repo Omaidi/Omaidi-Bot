@@ -44,12 +44,12 @@ const locales = moment.locales();
 const timez = moment.tz.names();
 const menfesTimeouts = new Map();
 const settingsPath = path.join(__dirname, 'settings.js');
-const cases = db.cases ? db.cases : (db.cases = [...fs.readFileSync('./naze.js', 'utf-8').matchAll(/case\s+['"]([^'"]+)['"]/g)].map(match => match[1]));
+const cases = db.cases ? db.cases : (db.cases = [...fs.readFileSync('./Omaidi.js', 'utf-8').matchAll(/case\s+['"]([^'"]+)['"]/g)].map(match => match[1]));
 
-module.exports = naze = async (naze, m, msg, store) => {
-	await LoadDataBase(naze, m);
+module.exports = Omaidi = async (Omaidi, m, msg, store) => {
+	await LoadDataBase(Omaidi, m);
 	
-	const botNumber = naze.decodeJid(naze.user.id);
+	const botNumber = Omaidi.decodeJid(Omaidi.user.id);
 	
 	// Read Database
 	const sewa = db.sewa
@@ -82,7 +82,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 	const ownerNumber = set.owner = [...new Set([...owner, botNumber.split('@')[0], ...set?.owner || []])];
 	
 	try {
-		await GroupUpdate(naze, m, store);
+		await GroupUpdate(Omaidi, m, store);
 		
 		const body = ((m.type === 'conversation') ? m.message.conversation :
 		(m.type == 'imageMessage') ? m.message.imageMessage.caption :
@@ -100,7 +100,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 		const budy = (typeof m.text == 'string' ? m.text : '')
 		const isCreator = isOwner = ownerNumber.some(owner => {
 			const ownerJid = owner.includes('@') ? owner : owner + '@s.whatsapp.net';
-			const findJid = naze.findJidByLid(jidNormalizedUser(ownerJid), store, true);
+			const findJid = Omaidi.findJidByLid(jidNormalizedUser(ownerJid), store, true);
 			if (!findJid) return false
 			return findJid === m.sender
 		});
@@ -157,7 +157,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 		// Auto Set Bio
 		if (set.autobio) {
 			if (new Date() * 1 - set.status > 60000) {
-				await naze.updateProfileStatus(`${naze.user.name} | 🎯 Runtime : ${runtime(process.uptime())}`).catch(e => {})
+				await Omaidi.updateProfileStatus(`${Omaidi.user.name} | 🎯 Runtime : ${runtime(process.uptime())}`).catch(e => {})
 				set.status = new Date() * 1
 			}
 		}
@@ -165,7 +165,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 		// Set Mode
 		if (!isCreator) {
 			if ((set.grouponly === set.privateonly)) {
-				if (!naze.public && !m.key.fromMe) return
+				if (!Omaidi.public && !m.key.fromMe) return
 			} else if (set.grouponly) {
 				if (!m.isGroup) return
 			} else if (set.privateonly) {
@@ -182,7 +182,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 			
 			// Anti Hidetag
 			if (!m.key.fromMe && m.mentionedJid?.length === m.metadata.participants?.length && db.groups[m.chat].antihidetag && !isCreator && m.isBotAdmin && !m.isAdmin) {
-				await naze.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
+				await Omaidi.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
 				await m.reply('*Anti Hidetag Sedang Aktif❗*')
 			}
 			
@@ -193,7 +193,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 						db.groups[m.chat].tagsw[m.sender] = 1
 						await m.reply(`Grup ini terdeteksi ditandai dalam Status WhatsApp\n@${m.sender.split('@')[0]}, mohon untuk tidak menandai grup dalam status WhatsApp\nPeringatan ${db.groups[m.chat].tagsw[m.sender]}/5, akan dikick sewaktu waktu❗`)
 					} else if (db.groups[m.chat].tagsw[m.sender] >= 5) {
-						await naze.groupParticipantsUpdate(m.chat, [m.sender], 'remove').catch((err) => m.reply(mess.fail))
+						await Omaidi.groupParticipantsUpdate(m.chat, [m.sender], 'remove').catch((err) => m.reply(mess.fail))
 						await m.reply(`@${m.sender.split("@")[0]} telah dikeluarkan dari grup\nKarena menandai grup dalam status WhatsApp sebanyak 5x`)
 						delete db.groups[m.chat].tagsw[m.sender]
 					} else {
@@ -206,8 +206,8 @@ module.exports = naze = async (naze, m, msg, store) => {
 			// Anti Toxic
 			if (!m.key.fromMe && db.groups[m.chat].antitoxic && !isCreator && m.isBotAdmin && !m.isAdmin) {
 				if (budy.toLowerCase().split(/\s+/).some(word => badWordsLower.includes(word))) {
-					await naze.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
-					await naze.relayMessage(m.chat, { extendedTextMessage: { text: `Terdeteksi @${m.sender.split('@')[0]} Berkata Toxic\nMohon gunakan bahasa yang sopan.`, contextInfo: { mentionedJid: [m.key.participantAlt || m.sender], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Toxic❗*'}, ...m.key }}}, {})
+					await Omaidi.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
+					await Omaidi.relayMessage(m.chat, { extendedTextMessage: { text: `Terdeteksi @${m.sender.split('@')[0]} Berkata Toxic\nMohon gunakan bahasa yang sopan.`, contextInfo: { mentionedJid: [m.key.participantAlt || m.sender], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Toxic❗*'}, ...m.key }}}, {})
 				}
 			}
 			
@@ -225,29 +225,29 @@ module.exports = naze = async (naze, m, msg, store) => {
 					}
 					msgContent.contextInfo = { mentionedJid: [chats.key.participantAlt], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Delete❗*'}, ...chats.key }
 					const pesan = msgType === 'conversation' ? { extendedTextMessage: { text: msgContent, contextInfo: { mentionedJid: [chats.key.participantAlt], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Delete❗*'}, ...chats.key }}} : { [msgType]: msgContent }
-					await naze.relayMessage(m.chat, pesan, {})
+					await Omaidi.relayMessage(m.chat, pesan, {})
 				}
 			}
 			
 			// Anti Link Group
 			if (db.groups[m.chat].antilink && !isCreator && m.isBotAdmin && !m.isAdmin) {
 				if (budy.match('chat.whatsapp.com/')) {
-					await naze.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
-					await naze.relayMessage(m.chat, { extendedTextMessage: { text: `Terdeteksi @${m.sender.split('@')[0]} Mengirim Link Group\nMaaf Link Harus Di Hapus..`, contextInfo: { mentionedJid: [m.key.participantAlt || m.sender], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Link❗*'}, ...m.key }}}, {})
+					await Omaidi.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
+					await Omaidi.relayMessage(m.chat, { extendedTextMessage: { text: `Terdeteksi @${m.sender.split('@')[0]} Mengirim Link Group\nMaaf Link Harus Di Hapus..`, contextInfo: { mentionedJid: [m.key.participantAlt || m.sender], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Link❗*'}, ...m.key }}}, {})
 				}
 			}
 			
 			// Anti Virtex Group
 			if (db.groups[m.chat].antivirtex && !isCreator && m.isBotAdmin && !m.isAdmin) {
 				if (budy.length > 4500) {
-					await naze.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
-					await naze.relayMessage(m.chat, { extendedTextMessage: { text: `Terdeteksi @${m.sender.split('@')[0]} Mengirim Virtex..`, contextInfo: { mentionedJid: [m.key.participantAlt || m.sender], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Virtex❗*'}, ...m.key }}}, {})
-					await naze.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+					await Omaidi.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
+					await Omaidi.relayMessage(m.chat, { extendedTextMessage: { text: `Terdeteksi @${m.sender.split('@')[0]} Mengirim Virtex..`, contextInfo: { mentionedJid: [m.key.participantAlt || m.sender], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Virtex❗*'}, ...m.key }}}, {})
+					await Omaidi.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 				}
 				if (m.msg?.nativeFlowMessage?.messageParamsJson?.length > 3500) {
-					await naze.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
-					await naze.relayMessage(m.chat, { extendedTextMessage: { text: `Terdeteksi @${m.sender.split('@')[0]} Mengirim Bug..`, contextInfo: { mentionedJid: [m.key.participantAlt || m.sender], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Bug❗*'}, ...m.key }}}, {})
-					await naze.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+					await Omaidi.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
+					await Omaidi.relayMessage(m.chat, { extendedTextMessage: { text: `Terdeteksi @${m.sender.split('@')[0]} Mengirim Bug..`, contextInfo: { mentionedJid: [m.key.participantAlt || m.sender], isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: '*Anti Bug❗*'}, ...m.key }}}, {})
+					await Omaidi.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 				}
 			}
 			
@@ -255,8 +255,8 @@ module.exports = naze = async (naze, m, msg, store) => {
 		
 		// Auto Read
 		if (m.message && m.key.remoteJid !== 'status@broadcast') {
-			if ((set.autoread && naze.public) || isCreator) {
-				naze.readMessages([m.key]);
+			if ((set.autoread && Omaidi.public) || isCreator) {
+				Omaidi.readMessages([m.key]);
 				if (set.log) console.log(chalk.black(chalk.whiteBright('[CHAT]:'), chalk.greenBright(`${locale_day} ${date} (${date_time})`), chalk.hex('#AF26EB')(m.key.id) + '\n' + chalk.hex('#00EAD3')(budy || m.type) + '\n' + chalk.cyanBright('[FROM]:'), chalk.yellowBright(m.pushName || (isCreator ? 'Bot' : 'Anonim')), chalk.hex('#FF449F')(m.sender.split('@')[0]), chalk.hex('#FF5700')(m.isGroup ? m.metadata.subject : m.chat.endsWith('@newsletter') ? 'Newsletter' : 'Private Chat'), chalk.blueBright('(' + m.chat + ')')));
 				else console.log(chalk.black(chalk.bgWhite('[CHAT]:'), chalk.bgGreen(`${locale_day} ${date} (${date_time})`), chalk.bgHex('#AF26EB')(m.key.id) + '\n' + chalk.bgHex('#00EAD3')(budy || m.type) + '\n' + chalk.bgCyanBright('[FROM]:'), chalk.bgYellow(m.pushName || (isCreator ? 'Bot' : 'Anonim')), chalk.bgHex('#FF449F')(m.sender), chalk.bgHex('#FF5700')(m.isGroup ? m.metadata.subject : m.chat.endsWith('@newsletter') ? 'Newsletter' : 'Private Chat'), chalk.bgBlue('(' + m.chat + ')')));
 			}
@@ -267,14 +267,14 @@ module.exports = naze = async (naze, m, msg, store) => {
 		if (db.users[m.sender]?.ban && !isCreator) return
 		
 		// Filter Set Api Key
-		if (cases.includes(command) && isCmd && (command !== 'setapikey') && global.APIKeys[global.APIs.naze] === 'YOUR_API_KEY') {
-			return m.reply('Silahkan Ganti Apikey yang ada\ndi File settings.js dengan apikey mu\nAgar semua fitur bisa digunakan dengan normal\n\nAmbil Key di : https://naze.biz.id/profile\nKemudian Gunakan Perintah\n.setapikey key_nya');
+		if (cases.includes(command) && isCmd && (command !== 'setapikey') && global.APIKeys[global.APIs.Omaidi] === 'YOUR_API_KEY') {
+			return m.reply('Silahkan Ganti Apikey yang ada\ndi File settings.js dengan apikey mu\nAgar semua fitur bisa digunakan dengan normal\n\nAmbil Key di : https://Omaidi.biz.id/profile\nKemudian Gunakan Perintah\n.setapikey key_nya');
 		}
 		
 		// Mengetik & Anti Spam & Hit
-		if (naze.public && isCmd) {
+		if (Omaidi.public && isCmd) {
 			if (set.autotyping) {
-				await naze.sendPresenceUpdate('composing', m.chat)
+				await Omaidi.sendPresenceUpdate('composing', m.chat)
 			}
 			if (cases.includes(command)) {
 				cmdAdd(db.hit);
@@ -320,7 +320,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 		
 		// Cek Expired
 		checkExpired(premium);
-		checkExpired(sewa, naze);
+		checkExpired(sewa, Omaidi);
 		
 		// TicTacToe
 		let room = Object.values(tictactoe).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
@@ -360,8 +360,8 @@ module.exports = naze = async (naze, m, msg, store) => {
 			let str = `Room ID: ${room.id}\n\n${arr.slice(0, 3).join('')}\n${arr.slice(3, 6).join('')}\n${arr.slice(6).join('')}\n\n${isWin ? `@${winner.split('@')[0]} Menang!` : isTie ? `Game berakhir` : `Giliran ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}\n❌: @${room.game.playerX.split('@')[0]}\n⭕: @${room.game.playerO.split('@')[0]}\n\nKetik *nyerah* untuk menyerah dan mengakui kekalahan`
 			if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
 			room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-			if (room.x !== room.o) await naze.sendMessage(room.x, { text: str, mentions: parseMention(str) }, { quoted: m })
-			await naze.sendMessage(room.o, { text: str, mentions: parseMention(str) }, { quoted: m })
+			if (room.x !== room.o) await Omaidi.sendMessage(room.x, { text: str, mentions: parseMention(str) }, { quoted: m })
+			await Omaidi.sendMessage(room.o, { text: str, mentions: parseMention(str) }, { quoted: m })
 			if (isTie || isWin) delete tictactoe[room.id]
 		}
 		
@@ -385,8 +385,8 @@ module.exports = naze = async (naze, m, msg, store) => {
 				roof.status = 'play';
 				roof.asal = m.chat;
 				m.reply(`Suit telah dikirimkan ke chat\n\n@${roof.p.split('@')[0]} dan @${roof.p2.split('@')[0]}\n\nSilahkan pilih suit di chat masing-masing klik https://wa.me/${botNumber.split('@')[0]}`)
-				if (!roof.pilih) naze.sendMessage(roof.p, { text: `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️` }, { quoted: m })
-				if (!roof.pilih2) naze.sendMessage(roof.p2, { text: `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️` }, { quoted: m })
+				if (!roof.pilih) Omaidi.sendMessage(roof.p, { text: `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️` }, { quoted: m })
+				if (!roof.pilih2) Omaidi.sendMessage(roof.p2, { text: `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️` }, { quoted: m })
 			}
 			let jwb = m.sender == roof.p, jwb2 = m.sender == roof.p2;
 			let g = /gunting/i, b = /batu/i, k = /kertas/i, reg = /^(gunting|batu|kertas)/i;
@@ -395,13 +395,13 @@ module.exports = naze = async (naze, m, msg, store) => {
 				roof.pilih = reg.exec(m.text.toLowerCase())[0];
 				roof.text = m.text;
 				m.reply(`Kamu telah memilih ${m.text} ${!roof.pilih2 ? `\n\nMenunggu lawan memilih` : ''}`);
-				if (!roof.pilih2) naze.sendMessage(roof.p2, { text: '_Lawan sudah memilih_\nSekarang giliran kamu' })
+				if (!roof.pilih2) Omaidi.sendMessage(roof.p2, { text: '_Lawan sudah memilih_\nSekarang giliran kamu' })
 			}
 			if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 				roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
 				roof.text2 = m.text
 				m.reply(`Kamu telah memilih ${m.text} ${!roof.pilih ? `\n\nMenunggu lawan memilih` : ''}`)
-				if (!roof.pilih) naze.sendMessage(roof.p, { text: '_Lawan sudah memilih_\nSekarang giliran kamu' })
+				if (!roof.pilih) Omaidi.sendMessage(roof.p, { text: '_Lawan sudah memilih_\nSekarang giliran kamu' })
 			}
 			let stage = roof.pilih
 			let stage2 = roof.pilih2
@@ -415,7 +415,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				else if (stage == stage2) tie = true
 				db.users[roof.p == win ? roof.p : roof.p2].limit += tie ? 0 : 3
 				db.users[roof.p == win ? roof.p : roof.p2].money += tie ? 0 : 3000
-				naze.sendMessage(roof.asal, { text: `_*Hasil Suit*_${tie ? '\nSERI' : ''}\n\n@${roof.p.split('@')[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Menang \n` : ` Kalah \n`}\n@${roof.p2.split('@')[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Menang \n` : ` Kalah \n`}\n\nPemenang Mendapatkan\n*Hadiah :* Uang(3000) & Limit(3)`.trim(), mentions: [roof.p, roof.p2] }, { quoted: m })
+				Omaidi.sendMessage(roof.asal, { text: `_*Hasil Suit*_${tie ? '\nSERI' : ''}\n\n@${roof.p.split('@')[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Menang \n` : ` Kalah \n`}\n@${roof.p2.split('@')[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Menang \n` : ` Kalah \n`}\n\nPemenang Mendapatkan\n*Hadiah :* Uang(3000) & Limit(3)`.trim(), mentions: [roof.p, roof.p2] }, { quoted: m })
 				delete suit[roof.id]
 			}
 		}
@@ -634,7 +634,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				m.react('✈');
 				m.msg.contextInfo = { isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: `*Pesan Dari ${menfes[m.sender].nama ? menfes[m.sender].nama : 'Seseorang'}*`}, key: { remoteJid: '0@s.whatsapp.net', fromMe: false, participant: '0@s.whatsapp.net' }}
 				const pesan = m.type === 'conversation' ? { extendedTextMessage: { text: m.msg, contextInfo: { isForwarded: true, forwardingScore: 1, quotedMessage: { conversation: `*Pesan Dari ${menfes[m.sender].nama ? menfes[m.sender].nama : 'Seseorang'}*`}, key: { remoteJid: '0@s.whatsapp.net', fromMe: false, participant: '0@s.whatsapp.net' }}}} : { [m.type]: m.msg }
-				await naze.relayMessage(menfes[m.sender].tujuan, pesan, {});
+				await Omaidi.relayMessage(menfes[m.sender].tujuan, pesan, {});
 			}
 			if (chat_ai[m.sender] && m.key.remoteJid !== 'status@broadcast') {
 				if (!/^(del((room|c|hat)ai)|>|<$)$/i.test(command) && budy) {
@@ -705,13 +705,13 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!m.quoted) return m.reply(mess.quoted)
 				delete m.quoted.chat
 				let anya = Object.values(m.quoted.fakeObj())[1]
-				m.reply(`const byt = ${JSON.stringify(anya.message, null, 2)}\nnaze.relayMessage(m.chat, byt, {})`)
+				m.reply(`const byt = ${JSON.stringify(anya.message, null, 2)}\nOmaidi.relayMessage(m.chat, byt, {})`)
 			}
 			break
 			case 'setbio': {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!text) return m.reply(mess.text)
-				naze.setStatus(q)
+				Omaidi.setStatus(q)
 				m.reply(`*Bio telah di ganti menjadi ${q}*`)
 			}
 			break
@@ -720,7 +720,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!/image/.test(quoted.type)) return m.reply(`Reply Image With Caption ${prefix + command}`)
 				let media = await quoted.download();
 				let { img } = await generateProfilePicture(media, text.length > 0 ? null : 512)
-				await naze.query({
+				await Omaidi.query({
 					tag: 'iq',
 					attrs: {
 						to: '@s.whatsapp.net',
@@ -734,7 +734,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 			break
 			case 'delppbot': {
 				if (!isCreator) return m.reply(mess.owner)
-				await naze.removeProfilePicture(naze.user.id)
+				await Omaidi.removeProfilePicture(Omaidi.user.id)
 				m.reply(mess.done)
 			}
 			break
@@ -749,7 +749,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				const result = args[0].match(/chat\.whatsapp\.com\/([0-9A-Za-z]+)/)
 				if (!result) return m.reply('Link Invalid❗')
 				m.reply(mess.wait)
-				await naze.groupAcceptInvite(result[1]).catch((res) => {
+				await Omaidi.groupAcceptInvite(result[1]).catch((res) => {
 					if (res.data == 400) return m.reply('Grup Tidak Di Temukan❗');
 					if (res.data == 401) return m.reply('Bot Di Kick Dari Grup Tersebut❗');
 					if (res.data == 409) return m.reply('Bot Sudah Join Di Grup Tersebut❗');
@@ -760,12 +760,12 @@ module.exports = naze = async (naze, m, msg, store) => {
 			break
 			case 'leave': {
 				if (!isCreator) return m.reply(mess.owner)
-				await naze.groupLeave(m.chat).then(() => naze.sendFromOwner(ownerNumber, 'Sukses Keluar Dari Grup', m, { contextInfo: { isForwarded: true }})).catch(e => {});
+				await Omaidi.groupLeave(m.chat).then(() => Omaidi.sendFromOwner(ownerNumber, 'Sukses Keluar Dari Grup', m, { contextInfo: { isForwarded: true }})).catch(e => {});
 			}
 			break
 			case 'clearchat': {
 				if (!isCreator) return m.reply(mess.owner)
-				await naze.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.timestamp }] }, m.chat).catch((e) => m.reply('Gagal Menghapus Chat!'))
+				await Omaidi.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.timestamp }] }, m.chat).catch((e) => m.reply('Gagal Menghapus Chat!'))
 				m.reply(mess.done)
 			}
 			break
@@ -774,7 +774,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				let [teks1, teks2] = text.split`|`
 				if (teks1 && teks2) {
 					const msgnya = await global.loadMessage(teks1, teks2)
-					if (msgnya?.message) await naze.relayMessage(m.chat, msgnya.message, {})
+					if (msgnya?.message) await Omaidi.relayMessage(m.chat, msgnya.message, {})
 					else m.reply('Pesan Tidak Ditemukan!')
 				} else m.reply(`Example: ${prefix + command} 123xxx@g.us|3EB0xxx`)
 			}
@@ -783,12 +783,12 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!isCreator) return m.reply(mess.owner)
 				if (text || m.quoted) {
 					const numbersOnly = m.isGroup ? (text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender) : m.chat
-					await naze.updateBlockStatus(numbersOnly, 'block').then((a) => m.reply(mess.done)).catch((err) => m.reply(mess.fail))
+					await Omaidi.updateBlockStatus(numbersOnly, 'block').then((a) => m.reply(mess.done)).catch((err) => m.reply(mess.fail))
 				} else m.reply(`Example: ${prefix + command} 62xxx`)
 			}
 			break
 			case 'listblock': {
-				let anu = await naze.fetchBlocklist()
+				let anu = await Omaidi.fetchBlocklist()
 				m.reply(`Total Block : ${anu.length}\n` + anu.map(v => '• ' + v.replace(/@.+/, '')).join`\n`)
 			}
 			break
@@ -796,16 +796,16 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!isCreator) return m.reply(mess.owner)
 				if (text || m.quoted) {
 					const numbersOnly = m.isGroup ? (text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender) : m.chat
-					await naze.updateBlockStatus(numbersOnly, 'unblock').then((a) => m.reply(mess.done)).catch((err) => m.reply(mess.fail))
+					await Omaidi.updateBlockStatus(numbersOnly, 'unblock').then((a) => m.reply(mess.done)).catch((err) => m.reply(mess.fail))
 				} else m.reply(`Example: ${prefix + command} 62xxx`)
 			}
 			break
 			case 'ban': case 'banned': {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!text) return m.reply(`Kirim/tag Nomernya!\nExample:\n${prefix + command} 62xxx`)
-				const findJid = naze.findJidByLid(text.replace(/[^0-9]/g, '') + '@lid', store);
+				const findJid = Omaidi.findJidByLid(text.replace(/[^0-9]/g, '') + '@lid', store);
 				const klss = text.replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-				const nmrnya = naze.findJidByLid(klss, store, true)
+				const nmrnya = Omaidi.findJidByLid(klss, store, true)
 				if (db.users[nmrnya] && !db.users[nmrnya].ban) {
 					db.users[nmrnya].ban = true
 					m.reply(mess.done)
@@ -815,9 +815,9 @@ module.exports = naze = async (naze, m, msg, store) => {
 			case 'unban': case 'unbanned': {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!text) return m.reply(`Kirim/tag Nomernya!\nExample:\n${prefix + command} 62xxx`)
-				const findJid = naze.findJidByLid(text.replace(/[^0-9]/g, '') + '@lid', store);
+				const findJid = Omaidi.findJidByLid(text.replace(/[^0-9]/g, '') + '@lid', store);
 				const klss = text.replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-				const nmrnya = naze.findJidByLid(klss, store, true)
+				const nmrnya = Omaidi.findJidByLid(klss, store, true)
 				if (db.users[nmrnya] && db.users[nmrnya].ban) {
 					db.users[nmrnya].ban = false
 					m.reply(mess.done)
@@ -839,8 +839,8 @@ module.exports = naze = async (naze, m, msg, store) => {
 			case 'addowner': {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!text) return m.reply(`Kirim/tag Nomernya!\nExample:\n${prefix + command} 62xxx`)
-				const nmrnya = naze.findJidByLid(text.replace(/[^0-9]/g, ''), store, true)
-				const onWa = await naze.onWhatsApp(nmrnya)
+				const nmrnya = Omaidi.findJidByLid(text.replace(/[^0-9]/g, ''), store, true)
+				const onWa = await Omaidi.onWhatsApp(nmrnya)
 				if (!onWa.length > 0) return m.reply(mess.onWa)
 				if (set?.owner) {
 					if (set.owner.find(a => nmrnya.includes(a))) return m.reply('Nomer Tersebut Sudah Ada Di Owner!')
@@ -856,8 +856,8 @@ module.exports = naze = async (naze, m, msg, store) => {
 			case 'delowner': {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!text) return m.reply(`Kirim/tag Nomernya!\nExample:\n${prefix + command} 62xxx`)
-				const nmrnya = naze.findJidByLid(text.replace(/[^0-9]/g, ''), store, true)
-				const onWa = await naze.onWhatsApp(nmrnya)
+				const nmrnya = Omaidi.findJidByLid(text.replace(/[^0-9]/g, ''), store, true)
+				const onWa = await Omaidi.onWhatsApp(nmrnya)
 				if (!onWa.length > 0) return m.reply(mess.onWa)
 				if (botNumber === nmrnya) return m.reply('Nomer Bot Tidak Boleh dihapus dari owner!')
 				let list = set.owner
@@ -875,10 +875,10 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!args[0] || !args[1] || isNaN(args[1])) return m.reply(`Kirim/tag Nomernya!\nExample:\n${prefix + command} 62xxx 1000`)
 				if (args[1].length > 15) return m.reply('Jumlah Money Maksimal 15 digit angka!')
-				const findJid = naze.findJidByLid(args[0].replace(/[^0-9]/g, '') + '@lid', store);
+				const findJid = Omaidi.findJidByLid(args[0].replace(/[^0-9]/g, '') + '@lid', store);
 				const klss = args[0].replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-				const nmrnya = naze.findJidByLid(klss, store, true)
-				const onWa = await naze.onWhatsApp(nmrnya)
+				const nmrnya = Omaidi.findJidByLid(klss, store, true)
+				const onWa = await Omaidi.onWhatsApp(nmrnya)
 				if (!onWa.length > 0) return m.reply(mess.onWa)
 				if (db.users[nmrnya] && db.users[nmrnya].money >= 0) {
 					addMoney(args[1], nmrnya, db)
@@ -890,10 +890,10 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!args[0] || !args[1] || isNaN(args[1])) return m.reply(`Kirim/tag Nomernya!\nExample:\n${prefix + command} 62xxx 10`)
 				if (args[1].length > 10) return m.reply('Jumlah Limit Maksimal 10 digit angka!')
-				const findJid = naze.findJidByLid(args[0].replace(/[^0-9]/g, '') + '@lid', store);
+				const findJid = Omaidi.findJidByLid(args[0].replace(/[^0-9]/g, '') + '@lid', store);
 				const klss = args[0].replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-				const nmrnya = naze.findJidByLid(klss, store, true)
-				const onWa = await naze.onWhatsApp(nmrnya)
+				const nmrnya = Omaidi.findJidByLid(klss, store, true)
+				const onWa = await Omaidi.onWhatsApp(nmrnya)
 				if (!onWa.length > 0) return m.reply(mess.onWa)
 				if (db.users[nmrnya] && db.users[nmrnya].limit >= 0) {
 					addLimit(args[1], nmrnya, db)
@@ -908,7 +908,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (anu.length === 0) return m.reply(teks)
 				for (let i of anu) {
 					if (store.messages?.[i]?.array?.length) {
-						let nama = naze.getName(i);
+						let nama = Omaidi.getName(i);
 						teks += `${setv} *Nama :* ${nama}\n${setv} *User :* @${i.split('@')[0]}\n${setv} *Chat :* https://wa.me/${i.split('@')[0]}\n\n=====================\n\n`
 					}
 				}
@@ -925,7 +925,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 					try {
 						metadata = store.groupMetadata[i]
 					} catch (e) {
-						metadata = (store.groupMetadata[i] = await naze.groupMetadata(i).catch(e => ({})))
+						metadata = (store.groupMetadata[i] = await Omaidi.groupMetadata(i).catch(e => ({})))
 					}
 					teks += metadata?.subject ? `${setv} *Nama :* ${metadata.subject}\n${setv} *Admin :* ${metadata.ownerPn ? `@${metadata.ownerPn.split('@')[0]}` : '-' }\n${setv} *ID :* ${metadata.id}\n${setv} *Dibuat :* ${moment(metadata.creation * 1000).tz(timezone).format('DD/MM/YYYY HH:mm:ss')}\n${setv} *Member :* ${metadata.participants.length}\n\n=====================\n\n` : ''
 				}
@@ -935,12 +935,12 @@ module.exports = naze = async (naze, m, msg, store) => {
 			case 'creategc': case 'buatgc': {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!text) return m.reply(`Example:\n${prefix + command} *Nama Gc*`)
-				let group = await naze.groupCreate(q, [m.sender])
-				let res = await naze.groupInviteCode(group.id)
+				let group = await Omaidi.groupCreate(q, [m.sender])
+				let res = await Omaidi.groupInviteCode(group.id)
 				await m.reply(`*Link Group :* *https://chat.whatsapp.com/${res}*\n\n*Nama Group :* *${group.subject}*\nSegera Masuk dalam 30 detik\nAgar menjadi Admin`, { detectLink: true })
 				await sleep(30000)
-				await naze.groupParticipantsUpdate(group.id, [m.sender], 'promote').catch(e => {});
-				await naze.sendMessage(group.id, { text: mess.done })
+				await Omaidi.groupParticipantsUpdate(group.id, [m.sender], 'promote').catch(e => {});
+				await Omaidi.sendMessage(group.id, { text: mess.done })
 			}
 			break
 			case 'addsewa': case 'sewa': {
@@ -951,14 +951,14 @@ module.exports = naze = async (naze, m, msg, store) => {
 				const urlny = teks1.match(/chat\.whatsapp\.com\/([0-9A-Za-z]+)/)
 				if (!urlny) return m.reply('Link Invalid❗')
 				try {
-					await naze.groupAcceptInvite(urlny[1])
+					await Omaidi.groupAcceptInvite(urlny[1])
 				} catch (e) {
 					if (e.data == 400) return m.reply('Grup Tidak Di Temukan❗');
 					if (e.data == 401) return m.reply('Bot Di Kick Dari Grup Tersebut❗');
 					if (e.data == 410) return m.reply('Url Grup Telah Di Setel Ulang❗');
 					if (e.data == 500) return m.reply('Grup Penuh❗');
 				}
-				await naze.groupGetInviteInfo(urlny[1]).then(a => {
+				await Omaidi.groupGetInviteInfo(urlny[1]).then(a => {
 					addExpired({ url: urlny[1], expired: (teks2?.replace(/[^0-9]/g, '') || 30) + 'd', id: a.id }, sewa)
 					m.reply('Sukses Menambahkan Sewa Selama ' + (teks2?.replace(/[^0-9]/g, '') || 30) + ' hari\nOtomatis Keluar Saat Waktu Habis!')
 				}).catch(e => m.reply('Gagal Menambahkan Sewa!'))
@@ -977,7 +977,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				}
 				if (checkStatus(urlny, sewa)) {
 					await m.reply(mess.done)
-					await naze.groupLeave(getStatus(urlny, sewa).id).catch(e => {});
+					await Omaidi.groupLeave(getStatus(urlny, sewa).id).catch(e => {});
 					sewa.splice(getPosition(urlny, sewa), 1);
 				} else m.reply(`${text} Tidak Terdaftar Di Database\nExample:\n${prefix + command} https://chat.whatsapp.com/xxxx\n Or \n${prefix + command} id_group@g.us`)
 			}
@@ -995,10 +995,10 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!text) return m.reply(`Example:\n${prefix + command} @tag|waktu\n${prefix + command} @${m.sender.split('@')[0]}|30 hari`)
 				let [teks1, teks2] = text.split('|').map(x => x.trim());
-				const findJid = naze.findJidByLid(teks1.replace(/[^0-9]/g, '') + '@lid', store);
+				const findJid = Omaidi.findJidByLid(teks1.replace(/[^0-9]/g, '') + '@lid', store);
 				const klss = teks1.replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-				const nmrnya = naze.findJidByLid(klss, store, true)
-				const onWa = await naze.onWhatsApp(nmrnya)
+				const nmrnya = Omaidi.findJidByLid(klss, store, true)
+				const onWa = await Omaidi.onWhatsApp(nmrnya)
 				if (!onWa.length > 0) return m.reply(mess.onWa)
 				if (teks2) {
 					if (db.users[nmrnya] && db.users[nmrnya].limit >= 0) {
@@ -1013,9 +1013,9 @@ module.exports = naze = async (naze, m, msg, store) => {
 			case 'delpr': case 'delprem': case 'delpremium': {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!text) return m.reply(`Example:\n${prefix + command} @tag`)
-				const findJid = naze.findJidByLid(text.replace(/[^0-9]/g, '') + '@lid', store);
+				const findJid = Omaidi.findJidByLid(text.replace(/[^0-9]/g, '') + '@lid', store);
 				const klss = text.replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-				const nmrnya = naze.findJidByLid(klss, store, true)
+				const nmrnya = Omaidi.findJidByLid(klss, store, true)
 				if (db.users[nmrnya] && db.users[nmrnya].limit >= 0) {
 					if (checkStatus(nmrnya, premium)) {
 						premium.splice(getPosition(nmrnya, premium), 1);
@@ -1041,16 +1041,16 @@ module.exports = naze = async (naze, m, msg, store) => {
 				const backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
 				try {
 					if (quoted.isMedia) {
-						let media = await naze.downloadAndSaveMediaMessage(qmsg);
+						let media = await Omaidi.downloadAndSaveMediaMessage(qmsg);
 						try {
 							if (/image|video/.test(quoted.mime)) {
-								await naze.sendMessage('status@broadcast', {
+								await Omaidi.sendMessage('status@broadcast', {
 									[`${quoted.mime.split('/')[0]}`]: { url: media },
 									caption: text || m.quoted?.body || ''
 								}, { statusJidList, broadcast: true })
 								m.react('✅')
 							} else if (/audio/.test(quoted.mime)) {
-								await naze.sendMessage('status@broadcast', {
+								await Omaidi.sendMessage('status@broadcast', {
 									audio: { url: media },
 									mimetype: 'audio/mp4',
 									ptt: true
@@ -1061,7 +1061,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 							if (fs.existsSync(media)) fs.unlinkSync(media);
 						}
 					} else if (quoted.text) {
-						await naze.sendMessage('status@broadcast', { text: text || m.quoted?.body || '' }, {
+						await Omaidi.sendMessage('status@broadcast', { text: text || m.quoted?.body || '' }, {
 							textArgb: 0xffffffff,
 							font: Math.floor(Math.random() * 9),
 							backgroundColor, statusJidList,
@@ -1077,7 +1077,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 			case 'addcase': {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!text && !text.startsWith('case')) return m.reply('Masukkan Casenya!')
-				fs.readFile('naze.js', 'utf8', (err, data) => {
+				fs.readFile('Omaidi.js', 'utf8', (err, data) => {
 					if (err) {
 						console.error('Terjadi kesalahan saat membaca file:', err);
 						return;
@@ -1085,7 +1085,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 					const posisi = data.indexOf("case '19rujxl1e':");
 					if (posisi !== -1) {
 						const codeBaru = data.slice(0, posisi) + '\n' + `${text}` + '\n' + data.slice(posisi);
-						fs.writeFile('naze.js', codeBaru, 'utf8', (err) => {
+						fs.writeFile('Omaidi.js', codeBaru, 'utf8', (err) => {
 							if (err) {
 								m.reply('Terjadi kesalahan saat menulis file: ', err);
 							} else m.reply(mess.done);
@@ -1099,7 +1099,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!text) return m.reply('Masukkan Nama Casenya!')
 				try {
 					const getCase = (cases) => {
-						return "case"+`'${cases}'`+fs.readFileSync("naze.js").toString().split('case \''+cases+'\'')[1].split("break")[0]+"break"
+						return "case"+`'${cases}'`+fs.readFileSync("Omaidi.js").toString().split('case \''+cases+'\'')[1].split("break")[0]+"break"
 					}
 					m.reply(`${getCase(text)}`)
 				} catch (e) {
@@ -1110,14 +1110,14 @@ module.exports = naze = async (naze, m, msg, store) => {
 			case 'delcase': {
 				if (!isCreator) return m.reply(mess.owner)
 				if (!text) return m.reply('Masukkan Nama Casenya!')
-				fs.readFile('naze.js', 'utf8', (err, data) => {
+				fs.readFile('Omaidi.js', 'utf8', (err, data) => {
 					if (err) {
 						console.error('Terjadi kesalahan saat membaca file:', err);
 						return;
 					}
 					const regex = new RegExp(`case\\s+'${text.toLowerCase()}':[\\s\\S]*?break`, 'g');
 					const modifiedData = data.replace(regex, '');
-					fs.writeFile('naze.js', modifiedData, 'utf8', (err) => {
+					fs.writeFile('Omaidi.js', modifiedData, 'utf8', (err) => {
 						if (err) {
 							console.log(err);
 							m.reply(mess.fail);
@@ -1335,8 +1335,8 @@ module.exports = naze = async (naze, m, msg, store) => {
 					});
 					m.reply(`*Apikey telah di ganti dari ${old_key} menjadi ${q}*`)
 				} else {
-					if (!text.startsWith('nz-')) return m.reply('Apikey Tidak Valid!\nAmbil Apikey di : https://naze.biz.id/profile');
-					let old_key = global.APIKeys[global.APIs.naze];
+					if (!text.startsWith('nz-')) return m.reply('Apikey Tidak Valid!\nAmbil Apikey di : https://Omaidi.biz.id/profile');
+					let old_key = global.APIKeys[global.APIs.Omaidi];
 					await updateSettings({
 						filePath: settingsPath,
 						apikey: text.trim()
@@ -1416,7 +1416,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 			}
 			break
 			case 'donasi': case 'donate': {
-				m.reply('Donasi Dapat Melalui Url Dibawah Ini :\nhttps://saweria.co/naze')
+				m.reply('Donasi Dapat Melalui Url Dibawah Ini :\nhttps://saweria.co/Omaidi')
 			}
 			break
 			
@@ -1427,13 +1427,13 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
 				if (text || m.quoted) {
 					const numbersOnly = text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender
-					const findJid = naze.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
+					const findJid = Omaidi.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
 					const klss = numbersOnly.replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-					const nmrnya = naze.findJidByLid(klss, store, true)
+					const nmrnya = Omaidi.findJidByLid(klss, store, true)
 					try {
-						await naze.groupParticipantsUpdate(m.chat, [nmrnya], 'add').then(async (res) => {
+						await Omaidi.groupParticipantsUpdate(m.chat, [nmrnya], 'add').then(async (res) => {
 							for (let i of res) {
-								let invv = await naze.groupInviteCode(m.chat)
+								let invv = await Omaidi.groupInviteCode(m.chat)
 								const statusMessages = {
 									200: `Berhasil menambahkan @${nmrnya.split('@')[0]} ke grup!`,
 									401: 'Dia Memblokir Bot!',
@@ -1447,7 +1447,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 									await m.reply(`${'https://chat.whatsapp.com/' + invv}\n------------------------------------------------------\n\nAdmin: @${m.sender.split('@')[0]}\nMengundang anda ke group ini\nSilahkan masuk jika berkehendak🙇`, { detectLink: true, chat: nmrnya, quoted: fkontak }).catch((err) => m.reply('Gagal Mengirim Undangan!'))
 								} else if (i.status == 403) {
 									let a = i.content.content[0].attrs
-									await naze.sendGroupInviteV4(m.chat, nmrnya, a.code, a.expiration, m.metadata.subject, `Admin: @${m.sender.split('@')[0]}\nMengundang anda ke group ini\nSilahkan masuk jika berkehendak🙇`, null, { mentions: [m.sender] })
+									await Omaidi.sendGroupInviteV4(m.chat, nmrnya, a.code, a.expiration, m.metadata.subject, `Admin: @${m.sender.split('@')[0]}\nMengundang anda ke group ini\nSilahkan masuk jika berkehendak🙇`, null, { mentions: [m.sender] })
 									await m.reply(`@${nmrnya.split('@')[0]} Tidak Dapat Ditambahkan\n\nKarena Target Private\n\nUndangan Akan Dikirimkan Ke\n-> wa.me/${nmrnya.replace(/\D/g, '')}\nMelalui Jalur Pribadi`)
 								} else m.reply('Gagal Add User\nStatus : ' + i.status)
 							}
@@ -1464,10 +1464,10 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
 				if (text || m.quoted) {
 					const numbersOnly = text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender
-					const findJid = naze.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
+					const findJid = Omaidi.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
 					const klss = numbersOnly.replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-					const nmrnya = naze.findJidByLid(klss, store, true)
-					await naze.groupParticipantsUpdate(m.chat, [nmrnya], 'remove').catch((err) => m.reply(mess.fail))
+					const nmrnya = Omaidi.findJidByLid(klss, store, true)
+					await Omaidi.groupParticipantsUpdate(m.chat, [nmrnya], 'remove').catch((err) => m.reply(mess.fail))
 				} else m.reply(`Example: ${prefix + command} 62xxx`)
 			}
 			break
@@ -1477,10 +1477,10 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
 				if (text || m.quoted) {
 					const numbersOnly = text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender
-					const findJid = naze.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
+					const findJid = Omaidi.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
 					const klss = numbersOnly.replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-					const nmrnya = naze.findJidByLid(klss, store, true)
-					await naze.groupParticipantsUpdate(m.chat, [nmrnya], 'promote').catch((err) => m.reply(mess.fail))
+					const nmrnya = Omaidi.findJidByLid(klss, store, true)
+					await Omaidi.groupParticipantsUpdate(m.chat, [nmrnya], 'promote').catch((err) => m.reply(mess.fail))
 				} else m.reply(`Example: ${prefix + command} 62xxx`)
 			}
 			break
@@ -1490,10 +1490,10 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
 				if (text || m.quoted) {
 					const numbersOnly = text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender
-					const findJid = naze.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
+					const findJid = Omaidi.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
 					const klss = numbersOnly.replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-					const nmrnya = naze.findJidByLid(klss, store, true)
-					await naze.groupParticipantsUpdate(m.chat, [nmrnya], 'demote').catch((err) => m.reply(mess.fail))
+					const nmrnya = Omaidi.findJidByLid(klss, store, true)
+					await Omaidi.groupParticipantsUpdate(m.chat, [nmrnya], 'demote').catch((err) => m.reply(mess.fail))
 				} else m.reply(`Example: ${prefix + command} 62xxx`)
 			}
 			break
@@ -1503,14 +1503,14 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
 				if (text || m.quoted) {
 					const numbersOnly = text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender
-					const findJid = naze.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
+					const findJid = Omaidi.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
 					const klss = numbersOnly.replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-					const nmrnya = naze.findJidByLid(klss, store, true)
+					const nmrnya = Omaidi.findJidByLid(klss, store, true)
 					if (!db.groups[m.chat].warn[nmrnya]) {
 						db.groups[m.chat].warn[nmrnya] = 1
 						m.reply('Warning 1/4, akan dikick sewaktu waktu❗')
 					} else if (db.groups[m.chat].warn[nmrnya] >= 3) {
-						await naze.groupParticipantsUpdate(m.chat, [nmrnya], 'remove').catch((err) => m.reply(mess.fail))
+						await Omaidi.groupParticipantsUpdate(m.chat, [nmrnya], 'remove').catch((err) => m.reply(mess.fail))
 						delete db.groups[m.chat].warn[nmrnya]
 					} else {
 						db.groups[m.chat].warn[nmrnya] += 1
@@ -1525,9 +1525,9 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
 				if (text || m.quoted) {
 					const numbersOnly = text ? text.replace(/\D/g, '') + '@s.whatsapp.net' : m.quoted?.sender
-					const findJid = naze.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
+					const findJid = Omaidi.findJidByLid(numbersOnly.replace(/[^0-9]/g, '') + '@lid', store);
 					const klss = numbersOnly.replace(/[^0-9]/g, '') + (findJid ? '@lid' :  '@s.whatsapp.net')
-					const nmrnya = naze.findJidByLid(klss, store, true)
+					const nmrnya = Omaidi.findJidByLid(klss, store, true)
 					if (db.groups[m.chat]?.warn?.[nmrnya]) {
 						delete db.groups[m.chat].warn[nmrnya]
 						m.reply('Berhasil Menghapus Warning!')
@@ -1541,7 +1541,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
 				if (text || m.quoted) {
 					const teksnya = text ? text : m.quoted.text
-					await naze.groupUpdateSubject(m.chat, teksnya).catch((err) => m.reply(mess.fail))
+					await Omaidi.groupUpdateSubject(m.chat, teksnya).catch((err) => m.reply(mess.fail))
 				} else m.reply(`Example: ${prefix + command} textnya`)
 			}
 			break
@@ -1551,7 +1551,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
 				if (text || m.quoted) {
 					const teksnya = text ? text : m.quoted.text
-					await naze.groupUpdateDescription(m.chat, teksnya).catch((err) => m.reply(mess.fail))
+					await Omaidi.groupUpdateDescription(m.chat, teksnya).catch((err) => m.reply(mess.fail))
 				} else m.reply(`Example: ${prefix + command} textnya`)
 			}
 			break
@@ -1563,7 +1563,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!/image/.test(quoted.type)) return m.reply(`Reply Image Dengan Caption ${prefix + command}`)
 				let media = await quoted.download();
 				let { img } = await generateProfilePicture(media, text.length > 0 ? null : 512)
-				await naze.query({
+				await Omaidi.query({
 					tag: 'iq',
 					attrs: {
 						target: m.chat,
@@ -1578,29 +1578,29 @@ module.exports = naze = async (naze, m, msg, store) => {
 			break
 			case 'delete': case 'del': case 'd': {
 				if (!m.quoted) return m.reply(mess.quoted)
-				await naze.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: m.isBotAdmin ? false : true, id: m.quoted.id, participant: m.quoted.sender }})
+				await Omaidi.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: m.isBotAdmin ? false : true, id: m.quoted.id, participant: m.quoted.sender }})
 			}
 			break
 			case 'pin': case 'unpin': {
 				if (!m.isGroup) return m.reply(mess.group)
 				if (!m.isAdmin) return m.reply(mess.admin)
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
-				await naze.sendMessage(m.chat, { pin: { type: command == 'pin' ? 1 : 0, time: 2592000, key: m.quoted ? m.quoted.key : m.key }})
+				await Omaidi.sendMessage(m.chat, { pin: { type: command == 'pin' ? 1 : 0, time: 2592000, key: m.quoted ? m.quoted.key : m.key }})
 			}
 			break
 			case 'linkgroup': case 'linkgrup': case 'linkgc': case 'urlgroup': case 'urlgrup': case 'urlgc': {
 				if (!m.isGroup) return m.reply(mess.group)
 				if (!m.isAdmin) return m.reply(mess.admin)
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
-				let response = await naze.groupInviteCode(m.chat)
-				await m.reply(`https://chat.whatsapp.com/${response}\n\nLink Group : ${(store.groupMetadata[m.chat] ? store.groupMetadata[m.chat] : (store.groupMetadata[m.chat] = await naze.groupMetadata(m.chat))).subject}`, { detectLink: true })
+				let response = await Omaidi.groupInviteCode(m.chat)
+				await m.reply(`https://chat.whatsapp.com/${response}\n\nLink Group : ${(store.groupMetadata[m.chat] ? store.groupMetadata[m.chat] : (store.groupMetadata[m.chat] = await Omaidi.groupMetadata(m.chat))).subject}`, { detectLink: true })
 			}
 			break
 			case 'revoke': case 'newlink': case 'newurl': {
 				if (!m.isGroup) return m.reply(mess.group)
 				if (!m.isAdmin) return m.reply(mess.admin)
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
-				await naze.groupRevokeInvite(m.chat).then((a) => {
+				await Omaidi.groupRevokeInvite(m.chat).then((a) => {
 					m.reply(`Sukses Menyetel Ulang, Tautan Undangan Grup ${m.metadata.subject}`)
 				}).catch((err) => m.reply(mess.fail))
 			}
@@ -1612,21 +1612,21 @@ module.exports = naze = async (naze, m, msg, store) => {
 				let set = db.groups[m.chat]
 				switch (args[0]?.toLowerCase()) {
 					case 'close': case 'open':
-					await naze.groupSettingUpdate(m.chat, args[0] == 'close' ? 'announcement' : 'not_announcement').then(a => m.reply(`*Sukses ${args[0] == 'open' ? 'Membuka' : 'Menutup'} Group*`))
+					await Omaidi.groupSettingUpdate(m.chat, args[0] == 'close' ? 'announcement' : 'not_announcement').then(a => m.reply(`*Sukses ${args[0] == 'open' ? 'Membuka' : 'Menutup'} Group*`))
 					break
 					case 'join':
-					const _list = await naze.groupRequestParticipantsList(m.chat).then(a => a.map(b => b.jid))
+					const _list = await Omaidi.groupRequestParticipantsList(m.chat).then(a => a.map(b => b.jid))
 					if (/(a(p|pp|cc)|(ept|rove))|true|ok/i.test(args[1]) && _list.length > 0) {
-						await naze.groupRequestParticipantsUpdate(m.chat, _list, 'approve').catch(e => m.react('❌'))
+						await Omaidi.groupRequestParticipantsUpdate(m.chat, _list, 'approve').catch(e => m.react('❌'))
 					} else if (/reject|false|no/i.test(args[1]) && _list.length > 0) {
-						await naze.groupRequestParticipantsUpdate(m.chat, _list, 'reject').catch(e => m.react('❌'))
+						await Omaidi.groupRequestParticipantsUpdate(m.chat, _list, 'reject').catch(e => m.react('❌'))
 					} else m.reply(`List Request Join :\n${_list.length > 0 ? '- @' + _list.join('\n- @').split('@')[0] : '*Nothing*'}\nExample : ${prefix + command} join acc/reject`)
 					break
 					case 'pesansementara': case 'disappearing':
 					if (/90|7|1|24|on/i.test(args[1])) {
-						naze.sendMessage(m.chat, { disappearingMessagesInChat: /90/i.test(args[1]) ? 7776000 : /7/i.test(args[1]) ? 604800 : 86400 })
+						Omaidi.sendMessage(m.chat, { disappearingMessagesInChat: /90/i.test(args[1]) ? 7776000 : /7/i.test(args[1]) ? 604800 : 86400 })
 					} else if (/0|off|false/i.test(args[1])) {
-						naze.sendMessage(m.chat, { disappearingMessagesInChat: 0 })
+						Omaidi.sendMessage(m.chat, { disappearingMessagesInChat: 0 })
 					} else m.reply('Silahkan Pilih :\n90 hari, 7 hari, 1 hari, off')
 					break
 					case 'antilink': case 'antivirtex': case 'antidelete': case 'welcome': case 'antitoxic': case 'waktusholat': case 'nsfw': case 'antihidetag': case 'setinfo': case 'antitagsw': case 'leave': case 'promote': case 'demote':
@@ -1675,7 +1675,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!m.isBotAdmin) return m.reply(mess.botAdmin)
 				if (!m.quoted) return m.reply(mess.quoted)
 				delete m.quoted.chat
-				await naze.sendMessage(m.chat, { forward: m.quoted.fakeObj(), mentions: m.metadata.participants.map(a => a.id) })
+				await Omaidi.sendMessage(m.chat, { forward: m.quoted.fakeObj(), mentions: m.metadata.participants.map(a => a.id) })
 			}
 			break
 			case 'listonline': case 'liston': {
@@ -1724,7 +1724,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 			
 			// Bot Menu
 			case 'owner': case 'listowner': {
-				await naze.sendContact(m.chat, ownerNumber, m);
+				await Omaidi.sendContact(m.chat, ownerNumber, m);
 			}
 			break
 			case 'profile': case 'cek': {
@@ -1745,11 +1745,11 @@ module.exports = naze = async (naze, m, msg, store) => {
 			case 'req': case 'request': {
 				if (!text) return m.reply('Mau Request apa ke Owner?')
 				await m.reply(`*Request Telah Terkirim Ke Owner*\n_Terima Kasih🙏_`)
-				await naze.sendFromOwner(ownerNumber, `Pesan Dari : @${m.sender.split('@')[0]}\nUntuk Owner\n\nRequest ${text}`, m, { contextInfo: { mentionedJid: [m.sender], isForwarded: true }})
+				await Omaidi.sendFromOwner(ownerNumber, `Pesan Dari : @${m.sender.split('@')[0]}\nUntuk Owner\n\nRequest ${text}`, m, { contextInfo: { mentionedJid: [m.sender], isForwarded: true }})
 			}
 			break
 			case 'totalfitur': {
-				const total = ((fs.readFileSync('./naze.js').toString()).match(/case '/g) || []).length
+				const total = ((fs.readFileSync('./Omaidi.js').toString()).match(/case '/g) || []).length
 				m.reply(`Total Fitur : ${total}`);
 			}
 			break
@@ -1766,7 +1766,7 @@ module.exports = naze = async (naze, m, msg, store) => {
 			}
 			break
 			case 'react': {
-				naze.sendMessage(m.chat, { react: { text: args[0], key: m.quoted ? m.quoted.key : m.key }})
+				Omaidi.sendMessage(m.chat, { react: { text: args[0], key: m.quoted ? m.quoted.key : m.key }})
 			}
 			break
 			case 'tagme': {
@@ -1779,15 +1779,15 @@ module.exports = naze = async (naze, m, msg, store) => {
 					case 'mode': case 'public': case 'self':
 					if (!isCreator) return m.reply(mess.owner)
 					if (args[1] == 'public' || args[1] == 'all') {
-						if (naze.public && set.grouponly && set.privateonly) return m.reply('*Sudah Aktif Sebelumnya*')
-						naze.public = set.public = true
+						if (Omaidi.public && set.grouponly && set.privateonly) return m.reply('*Sudah Aktif Sebelumnya*')
+						Omaidi.public = set.public = true
 						set.grouponly = true
 						set.privateonly = true
 						m.reply('*Sukses Change To Public Usage*')
 					} else if (args[1] == 'self') {
 						set.grouponly = false
 						set.privateonly = false
-						naze.public = set.public = false
+						Omaidi.public = set.public = false
 						m.reply('*Sukses Change To Self Usage*')
 					} else if (args[1] == 'group') {
 						set.grouponly = true
@@ -1933,7 +1933,7 @@ Select Bot Settings:
 				let _grup = /chat.whatsapp.com\/([\w\d]*)/;
 				let _saluran = /whatsapp\.com\/channel\/([\w\d]*)/;
 				if (_grup.test(text)) {
-					await naze.groupGetInviteInfo(text.match(_grup)[1]).then((_g) => {
+					await Omaidi.groupGetInviteInfo(text.match(_grup)[1]).then((_g) => {
 						let teks = `*[ INFORMATION GROUP ]*\n\nName Group: ${_g.subject}\nGroup ID: ${_g.id}\nCreate At: ${new Date(_g.creation * 1000).toLocaleString()}${_g.owner ? ('\nCreate By: ' + _g.owner) : '' }\nLinked Parent: ${_g.linkedParent}\nRestrict: ${_g.restrict}\nAnnounce: ${_g.announce}\nIs Community: ${_g.isCommunity}\nCommunity Announce:${_g.isCommunityAnnounce}\nJoin Approval: ${_g.joinApprovalMode}\nMember Add Mode: ${_g.memberAddMode}\nDescription ID: ${'`' + _g.descId + '`'}\nDescription: ${_g.desc}\nParticipants:\n`
 						_g.participants.forEach((a) => {
 							teks += a.admin ? `- Admin: @${a.id.split('@')[0]} [${a.admin}]\n` : ''
@@ -1945,7 +1945,7 @@ Select Bot Settings:
 						if (e.data == 410) return m.reply('Url Grup Telah Di Setel Ulang❗');
 					});
 				} else if (_saluran.test(text) || text.endsWith('@newsletter') || !isNaN(text)) {
-					await naze.newsletterMsg(text.match(_saluran)[1]).then((n) => {
+					await Omaidi.newsletterMsg(text.match(_saluran)[1]).then((n) => {
 						m.reply(`*[ INFORMATION CHANNEL ]*\n\nID: ${n.id}\nState: ${n.state.type}\nName: ${n.thread_metadata.name.text}\nCreate At: ${new Date(n.thread_metadata.creation_time * 1000).toLocaleString()}\nSubscriber: ${n.thread_metadata.subscribers_count}\nVerification: ${n.thread_metadata.verification}\nDescription: ${n.thread_metadata.description.text}\n`)
 					}).catch((e) => m.reply('Saluran Tidak Di Temukan❗'))
 				} else m.reply('Hanya Support Url Grup atau Saluran!')
@@ -1978,7 +1978,7 @@ Select Bot Settings:
 				if (!text) return m.reply(`Example : ${prefix + command} file name\n\nLihat list pesan dengan ${prefix}listmsg`)
 				let msgs = db.database
 				if (!(text.toLowerCase() in msgs)) return m.reply(`'${text}' tidak terdaftar di list pesan`)
-				await naze.relayMessage(m.chat, msgs[text.toLowerCase()], {})
+				await Omaidi.relayMessage(m.chat, msgs[text.toLowerCase()], {})
 			}
 			break
 			case 'listmsg': {
@@ -2016,7 +2016,7 @@ Select Bot Settings:
 			break
 			case 'listcmd': {
 				let teks = `*List Hash*\nInfo: *bold* hash is Locked\n${Object.entries(global.db.cmd).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} : ${value.text}`).join('\n')}`.trim()
-				naze.sendText(m.chat, teks, m);
+				Omaidi.sendText(m.chat, teks, m);
 			}
 			break
 			case 'lockcmd': case 'unlockcmd': {
@@ -2038,7 +2038,7 @@ Select Bot Settings:
 						const anu = await m.getQuotedObj()
 						if (!anu) return m.reply('Format Tidak Tersedia!')
 						if (!anu.quoted) return m.reply('Pesan Yang Anda Reply Tidak Mengandung Reply')
-						await naze.relayMessage(m.chat, { [anu.quoted.type]: anu.quoted.msg }, {})
+						await Omaidi.relayMessage(m.chat, { [anu.quoted.type]: anu.quoted.msg }, {})
 					} catch (e) {
 						return m.reply('Format Tidak Tersedia!')
 					}
@@ -2053,7 +2053,7 @@ Select Bot Settings:
 				let [teks1, teks2] = text.split`|`
 				if (teks1) {
 					const tujuan = teks1.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-					const onWa = await naze.onWhatsApp(tujuan)
+					const onWa = await Omaidi.onWhatsApp(tujuan)
 					if (!onWa.length > 0) return m.reply(mess.onWa)
 					menfes[m.sender] = {
 						tujuan: tujuan,
@@ -2069,7 +2069,7 @@ Select Bot Settings:
 							delete menfes[m.sender];
 						}
 						if (menfes[tujuan]) {
-							naze.sendMessage(tujuan, { text: `_Waktu ${command} habis_` });
+							Omaidi.sendMessage(tujuan, { text: `_Waktu ${command} habis_` });
 							delete menfes[tujuan];
 						}
 						menfesTimeouts.delete(m.sender);
@@ -2077,7 +2077,7 @@ Select Bot Settings:
 					}, 600000);
 					menfesTimeouts.set(m.sender, timeout);
 					menfesTimeouts.set(tujuan, timeout);
-					naze.sendMessage(tujuan, { text: `_${command} connected_\n*Note :* jika ingin mengakhiri ketik _*${prefix}del${command}*_` });
+					Omaidi.sendMessage(tujuan, { text: `_${command} connected_\n*Note :* jika ingin mengakhiri ketik _*${prefix}del${command}*_` });
 					m.reply(`_Memulai ${command}..._\n*Silahkan Mulai kirim pesan/media*\n*Durasi ${command} hanya selama 10 menit*\n*Note :* jika ingin mengakhiri ketik _*${prefix}del${command}*_`)
 					setLimit(m, db)
 				} else m.reply(`Masukkan Nomernya!\nExample : ${prefix + command} 62xxxx|Nama Samaran`)
@@ -2094,7 +2094,7 @@ Select Bot Settings:
 					clearTimeout(menfesTimeouts.get(anu.tujuan));
 					menfesTimeouts.delete(anu.tujuan);
 				}
-				naze.sendMessage(anu.tujuan, { text: `Chat Di Akhiri Oleh ${anu.nama ? anu.nama : 'Seseorang'}` })
+				Omaidi.sendMessage(anu.tujuan, { text: `Chat Di Akhiri Oleh ${anu.nama ? anu.nama : 'Seseorang'}` })
 				m.reply(`Sukses Mengakhiri Sesi ${command.split('del')[1]}!`)
 				delete menfes[anu.tujuan];
 				delete menfes[m.sender];
@@ -2125,22 +2125,22 @@ Select Bot Settings:
 				if (!isPremium) return m.reply(mess.prem)
 				if (!isLimit) return m.reply(mess.limit)
 				const nmrnya = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.sender
-				const onWa = await naze.onWhatsApp(nmrnya)
+				const onWa = await Omaidi.onWhatsApp(nmrnya)
 				if (!onWa.length > 0) return m.reply(mess.onWa)
-				await JadiBot(naze, nmrnya, m, store)
+				await JadiBot(Omaidi, nmrnya, m, store)
 				m.reply(`Gunakan ${prefix}stopjadibot\nUntuk Berhenti`)
 				setLimit(m, db)
 			}
 			break
 			case 'stopjadibot': case 'deljadibot': {
 				const nmrnya = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.sender
-				const onWa = await naze.onWhatsApp(nmrnya)
+				const onWa = await Omaidi.onWhatsApp(nmrnya)
 				if (!onWa.length > 0) return m.reply(mess.onWa)
-				await StopJadiBot(naze, nmrnya, m)
+				await StopJadiBot(Omaidi, nmrnya, m)
 			}
 			break
 			case 'listjadibot': {
-				ListJadiBot(naze, m)
+				ListJadiBot(Omaidi, m)
 			}
 			break
 			
@@ -2163,7 +2163,7 @@ Select Bot Settings:
 			case 'toaud': case 'toaudio': {
 				if (!/video|audio/.test(mime)) return m.reply(`Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`)
 				m.react('⏳')
-				let media = await naze.downloadAndSaveMediaMessage(qmsg)
+				let media = await Omaidi.downloadAndSaveMediaMessage(qmsg)
 				try {
 					let audio = await toAudio(media, 'mp4')
 					await m.reply({ audio: { url: audio }, mimetype: 'audio/mpeg'})
@@ -2176,7 +2176,7 @@ Select Bot Settings:
 			case 'tomp3': {
 				if (!/video|audio/.test(mime)) return m.reply(`Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`)
 				m.react('⏳')
-				let media = await naze.downloadAndSaveMediaMessage(qmsg)
+				let media = await Omaidi.downloadAndSaveMediaMessage(qmsg)
 				try {
 					let audio = await toAudio(media, 'mp4')
 					await m.reply({ document: { url: audio }, mimetype: 'audio/mpeg', fileName: `Convert By Naze Bot.mp3`})
@@ -2189,7 +2189,7 @@ Select Bot Settings:
 			case 'tovn': case 'toptt': case 'tovoice': {
 				if (!/video|audio/.test(mime)) return m.reply(`Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`)
 				m.react('⏳')
-				let media = await naze.downloadAndSaveMediaMessage(qmsg)
+				let media = await Omaidi.downloadAndSaveMediaMessage(qmsg)
 				try {
 					let audioBuffer = await toPTT(media, 'mp4')
 					await m.reply({ audio: audioBuffer, mimetype: 'audio/ogg; codecs=opus', ptt: true });
@@ -2201,7 +2201,7 @@ Select Bot Settings:
 			case 'togif': {
 				if (!/webp|video/.test(mime)) return m.reply(`Reply Video/Stiker dengan caption *${prefix + command}*`)
 				m.react('⏳')
-				let media = await naze.downloadAndSaveMediaMessage(qmsg)
+				let media = await Omaidi.downloadAndSaveMediaMessage(qmsg)
 				let ran = `./database/temp/${getRandom('.mp4')}`;
 				exec(`ffmpeg -y -i "${media}" -an -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -pix_fmt yuv420p -c:v libx264 -preset veryfast "${ran}"`, async (err) => {
 					try {
@@ -2217,7 +2217,7 @@ Select Bot Settings:
 			case 'toimage': case 'toimg': {
 				if (!/webp|video|image/.test(mime)) return m.reply(`Reply Video/Stiker dengan caption *${prefix + command}*`)
 				m.react('⏳')
-				let media = await naze.downloadAndSaveMediaMessage(qmsg)
+				let media = await Omaidi.downloadAndSaveMediaMessage(qmsg)
 				let ran = `./database/temp/${getRandom('.png')}`;
 				exec(`ffmpeg -y -i "${media}" -vframes 1 "${ran}"`, async (err) => {
 					try {
@@ -2234,10 +2234,10 @@ Select Bot Settings:
 				if (!/video/.test(mime)) return m.reply(`Kirim/Reply Video Yang Ingin Dijadikan PTV Message Dengan Caption ${prefix + command}`)
 				if ((m.quoted ? m.quoted.type : m.type) === 'videoMessage') {
 					m.react('⏳')
-					let media = await naze.downloadAndSaveMediaMessage(qmsg);
+					let media = await Omaidi.downloadAndSaveMediaMessage(qmsg);
 					try {
-						const message = await generateWAMessageContent({ video: { url: media } }, { upload: naze.waUploadToServer })
-						await naze.relayMessage(m.chat, { ptvMessage: message.videoMessage }, {})
+						const message = await generateWAMessageContent({ video: { url: media } }, { upload: Omaidi.waUploadToServer })
+						await Omaidi.relayMessage(m.chat, { ptvMessage: message.videoMessage }, {})
 					} finally {
 						if (fs.existsSync(media)) fs.unlinkSync(media)
 					}
@@ -2247,7 +2247,7 @@ Select Bot Settings:
 			case 'tourl': {
 				if (/webp|video|sticker|audio|jpg|jpeg|png/.test(mime)) {
 					m.react('⏳')
-					let media = await naze.downloadAndSaveMediaMessage(qmsg);
+					let media = await Omaidi.downloadAndSaveMediaMessage(qmsg);
 					try {
 						let anu = await UguuSe(media);
 						m.reply('Url : ' + anu.url)
@@ -2306,7 +2306,7 @@ Select Bot Settings:
 				if (/image/.test(mime)) {
 					m.react('⏳')
 					let hasil;
-					let media = await naze.downloadAndSaveMediaMessage(qmsg);
+					let media = await Omaidi.downloadAndSaveMediaMessage(qmsg);
 					try {
 						const form = new FormData();
 						form.append('buffer', fs.createReadStream(media), {
@@ -2325,7 +2325,7 @@ Select Bot Settings:
 						exec(`ffmpeg -i "${media}" -vf "scale=iw*${scaleFactor}:ih*${scaleFactor}:flags=lanczos" -q:v 1 "${ran}"`, async (err, stderr, stdout) => {
 							try {
 								if (err) return m.reply(mess.fail)
-								await naze.sendMessage(m.chat, { image: { url: ran }, caption: mess.done }, { quoted: m });
+								await Omaidi.sendMessage(m.chat, { image: { url: ran }, caption: mess.done }, { quoted: m });
 								setLimit(m, db)
 							} catch (e) {
 								console.log(e);
@@ -2342,7 +2342,7 @@ Select Bot Settings:
 				if (!isLimit) return m.reply(mess.limit)
 				if (/image/.test(mime)) {
 					let hasil;
-					let media = await naze.downloadAndSaveMediaMessage(qmsg);
+					let media = await Omaidi.downloadAndSaveMediaMessage(qmsg);
 					try {
 						const form = new FormData();
 						form.append('buffer', fs.createReadStream(media), {
@@ -2363,7 +2363,7 @@ Select Bot Settings:
 				if (!isLimit) return m.reply(mess.limit)
 				if (/image/.test(mime)) {
 					let hasil;
-					let media = await naze.downloadAndSaveMediaMessage(qmsg);
+					let media = await Omaidi.downloadAndSaveMediaMessage(qmsg);
 					try {
 						const form = new FormData();
 						form.append('style', 'summer');
@@ -2383,7 +2383,7 @@ Select Bot Settings:
 			break
 			case 'ssweb': {
 				if (!isPremium) return m.reply(mess.prem)
-				if (!text) return m.reply(`Example: ${prefix + command} https://github.com/Omaidi/naze-md`)
+				if (!text) return m.reply(`Example: ${prefix + command} https://github.com/Omaidi/Omaidi-md`)
 				let anu = 'https://' + text.replace(/^https?:\/\//, '')
 				let hasil;
 				try {
@@ -2427,16 +2427,16 @@ Select Bot Settings:
 			break
 			case 'sticker': case 'stiker': case 's': case 'stickergif': case 'stikergif': case 'sgif': case 'stickerwm': case 'swm': case 'curi': case 'colong': case 'take': case 'stickergifwm': case 'sgifwm': {
 				if (!/image|video|sticker/.test(quoted.type)) return m.reply(`Kirim/reply gambar/video/gif dengan caption ${prefix + command}\nDurasi Image/Video/Gif 1-9 Detik`)
-				let media = await naze.downloadAndSaveMediaMessage(qmsg);
+				let media = await Omaidi.downloadAndSaveMediaMessage(qmsg);
 				let teks1 = text.split`|`[0] ? text.split`|`[0] : packname
 				let teks2 = text.split`|`[1] ? text.split`|`[1] : author
 				if (/image|webp/.test(mime)) {
 					m.react('⏳')
-					await naze.sendAsSticker(m.chat, media, m, { packname: teks1, author: teks2 })
+					await Omaidi.sendAsSticker(m.chat, media, m, { packname: teks1, author: teks2 })
 				} else if (/video/.test(mime)) {
 					if ((qmsg).seconds > 11) return m.reply('Maksimal 10 detik!')
 					m.react('⏳')
-					await naze.sendAsSticker(m.chat, media, m, { packname: teks1, author: teks2 })
+					await Omaidi.sendAsSticker(m.chat, media, m, { packname: teks1, author: teks2 })
 				} else m.reply(`Kirim/reply gambar/video/gif dengan caption ${prefix + command}\nDurasi Video/Gif 1-9 Detik`)
 			}
 			break
@@ -2448,11 +2448,11 @@ Select Bot Settings:
 				m.react('⏳')
 				let atas = text.split`|`[0] ? text.split`|`[0] : '-'
 				let bawah = text.split`|`[1] ? text.split`|`[1] : '-'
-				let media = await naze.downloadAndSaveMediaMessage(qmsg)
+				let media = await Omaidi.downloadAndSaveMediaMessage(qmsg)
 				try {
 					let mem = await UguuSe(media);
 					let smeme = await fetchApi('/create/meme2', { url: mem.url, text: atas, text2: bawah }, { stream: true });
-					await naze.sendAsSticker(m.chat, smeme, m, { packname, author })
+					await Omaidi.sendAsSticker(m.chat, smeme, m, { packname, author })
 					setLimit(m, db)
 				} catch (e) {
 					console.log(e)
@@ -2470,7 +2470,7 @@ Select Bot Settings:
 				let { result } = await fetchApi('/tools/emojimix', { emoji1, emoji2 });
 				if (result.length < 1) return m.reply(`Mix Emoji ${text} Tidak Ditemukan!`)
 				for (let res of result) {
-					await naze.sendAsSticker(m.chat, res.url, m, { packname, author })
+					await Omaidi.sendAsSticker(m.chat, res.url, m, { packname, author })
 				}
 				setLimit(m, db)
 			}
@@ -2501,16 +2501,16 @@ Select Bot Settings:
 					let quotedMedianya;
 					let mediaPath;
 					let quotedMediaPath;
-					let ppUrl = await naze.profilePictureUrl(m.sender, 'image').catch(() => 'https://i.pinimg.com/564x/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg');
+					let ppUrl = await Omaidi.profilePictureUrl(m.sender, 'image').catch(() => 'https://i.pinimg.com/564x/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg');
 					const senderName = m.pushName || store.contacts?.[m.sender]?.name || '+' + m.sender.split('@')[0]
 					const quotedName = store.contacts?.[m.quoted?.sender]?.name || '+' + (m.quoted?.sender || '').split('@')[0]
 					try {
 						if (m.isMedia) {
-							mediaPath = await naze.downloadAndSaveMediaMessage(m);
+							mediaPath = await Omaidi.downloadAndSaveMediaMessage(m);
 							medianya = await UguuSe(mediaPath); 
 						}
 						if (m.quoted?.isMedia) {
-							quotedMediaPath = await naze.downloadAndSaveMediaMessage(m.quoted);
+							quotedMediaPath = await Omaidi.downloadAndSaveMediaMessage(m.quoted);
 							quotedMedianya = await UguuSe(quotedMediaPath);
 						}
 						const payload = {
@@ -2541,7 +2541,7 @@ Select Bot Settings:
 							}]
 						};
 						let res = await fetchApi('/create/qc', payload, { method: 'POST', buffer: true });
-						await naze.sendAsSticker(m.chat, Buffer.from(res, 'base64'), m, { packname, author });
+						await Omaidi.sendAsSticker(m.chat, Buffer.from(res, 'base64'), m, { packname, author });
 						setLimit(m, db);
 					} finally {
 						if (mediaPath && fs.existsSync(mediaPath)) fs.unlinkSync(mediaPath);
@@ -2560,12 +2560,12 @@ Select Bot Settings:
 				if (queryText.length >= 200) return m.reply('Max 200 Length!')
 				try {
 					let res = await fetchApi('/create/brat', { text: queryText }, { stream: true });
-					await naze.sendAsSticker(m.chat, res, m)
+					await Omaidi.sendAsSticker(m.chat, res, m)
 					setLimit(m, db)
 				} catch (e) {
 					try {
 						let res = await fetchApi('/create/brat3', { text: queryText }, { stream: true });
-						await naze.sendAsSticker(m.chat, res, m)
+						await Omaidi.sendAsSticker(m.chat, res, m)
 						setLimit(m, db)
 					} catch (e) {
 						console.log(e)
@@ -2605,7 +2605,7 @@ Select Bot Settings:
 					fileListContent += `duration 3\n`;
 					fs.writeFileSync(fileListPath, fileListContent);
 					execSync(`ffmpeg -y -f concat -safe 0 -i "${fileListPath}" -vf 'fps=30' -c:v libx264 -preset veryfast -pix_fmt yuv420p -t 00:00:10 "${outputVideoPath}"`);
-					await naze.sendAsSticker(m.chat, outputVideoPath, m, { packname, author });
+					await Omaidi.sendAsSticker(m.chat, outputVideoPath, m, { packname, author });
 					setLimit(m, db)
 				} catch (e) {
 					console.log(e)
@@ -2624,7 +2624,7 @@ Select Bot Settings:
 				if (/jpg|jpeg|png/.test(mime)) {
 					m.react('⏳')
 					let hasil;
-					let media = await naze.downloadAndSaveMediaMessage(qmsg);
+					let media = await Omaidi.downloadAndSaveMediaMessage(qmsg);
 					try {
 						const form = new FormData();
 					    form.append('buffer', fs.createReadStream(media), {
@@ -2632,7 +2632,7 @@ Select Bot Settings:
 							contentType: 'image/jpeg'
 						});
 						hasil = await fetchApi('/create/wasted', form, { stream: true });
-						await naze.sendMedia(m.chat, hasil, '', 'Nih Bro', m);
+						await Omaidi.sendMedia(m.chat, hasil, '', 'Nih Bro', m);
 						setLimit(m, db)
 					} finally {
 						if (fs.existsSync(hasil)) fs.unlinkSync(hasil);
@@ -2646,7 +2646,7 @@ Select Bot Settings:
 				if (/jpg|jpeg|png/.test(mime)) {
 					m.react('⏳')
 					let hasil;
-					let media = await naze.downloadAndSaveMediaMessage(qmsg);
+					let media = await Omaidi.downloadAndSaveMediaMessage(qmsg);
 					try {
 						const form = new FormData();
 					    form.append('buffer', fs.createReadStream(media), {
@@ -2654,7 +2654,7 @@ Select Bot Settings:
 							contentType: 'image/jpeg'
 						});
 						hasil = await fetchApi('/create/triggered', form, { stream: true });
-						await naze.sendMedia(m.chat, hasil, '', mess.done, m);
+						await Omaidi.sendMedia(m.chat, hasil, '', mess.done, m);
 						setLimit(m, db)
 					} finally {
 						if (fs.existsSync(hasil)) fs.unlinkSync(hasil);
@@ -2700,7 +2700,7 @@ Select Bot Settings:
 					if (/tupai/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
 					if (/audio/.test(mime)) {
 						m.react('⏳')
-						let media = await naze.downloadAndSaveMediaMessage(qmsg)
+						let media = await Omaidi.downloadAndSaveMediaMessage(qmsg)
 						let ran = `./database/temp/${getRandom('.mp3')}`;
 						exec(`ffmpeg -i "${media}" ${set} "${ran}"`, async (err, stderr, stdout) => {
 			                try {
@@ -2958,16 +2958,16 @@ Select Bot Settings:
 					let num = m.quoted?.sender || m.mentionedJid?.[0] || text
 					if (!num) return m.reply(`Example : ${prefix + command} @tag / 628xxx`)
 					num = num.replace(/\D/g, '') + '@s.whatsapp.net'
-					if (!(await naze.onWhatsApp(num))[0]?.exists) return m.reply('Nomer tidak terdaftar di WhatsApp!')
-					let img = await naze.profilePictureUrl(num, 'image').catch(_ => 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60')
-					let bio = await naze.fetchStatus(num).catch(_ => { })
-					let name = await naze.getName(num)
-					let business = await naze.getBusinessProfile(num)
+					if (!(await Omaidi.onWhatsApp(num))[0]?.exists) return m.reply('Nomer tidak terdaftar di WhatsApp!')
+					let img = await Omaidi.profilePictureUrl(num, 'image').catch(_ => 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60')
+					let bio = await Omaidi.fetchStatus(num).catch(_ => { })
+					let name = await Omaidi.getName(num)
+					let business = await Omaidi.getBusinessProfile(num)
 					let format = PhoneNum(`+${num.split('@')[0]}`)
 					let regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
 					let country = regionNames.of(format.getRegionCode('international'));
 					let wea = `WhatsApp Stalk\n\n*° Country :* ${country.toUpperCase()}\n*° Name :* ${name ? name : '-'}\n*° Format Number :* ${format.getNumber('international')}\n*° Url Api :* wa.me/${num.split('@')[0]}\n*° Mentions :* @${num.split('@')[0]}\n*° Status :* ${bio?.status || '-'}\n*° Date Status :* ${bio?.setAt ? moment(bio.setAt.toDateString()).locale(locale).format('LL') : '-'}\n\n${business ? `*WhatsApp Business Stalk*\n\n*° BusinessId :* ${business.wid}\n*° Website :* ${business.website ? business.website : '-'}\n*° Email :* ${business.email ? business.email : '-'}\n*° Category :* ${business.category}\n*° Address :* ${business.address ? business.address : '-'}\n*° Timeone :* ${business.business_hours.timezone ? business.business_hours.timezone : '-'}\n*° Description* : ${business.description ? business.description : '-'}` : '*Standard WhatsApp Account*'}`
-					img ? await naze.sendMessage(m.chat, { image: { url: img }, caption: wea, mentions: [num] }, { quoted: m }) : m.reply(wea)
+					img ? await Omaidi.sendMessage(m.chat, { image: { url: img }, caption: wea, mentions: [num] }, { quoted: m }) : m.reply(wea)
 				} catch (e) {
 					m.reply('Nomer Tidak ditemukan!')
 				}
@@ -3072,7 +3072,7 @@ Select Bot Settings:
 				try {
 					let hasil = await fetchApi('/download/instagram2', { url: text })
 					if(hasil.result?.urls?.length > 1) {
-						await naze.sendAlbumMessage(m.chat, {
+						await Omaidi.sendAlbumMessage(m.chat, {
 							album: hasil.result.urls.map(a => (a.is_video ? { video: { url: a.url }} : { image: { url: a.url }})),
 							caption: hasil.result.caption
 						}, { quoted: m });
@@ -3096,7 +3096,7 @@ Select Bot Settings:
 					if (hasil.result.download.type == "video") {
 						await m.reply({ video: { url: hasil.result.download?.video?.nowm_hd || hasil.result.download?.video?.nowm }, caption: `*📍Title:* ${hasil.result.desc || '-'}\n*🕓Create At:* ${hasil.result.create_time}\n*🎃Author:* ${hasil.result.author.nickname} (@${hasil.result.author.unique_id})` });
 					} else if (hasil.result.download.type == "images") {
-						await naze.sendAlbumMessage(m.chat, {
+						await Omaidi.sendAlbumMessage(m.chat, {
 							album: hasil.result.download.images.map(a => ({ image: { url: a.url }})),
 							caption: `*📍Title:* ${hasil.result.desc || '-'}\n*🕓Create At:* ${hasil.result.create_time}\n*🎃Author:* ${hasil.result.author.nickname} (@${hasil.result.author.unique_id})`
 						}, { quoted: m });
@@ -3148,7 +3148,7 @@ Select Bot Settings:
 						m.reply('Video Tidak ditemukan!')
 					} else {
 						m.react('⏳')
-						await naze.sendFileUrl(m.chat, hasil.result.hd || hasil.result.sd, `*🎐Title:* ${hasil.result.title}`, m);
+						await Omaidi.sendFileUrl(m.chat, hasil.result.hd || hasil.result.sd, `*🎐Title:* ${hasil.result.title}`, m);
 					}
 					setLimit(m, db)
 				} catch (e) {
@@ -3162,7 +3162,7 @@ Select Bot Settings:
 				if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) return m.reply('Url Invalid!')
 				try {
 					let { result: res } = await fetchApi('/download/mediafire', { url: text })
-					await naze.sendMedia(m.chat, res.link, res.filename, `*MEDIAFIRE DOWNLOADER*\n\n*${setv} Name* : ${res.filename}\n*${setv} Size* : ${res.size}`, m)
+					await Omaidi.sendMedia(m.chat, res.link, res.filename, `*MEDIAFIRE DOWNLOADER*\n\n*${setv} Name* : ${res.filename}\n*${setv} Size* : ${res.size}`, m)
 					setLimit(m, db)
 				} catch (e) {
 					m.reply(mess.fail)
@@ -3255,11 +3255,11 @@ Select Bot Settings:
 			// Random Menu
 			case 'coffe': case 'kopi': {
 				try {
-					await naze.sendFileUrl(m.chat, 'https://coffee.alexflipnote.dev/random', '☕ Random Coffe', m)
+					await Omaidi.sendFileUrl(m.chat, 'https://coffee.alexflipnote.dev/random', '☕ Random Coffe', m)
 				} catch (e) {
 					try {
 						const anu = await fetchJson('https://api.sampleapis.com/coffee/hot')
-						await naze.sendFileUrl(m.chat, pickRandom(anu).image, '☕ Random Coffe', m)
+						await Omaidi.sendFileUrl(m.chat, pickRandom(anu).image, '☕ Random Coffe', m)
 					} catch (e) {
 						m.reply('Server Sedang Offline!')
 					}
@@ -3272,7 +3272,7 @@ Select Bot Settings:
 				try {
 					if (!isNsfw && text === 'nsfw') return m.reply('Filter Nsfw Sedang Aktif!')
 					const res = await fetchJson('https://api.waifu.pics/' + (text === 'nsfw' ? 'nsfw' : 'sfw') + '/' + command)
-					await naze.sendFileUrl(m.chat, res.url, 'Random Waifu', m)
+					await Omaidi.sendFileUrl(m.chat, res.url, 'Random Waifu', m)
 					setLimit(m, db)
 				} catch (e) {
 					m.reply('Server sedang offline!')
@@ -3285,11 +3285,11 @@ Select Bot Settings:
 				let ddsa = [{ url: 'https://telegra.ph/file/9f60e4cdbeb79fc6aff7a.png', no: 1 },{ url: 'https://telegra.ph/file/797f86e444755282374ef.png', no: 2 },{ url: 'https://telegra.ph/file/970d2a7656ada7c579b69.png', no: 3 },{ url: 'https://telegra.ph/file/0470d295e00ebe789fb4d.png', no: 4 },{ url: 'https://telegra.ph/file/a9d7332e7ba1d1d26a2be.png', no: 5 },{ url: 'https://telegra.ph/file/99dcd999991a79f9ba0c0.png', no: 6 }]
 				let media = pickRandom(ddsa)
 				try {
-					await naze.sendAsSticker(m.chat, media.url, m, { packname, author, isAvatar: 1 })
+					await Omaidi.sendAsSticker(m.chat, media.url, m, { packname, author, isAvatar: 1 })
 				} catch (e) {
 					let anu = await fetch(media.url)
 					let una = await anu.buffer()
-					await naze.sendAsSticker(m.chat, una, m, { packname, author, isAvatar: 1 })
+					await Omaidi.sendAsSticker(m.chat, una, m, { packname, author, isAvatar: 1 })
 				}
 			}
 			break
@@ -3387,12 +3387,12 @@ Select Bot Settings:
 				let [teks1, teks2, teks3] = text.split`|`
 				if (!teks1 || !teks2 || !teks3) return m.reply(`Example : ${prefix + command} pesan target|pesan mu|nomer/tag target`)
 				let ftelo = { key: { fromMe: false, participant: teks3.replace(/[^0-9]/g, '') + '@s.whatsapp.net', ...(m.isGroup ? { remoteJid: m.chat } : { remoteJid: teks3.replace(/[^0-9]/g, '') + '@s.whatsapp.net'})}, message: { conversation: teks1 }}
-				naze.sendMessage(m.chat, { text: teks2 }, { quoted: ftelo });
+				Omaidi.sendMessage(m.chat, { text: teks2 }, { quoted: ftelo });
 			}
 			break
 			case 'coba': {
 				let anu = ['Aku Monyet','Aku Kera','Aku Tolol','Aku Kaya','Aku Dewa','Aku Anjing','Aku Dongo','Aku Raja','Aku Sultan','Aku Baik','Aku Hitam','Aku Suki']
-				await naze.sendButtonMsg(m.chat, {
+				await Omaidi.sendButtonMsg(m.chat, {
 					text: 'Semoga Hoki😹',
 					buttons: [{
 						buttonId: 'teshoki',
@@ -3409,15 +3409,15 @@ Select Bot Settings:
 			
 			// Game Menu
 			case 'slot': {
-				await gameSlot(naze, m, db)
+				await gameSlot(Omaidi, m, db)
 			}
 			break
 			case 'casino': {
-				await gameCasinoSolo(naze, m, prefix, db)
+				await gameCasinoSolo(Omaidi, m, prefix, db)
 			}
 			break
 			case 'samgong': case 'kartu': {
-				await gameSamgongSolo(naze, m, db)
+				await gameSamgongSolo(Omaidi, m, db)
 			}
 			break
 			case 'rampok': case 'merampok': {
@@ -3425,7 +3425,7 @@ Select Bot Settings:
 			}
 			break
 			case 'begal': {
-				await gameBegal(naze, m, db)
+				await gameBegal(Omaidi, m, db)
 			}
 			break
 			case 'suitpvp': case 'suit': {
@@ -3475,8 +3475,8 @@ Select Bot Settings:
 						return {X: '❌',O: '⭕',1: '1️⃣',2: '2️⃣',3: '3️⃣',4: '4️⃣',5: '5️⃣',6: '6️⃣',7: '7️⃣',8: '8️⃣',9: '9️⃣'}[v]
 					})
 					let str = `Room ID: ${room.id}\n\n${arr.slice(0, 3).join('')}\n${arr.slice(3, 6).join('')}\n${arr.slice(6).join('')}\n\nMenunggu @${room.game.currentTurn.split('@')[0]}\n\nKetik *nyerah* untuk menyerah dan mengakui kekalahan`
-					if (room.x !== room.o) await naze.sendMessage(room.x, { text: str, mentions: parseMention(str) }, { quoted: m })
-					await naze.sendMessage(room.o, { text: str, mentions: parseMention(str) }, { quoted: m })
+					if (room.x !== room.o) await Omaidi.sendMessage(room.x, { text: str, mentions: parseMention(str) }, { quoted: m })
+					await Omaidi.sendMessage(room.o, { text: str, mentions: parseMention(str) }, { quoted: m })
 				} else {
 					room = {
 						id: 'tictactoe-' + (+new Date),
@@ -3486,7 +3486,7 @@ Select Bot Settings:
 						state: 'WAITING',
 					}
 					if (text) room.name = text
-					naze.sendMessage(m.chat, { text: 'Menunggu partner' + (text ? ` mengetik command dibawah ini ${prefix}${command} ${text}` : ''), mentions: m.mentionedJid }, { quoted: m })
+					Omaidi.sendMessage(m.chat, { text: 'Menunggu partner' + (text ? ` mengetik command dibawah ini ${prefix}${command} ${text}` : ''), mentions: m.mentionedJid }, { quoted: m })
 					tictactoe[room.id] = room
 					await sleep(300000)
 					if (tictactoe[room.id]) {
@@ -3647,7 +3647,7 @@ Select Bot Settings:
 			case 'tebakgambar': {
 				if (iGame(tebakgambar, m.chat)) return m.reply('Masih Ada Sesi Yang Belum Diselesaikan!')
 				const { result: hasil } = await fetchApi('/games/tebakgambar');
-				let { key } = await naze.sendFileUrl(m.chat, hasil.img, `🎮 Tebak Gambar Berikut :\n\n${hasil.deskripsi}\n\nWaktu : 60s\nHadiah *+3499*`, m)
+				let { key } = await Omaidi.sendFileUrl(m.chat, hasil.img, `🎮 Tebak Gambar Berikut :\n\n${hasil.deskripsi}\n\nWaktu : 60s\nHadiah *+3499*`, m)
 				tebakgambar[m.chat + key.id] = {
 					jawaban: hasil.jawaban.toLowerCase(),
 					id: key.id
@@ -3915,7 +3915,7 @@ Select Bot Settings:
 						const startCard = blackjack[m.chat].startCard;
 						let buttons = p.cards.map(a => ({ name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: `${a.rank}${a.suit}`, id: `.${command} play ${a.rank}${a.suit}` })}));
 						if (!blackjack[m.chat].hasMatching(p.id)) buttons.push({ name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: 'Minum', id: `.${command} minum` }) });
-						await naze.sendListMsg(p.id, { text: `Start Card: ${startCard.rank + startCard.suit}`, footer: `${p.cards.map(c => c.rank + c.suit).join(', ')}`, buttons }, { quoted: m });
+						await Omaidi.sendListMsg(p.id, { text: `Start Card: ${startCard.rank + startCard.suit}`, footer: `${p.cards.map(c => c.rank + c.suit).join(', ')}`, buttons }, { quoted: m });
 					}
 					break
 					case 'hit': case 'minum': {
@@ -3936,25 +3936,25 @@ Select Bot Settings:
 								await sleep(1000);
 								let buttons = player.cards.map(a => ({ name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: `${a.rank}${a.suit}`, id: `.${command} play ${a.rank}${a.suit}` })}));
 								if (!session.hasMatching(player.id)) buttons.push({ name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: 'Minum', id: `.${command} minum` }) });
-								await naze.sendListMsg(player.id, { text: `Start Card: ${session.startCard.rank + session.startCard.suit}`, footer: `${player.cards.map(c => c.rank + c.suit).join(', ')}`, buttons }, { quoted: m });
+								await Omaidi.sendListMsg(player.id, { text: `Start Card: ${session.startCard.rank + session.startCard.suit}`, footer: `${player.cards.map(c => c.rank + c.suit).join(', ')}`, buttons }, { quoted: m });
 							} else {
 								let reuse = session.reuseSubmitCardsForDrinking()
 								await m.reply(reuse.msg)
 								if (!session.skip.find(a => a.id === player.id)) session.skip.push({ id: player.id });
 								await m.reply('Deck sudah habis, kamu tidak bisa mengambil kartu. Dilewati.');
-								await naze.sendText(session.id, `@${m.sender.split('@')[0]} dilewati karena deck habis.`, m);
+								await Omaidi.sendText(session.id, `@${m.sender.split('@')[0]} dilewati karena deck habis.`, m);
 								if ((session.submitCard.length + session.skip.length) === session.players.length) {
 									const result = session.resolveRound();
 									if (result) {
-										await naze.sendText(session.id, result, m);
+										await Omaidi.sendText(session.id, result, m);
 										if (session.players.length === 1) {
-											await naze.sendText(session.id, `Pemain Tersisa 1 (@${session.players[0].id.split('@')[0]}), sesi Blackjack selesai.`, m);
+											await Omaidi.sendText(session.id, `Pemain Tersisa 1 (@${session.players[0].id.split('@')[0]}), sesi Blackjack selesai.`, m);
 											delete blackjack[session.id];
 											return;
 										}
 										const leaderCards = session.players.find(a => a.id === session.leader);
 										let buttons = leaderCards.cards.map(c => ({ name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: `${c.rank}${c.suit}`, id: `.${command} play ${c.rank}${c.suit}` })}));
-										await naze.sendListMsg(session.leader, { text: 'Pilih kartu untuk memulai ronde baru', footer: leaderCards.cards.map(c => c.rank + c.suit).join(', '), buttons }, { quoted: m });
+										await Omaidi.sendListMsg(session.leader, { text: 'Pilih kartu untuk memulai ronde baru', footer: leaderCards.cards.map(c => c.rank + c.suit).join(', '), buttons }, { quoted: m });
 									}
 								}
 							}
@@ -3962,15 +3962,15 @@ Select Bot Settings:
 						if ((session.submitCard.length + session.skip.length) === session.players.length) {
 							const result = session.resolveRound();
 							if (result) {
-								await naze.sendText(session.id, result, m);
+								await Omaidi.sendText(session.id, result, m);
 								if (session.players.length === 1) {
-									await naze.sendText(session.id, `Pemain Tersisa 1 (@${session.players[0].id.split('@')[0]}), sesi Blackjack selesai.`, m);
+									await Omaidi.sendText(session.id, `Pemain Tersisa 1 (@${session.players[0].id.split('@')[0]}), sesi Blackjack selesai.`, m);
 									delete blackjack[session.id];
 									return;
 								}
 								const leaderCards = session.players.find(a => a.id === session.leader);
 								let buttons = leaderCards.cards.map(c => ({ name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: `${c.rank}${c.suit}`, id: `.${command} play ${c.rank}${c.suit}` })}));
-								await naze.sendListMsg(session.leader, { text: 'Pilih kartu untuk memulai ronde baru', footer: leaderCards.cards.map(c => c.rank + c.suit).join(', '), buttons }, { quoted: m });
+								await Omaidi.sendListMsg(session.leader, { text: 'Pilih kartu untuk memulai ronde baru', footer: leaderCards.cards.map(c => c.rank + c.suit).join(', '), buttons }, { quoted: m });
 							}
 						}
 					}
@@ -3998,41 +3998,41 @@ Select Bot Settings:
 							session.leader = '';
 							session.submitCard = [];
 							session.players = session.players.filter(p => p.id !== player.id);
-							await naze.sendText(session.id, `@${m.sender.split('@')[0]} memenangkan permainan!\nSisa Kartu: 0`, m);
+							await Omaidi.sendText(session.id, `@${m.sender.split('@')[0]} memenangkan permainan!\nSisa Kartu: 0`, m);
 							if (session.players.length === 1) {
-								await naze.sendText(session.id, `Pemain Tersisa 1 (@${session.players[0].id.split('@')[0]}), sesi Blackjack selesai.`, m);
+								await Omaidi.sendText(session.id, `Pemain Tersisa 1 (@${session.players[0].id.split('@')[0]}), sesi Blackjack selesai.`, m);
 								delete blackjack[session.id];
 								return;
 							}
 						}
 						if (Object.keys(session.startCard).length === 0) {
 							session.startCard = card;
-							await naze.sendText(session.id, `@${m.sender.split('@')[0]} memulai putaran dengan ${card.rank}${card.suit}`, m);
+							await Omaidi.sendText(session.id, `@${m.sender.split('@')[0]} memulai putaran dengan ${card.rank}${card.suit}`, m);
 							for (let s of session.players) {
 								if (s.id === session.leader) continue;
 								const startCard = session.startCard;
 								let buttons = s.cards.map(a => ({ name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: `${a.rank}${a.suit}`, id: `.${command} play ${a.rank}${a.suit}` })}));
 								if (!session.hasMatching(s.id)) buttons.push({ name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: 'Minum', id: `.${command} minum` }) });
-								await naze.sendListMsg(s.id, { text: `Start Card: ${startCard.rank + startCard.suit}`, footer: `${s.cards.map(c => c.rank + c.suit).join(', ')}`, buttons }, { quoted: m });
+								await Omaidi.sendListMsg(s.id, { text: `Start Card: ${startCard.rank + startCard.suit}`, footer: `${s.cards.map(c => c.rank + c.suit).join(', ')}`, buttons }, { quoted: m });
 							}
 							return;
 						}
 						if ((session.submitCard.length + session.skip.length) === session.players.length) {
 							const result = session.resolveRound();
 							if (result) {
-								await naze.sendText(session.id, result, m);
+								await Omaidi.sendText(session.id, result, m);
 								if (session.players.length === 1) {
-									await naze.sendText(session.id, `Pemain Tersisa 1 (@${session.players[0].id.split('@')[0]}), sesi Blackjack selesai.`, m);
+									await Omaidi.sendText(session.id, `Pemain Tersisa 1 (@${session.players[0].id.split('@')[0]}), sesi Blackjack selesai.`, m);
 									delete blackjack[session.id];
 									return;
 								}
 								const leaderCards = session.players.find(a => a.id === session.leader);
 								let buttons = leaderCards.cards.map(c => ({ name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: `${c.rank}${c.suit}`, id: `.${command} play ${c.rank}${c.suit}` })}));
-								await naze.sendListMsg(session.leader, { text: 'Pilih kartu untuk memulai ronde baru', footer: leaderCards.cards.map(c => c.rank + c.suit).join(', '), buttons }, { quoted: m });
+								await Omaidi.sendListMsg(session.leader, { text: 'Pilih kartu untuk memulai ronde baru', footer: leaderCards.cards.map(c => c.rank + c.suit).join(', '), buttons }, { quoted: m });
 							}
 						}
 						await m.reply(`Kamu memainkan ${card.rank}${card.suit}`);
-						await naze.sendText(session.id, `@${m.sender.split('@')[0]} memainkan ${card.rank}${card.suit}`, m);
+						await Omaidi.sendText(session.id, `@${m.sender.split('@')[0]} memainkan ${card.rank}${card.suit}`, m);
 					}
 					break
 					case 'info':
@@ -4068,13 +4068,13 @@ Select Bot Settings:
 						set.template = parseInt(Number(args[1]))
 						m.reply('Sukses Mengubah Template Menu')
 					} else m.reply(`Template Menu:\n- 1 (Button Menu)\n- 2 (List Menu)\n- 3 (Document Menu)\n\nExample: ${prefix + command} set 1`)
-				} else await templateMenu(naze, set.template, m, prefix, setv, db, { locale_day, date, date_time, botNumber, author, packname, isVip, isPremium, ucapanWaktu })
+				} else await templateMenu(Omaidi, set.template, m, prefix, setv, db, { locale_day, date, date_time, botNumber, author, packname, isVip, isPremium, ucapanWaktu })
 			}
 			break
 			case 'allmenu': {
 				let profile
 				try {
-					profile = await naze.profilePictureUrl(m.sender, 'image');
+					profile = await Omaidi.profilePictureUrl(m.sender, 'image');
 				} catch (e) {
 					profile = fake.anonim
 				}
@@ -4090,7 +4090,7 @@ Select Bot Settings:
 ├ *Nama Bot* : ${set?.botname || 'Naze Bot'}
 ├ *Powered* : @${'0@s.whatsapp.net'.split('@')[0]}
 ├ *Owner* : @${ownerNumber[0].split('@')[0]}
-├ *Mode* : ${naze.public ? 'Public' : 'Self'}
+├ *Mode* : ${Omaidi.public ? 'Public' : 'Self'}
 ├ *Prefix* :${set.multiprefix ? '「 MULTI-PREFIX 」' : ' *'+prefix+'*' }
 ├ *Premium Feature* : 🔸️
 ╰─┬────❍
@@ -4717,7 +4717,7 @@ Select Bot Settings:
 			if ((!isCmd || isCreator) && budy.toLowerCase() != undefined) {
 				if (m.chat.endsWith('broadcast')) return
 				if (!(budy.toLowerCase() in db.database)) return
-				await naze.relayMessage(m.chat, db.database[budy.toLowerCase()], {})
+				await Omaidi.relayMessage(m.chat, db.database[budy.toLowerCase()], {})
 			}
 		}
 	} catch (e) {
@@ -4734,7 +4734,7 @@ Select Bot Settings:
 		if (isBaileysBoomError && !isAxiosError) {
 			console.log(chalk.yellowBright('[SYSTEM] Error Baileys (Grup Forbidden) terdeteksi. Memperbarui store groupMetadata...'));
 			try {
-				store.groupMetadata = await naze.groupFetchAllParticipating();
+				store.groupMetadata = await Omaidi.groupFetchAllParticipating();
 			} catch (updateErr) {
 				console.log(chalk.yellowBright('[SYSTEM] Gagal memperbarui store:', updateErr?.message));
 			}
@@ -4747,23 +4747,23 @@ Select Bot Settings:
 		} else*/ if (statusCode === 500) {
 			m.reply('Server API Error: Terjadi gangguan pada server tujuan.');
 		} else if (statusCode === 429) {
-			if (errorUrl.includes('api.naze.biz.id')) {
+			if (errorUrl.includes('api.Omaidi.biz.id')) {
 				return m.reply('Limit Reached: ' + mess.key);
 			} else m.reply('Limit Reached (Sistem/WA): Terlalu banyak permintaan.\nLog Error Telah dikirim ke Owner');
 		} else if (statusCode === 403) {
 			if (isAxiosError) {
-				if (errorUrl.includes('api.naze.biz.id')) {
+				if (errorUrl.includes('api.Omaidi.biz.id')) {
 					return m.reply('Akses Khusus Premium!');
 				} else m.reply('API Error: Akses ke server API ditolak (403 Forbidden).');
 			} else console.log(chalk.yellowBright('[SYSTEM] Akses grup ditolak (Baileys 403 / Forbidden).'));
 		} else if (statusCode === 401) {
 			if (isAxiosError) {
-				if (errorUrl.includes('api.naze.biz.id')) {
+				if (errorUrl.includes('api.Omaidi.biz.id')) {
 					return m.reply('Invalid Apikey!');
 				} else m.reply('API Error: Akses ke server API ditolak (401 Unauthorized).');
 			} else console.log(chalk.yellowBright('[SYSTEM] Akses ditolak (401 Unauthorized).'));
 		} else m.reply('Error: ' + (e?.name || e?.code || e?.message || 'Terjadi kesalahan tidak diketahui') + '\nLog Error Telah dikirim ke Owner\n\n');
-		return naze.sendFromOwner(ownerNumber, `Halo sayang, sepertinya ada yang error nih, jangan lupa diperbaiki ya\n\nVersion : *${require('./package.json').version}*\nType : *${m.type || errorKey}*\n\n*Log error:*\n\n` + util.format(e), m, { contextInfo: { isForwarded: true }})
+		return Omaidi.sendFromOwner(ownerNumber, `Halo sayang, sepertinya ada yang error nih, jangan lupa diperbaiki ya\n\nVersion : *${require('./package.json').version}*\nType : *${m.type || errorKey}*\n\n*Log error:*\n\n` + util.format(e), m, { contextInfo: { isForwarded: true }})
 	}
 }
 

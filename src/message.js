@@ -20,7 +20,7 @@ const { jidNormalizedUser, proto, getBinaryNodeChildren, getBinaryNodeChildStrin
 	* Whatsapp : https://wa.me/6283853027516
 */
 
-async function GroupUpdate(naze, m, store) {
+async function GroupUpdate(Omaidi, m, store) {
 	function clearParse(parse) {
 		try {
 			return JSON.parse(parse);
@@ -49,13 +49,13 @@ async function GroupUpdate(naze, m, store) {
 			132: 'mereset link grup!',
 			172: `@${normalizedTarget?.pn?.split('@')?.[0]} meminta bergabung`,
 		}
-		if (naze.public && global.db?.groups?.[m.chat]?.setinfo && messages[type]) {
-			await naze.sendMessage(m.chat, { text: `${admin} ${messages[type]}`, mentions: [m.sender, ...((normalizedTarget?.id || normalizedTarget)?.includes('@') ? [`${normalizedTarget.id || normalizedTarget}`] : [])].filter(Boolean)}, { ephemeralExpiration: m.expiration || m?.metadata?.ephemeralDuration || store?.messages[m.chat]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 })
+		if (Omaidi.public && global.db?.groups?.[m.chat]?.setinfo && messages[type]) {
+			await Omaidi.sendMessage(m.chat, { text: `${admin} ${messages[type]}`, mentions: [m.sender, ...((normalizedTarget?.id || normalizedTarget)?.includes('@') ? [`${normalizedTarget.id || normalizedTarget}`] : [])].filter(Boolean)}, { ephemeralExpiration: m.expiration || m?.metadata?.ephemeralDuration || store?.messages[m.chat]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 })
 		}
 		if (type === 20) {
 			clearTimeout(groupMetadataTimers[m.chat])
 			groupMetadataTimers[m.chat] = setTimeout(async () => {
-				store.groupMetadata[m.chat] = await naze.groupMetadata(m.chat).catch(e => ({ ...store.groupMetadata[m.chat] }));
+				store.groupMetadata[m.chat] = await Omaidi.groupMetadata(m.chat).catch(e => ({ ...store.groupMetadata[m.chat] }));
 			}, 5000);
 		} else if (type === 29 || type === 30) {
 			const target = jidNormalizedUser(normalizedTarget.id || normalizedTarget)
@@ -73,11 +73,11 @@ async function GroupUpdate(naze, m, store) {
 			if (!metadata.participants.some(a => (a.id === (normalizedTarget.id || normalizedTarget) || a.phoneNumber === (normalizedTarget.id || normalizedTarget)))) {
 				clearTimeout(groupMetadataTimers[m.chat])
 				groupMetadataTimers[m.chat] = setTimeout(async () => {
-					store.groupMetadata[m.chat] = await naze.groupMetadata(m.chat).catch(e => ({ ...store.groupMetadata[m.chat] }));
+					store.groupMetadata[m.chat] = await Omaidi.groupMetadata(m.chat).catch(e => ({ ...store.groupMetadata[m.chat] }));
 				}, 5000);
 			}
 		} else if (type === 28 || type === 32) {
-			if (m.fromMe && ((jidNormalizedUser(naze.user.id) == (normalizedTarget.id || normalizedTarget)) || (jidNormalizedUser(naze.user.lid) == (normalizedTarget.id || normalizedTarget)))) {
+			if (m.fromMe && ((jidNormalizedUser(Omaidi.user.id) == (normalizedTarget.id || normalizedTarget)) || (jidNormalizedUser(Omaidi.user.lid) == (normalizedTarget.id || normalizedTarget)))) {
 				delete store.messages[m.chat];
 				delete store.presences[m.chat];
 				delete store.groupMetadata[m.chat];
@@ -95,7 +95,7 @@ async function GroupUpdate(naze, m, store) {
 	}
 }
 
-async function GroupParticipantsUpdate(naze, update, store) {
+async function GroupParticipantsUpdate(Omaidi, update, store) {
 	try {
 		const { id, participants, author, action } = update;
 		function updateAdminStatus(participants, metadataParticipants, status) {
@@ -112,7 +112,7 @@ async function GroupParticipantsUpdate(naze, update, store) {
 				const participant = metadata.participants.find(a => a.id == jidNormalizedUser(jid))
 				let profile;
 				try {
-					profile = await naze.profilePictureUrl(jid, 'image');
+					profile = await Omaidi.profilePictureUrl(jid, 'image');
 				} catch {
 					profile = 'https://telegra.ph/file/95670d63378f7f4210f03.png';
 				}
@@ -122,12 +122,12 @@ async function GroupParticipantsUpdate(naze, update, store) {
 					if (!participant) {
 						clearTimeout(groupMetadataTimers[id])
 						groupMetadataTimers[id] = setTimeout(async () => {
-							store.groupMetadata[id] = await naze.groupMetadata(id).catch(e => ({ ...store.groupMetadata[id] }));
+							store.groupMetadata[id] = await Omaidi.groupMetadata(id).catch(e => ({ ...store.groupMetadata[id] }));
 						}, 5000);
 					}
 				} else if (action === 'remove') {
 					if (db.groups[id].leave) messageText = db.groups[id]?.text?.setleave || `@\nLeaving From ${metadata.subject}`;
-					if ((jidNormalizedUser(naze.user.lid) == jidNormalizedUser(jid)) || (jidNormalizedUser(naze.user.id) == jidNormalizedUser(jid))) {
+					if ((jidNormalizedUser(Omaidi.user.lid) == jidNormalizedUser(jid)) || (jidNormalizedUser(Omaidi.user.id) == jidNormalizedUser(jid))) {
 						delete store.messages[id];
 						delete store.presences[id];
 						delete store.groupMetadata[id];
@@ -140,8 +140,8 @@ async function GroupParticipantsUpdate(naze, update, store) {
 					if (db.groups[id].demote) messageText = db.groups[id]?.text?.setdemote || `@\nDemote From ${metadata.subject}\nBy @admin`;
 					updateAdminStatus(participants, metadata.participants, null);
 				}
-				if (messageText && naze.public) {
-					await naze.sendMessage(id, {
+				if (messageText && Omaidi.public) {
+					await Omaidi.sendMessage(id, {
 						text: messageText.replace('@subject', metadata.subject).replace('@admin', author ? `@${author.split('@')[0]}` : '@admin').replace(/(?<=\s|^)@(?!\w)/g, `@${jid.split('@')[0]}`),
 						contextInfo: {
 							mentionedJid: [jid, author].filter(Boolean),
@@ -163,9 +163,9 @@ async function GroupParticipantsUpdate(naze, update, store) {
 	}
 }
 
-async function LoadDataBase(naze, m) {
+async function LoadDataBase(Omaidi, m) {
 	try {
-		const botNumber = await naze.decodeJid(naze.user.id);
+		const botNumber = await Omaidi.decodeJid(Omaidi.user.id);
 		let game = global.db.game || {};
 		let premium = global.db.premium || [];
 		let user = global.db.users[m.sender] || {};
@@ -286,9 +286,9 @@ async function LoadDataBase(naze, m) {
 	}
 }
 
-async function MessagesUpsert(naze, message, store) {
+async function MessagesUpsert(Omaidi, message, store) {
 	try {
-		let botNumber = await naze.decodeJid(naze.user.id);
+		let botNumber = await Omaidi.decodeJid(Omaidi.user.id);
 		const msg = message.messages[0];
 		const remoteJid = msg.key.remoteJid;
 		(store.messages ??= {})[remoteJid] ??= {};
@@ -304,16 +304,16 @@ async function MessagesUpsert(naze, message, store) {
 			const removed = store.messages[remoteJid].array.shift();
 			store.messages[remoteJid].keyId.delete(removed.key.id);
 		}
-		if (!store.groupMetadata || Object.keys(store.groupMetadata).length === 0) store.groupMetadata ??= await naze.groupFetchAllParticipating().catch(e => ({}));
+		if (!store.groupMetadata || Object.keys(store.groupMetadata).length === 0) store.groupMetadata ??= await Omaidi.groupFetchAllParticipating().catch(e => ({}));
 		const type = msg.message ? (getContentType(msg.message) || Object.keys(msg.message)[0]) : '';
-		const m = await Serialize(naze, msg, store)
-		require('../naze')(naze, m, msg, store);
+		const m = await Serialize(Omaidi, msg, store)
+		require('../Omaidi')(Omaidi, m, msg, store);
 		if (db?.set?.[botNumber]?.readsw && msg.key.remoteJid === 'status@broadcast') {
-			await naze.readMessages([msg.key]);
-			if (/protocolMessage/i.test(type)) await naze.sendFromOwner(global.db?.set?.[botNumber]?.owner || global.owner, 'Status dari @' + msg.key.participant.split('@')[0] + ' Telah dihapus', msg, { mentions: [msg.key.participant] });
+			await Omaidi.readMessages([msg.key]);
+			if (/protocolMessage/i.test(type)) await Omaidi.sendFromOwner(global.db?.set?.[botNumber]?.owner || global.owner, 'Status dari @' + msg.key.participant.split('@')[0] + ' Telah dihapus', msg, { mentions: [msg.key.participant] });
 			if (/(audioMessage|imageMessage|videoMessage|extendedTextMessage)/i.test(type)) {
 				let keke = (type == 'extendedTextMessage') ? `Story Teks Berisi : ${msg.message.extendedTextMessage.text ? msg.message.extendedTextMessage.text : ''}` : (type == 'imageMessage') ? `Story Gambar ${msg.message.imageMessage.caption ? 'dengan Caption : ' + msg.message.imageMessage.caption : ''}` : (type == 'videoMessage') ? `Story Video ${msg.message.videoMessage.caption ? 'dengan Caption : ' + msg.message.videoMessage.caption : ''}` : (type == 'audioMessage') ? 'Story Audio' : '\nTidak diketahui cek saja langsung'
-				await naze.sendFromOwner(global.db?.set?.[botNumber]?.owner || global.owner, `Melihat story dari @${msg.key.participant.split('@')[0]}\n${keke}`, msg, { mentions: [msg.key.participant] });
+				await Omaidi.sendFromOwner(global.db?.set?.[botNumber]?.owner || global.owner, `Melihat story dari @${msg.key.participant.split('@')[0]}\n${keke}`, msg, { mentions: [msg.key.participant] });
 			}
 		}
 	} catch (e) {
@@ -322,10 +322,10 @@ async function MessagesUpsert(naze, message, store) {
 	}
 }
 
-async function Solving(naze, store) {
-	naze.serializeM = (m) => MessagesUpsert(naze, m, store)
+async function Solving(Omaidi, store) {
+	Omaidi.serializeM = (m) => MessagesUpsert(Omaidi, m, store)
 	
-	naze.decodeJid = (jid) => {
+	Omaidi.decodeJid = (jid) => {
 		if (!jid) return jid
 		if (/:\d+@/gi.test(jid)) {
 			let decode = jidDecode(jid) || {}
@@ -333,7 +333,7 @@ async function Solving(naze, store) {
 		} else return jid
 	}
 	
-	naze.findJidByLid = (lid, store, resolve = false) => {
+	Omaidi.findJidByLid = (lid, store, resolve = false) => {
 		const groupMeta = store?.groupMetadata
 		if (groupMeta) {
 			for (const g of Object.values(groupMeta)) {
@@ -357,10 +357,10 @@ async function Solving(naze, store) {
 		return null
 	}
 	
-	naze.getName = (jid, withoutContact  = false) => {
-		const id = naze.decodeJid(jid);
+	Omaidi.getName = (jid, withoutContact  = false) => {
+		const id = Omaidi.decodeJid(jid);
 		if (id.endsWith('@g.us')) {
-			const groupInfo = store.contacts[id] || (store.groupMetadata[id] ? store.groupMetadata[id] : (store.groupMetadata[id] = naze.groupMetadata(id))) || {};
+			const groupInfo = store.contacts[id] || (store.groupMetadata[id] ? store.groupMetadata[id] : (store.groupMetadata[id] = Omaidi.groupMetadata(id))) || {};
 			return Promise.resolve(groupInfo.name || groupInfo.subject || PhoneNumber('+' + id.replace('@g.us', '')).getNumber('international'));
 		} else {
 			if (id === '0@s.whatsapp.net') {
@@ -371,19 +371,19 @@ async function Solving(naze, store) {
 		}
 	}
 	
-	naze.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+	Omaidi.sendContact = async (jid, kon, quoted = '', opts = {}) => {
 		let list = []
 		for (let i of kon) {
 			list.push({
-				displayName: await naze.getName(i + '@s.whatsapp.net'),
-				vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await naze.getName(i + '@s.whatsapp.net')}\nFN:${await naze.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.ADR:;;Indonesia;;;;\nitem2.X-ABLabel:Region\nEND:VCARD` //vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await naze.getName(i + '@s.whatsapp.net')}\nFN:${await naze.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:whatsapp@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/naze_dev\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+				displayName: await Omaidi.getName(i + '@s.whatsapp.net'),
+				vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Omaidi.getName(i + '@s.whatsapp.net')}\nFN:${await Omaidi.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.ADR:;;Indonesia;;;;\nitem2.X-ABLabel:Region\nEND:VCARD` //vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Omaidi.getName(i + '@s.whatsapp.net')}\nFN:${await Omaidi.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:whatsapp@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/Omaidi_dev\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 			})
 		}
-		naze.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 });
+		Omaidi.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 });
 	}
 	
-	naze.profilePictureUrl = async (jid, type = 'image', timeoutMs) => {
-		const result = await naze.query({
+	Omaidi.profilePictureUrl = async (jid, type = 'image', timeoutMs) => {
+		const result = await Omaidi.query({
 			tag: 'iq',
 			attrs: {
 				target: jidNormalizedUser(jid),
@@ -402,8 +402,8 @@ async function Solving(naze, store) {
 		return child?.attrs?.url;
 	}
 	
-	naze.setStatus = (status) => {
-		naze.query({
+	Omaidi.setStatus = (status) => {
+		Omaidi.query({
 			tag: 'iq',
 			attrs: {
 				to: '@s.whatsapp.net',
@@ -419,47 +419,47 @@ async function Solving(naze, store) {
 		return status
 	}
 	
-	naze.relayMessageV2 = async (jid, message, options) => {
+	Omaidi.relayMessageV2 = async (jid, message, options) => {
 		const msg = generateWAMessageFromContent(jid, message, {
-			upload: naze.waUploadToServer,
+			upload: Omaidi.waUploadToServer,
 			messageId: generateMessageID(),
 			...options
 		});
-		const hasil = await naze.relayMessage(jid, msg.message, {
+		const hasil = await Omaidi.relayMessage(jid, msg.message, {
 			messageId: msg.key.id,
 			...options
 		});
 		return hasil;
 	}
 
-	naze.sendPoll = (jid, name = '', values = [], quoted, selectableCount = 1) => {
-		return naze.sendMessage(jid, { poll: { name, values, selectableCount }}, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 })
+	Omaidi.sendPoll = (jid, name = '', values = [], quoted, selectableCount = 1) => {
+		return Omaidi.sendMessage(jid, { poll: { name, values, selectableCount }}, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 })
 	}
 	
-	naze.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
+	Omaidi.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
 		const quotedOptions = { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 }
 		try {
 			const res = await axios.head(url);
 			let mime = res.headers['content-type'];
 			if (mime && mime.includes('gif')) {
-				return naze.sendMessage(jid, { video: { url }, caption: caption, gifPlayback: true, ...options }, quotedOptions);
+				return Omaidi.sendMessage(jid, { video: { url }, caption: caption, gifPlayback: true, ...options }, quotedOptions);
 			} else if (mime && mime === 'application/pdf') {
-				return naze.sendMessage(jid, { document: { url }, mimetype: 'application/pdf', caption: caption, ...options }, quotedOptions);
+				return Omaidi.sendMessage(jid, { document: { url }, mimetype: 'application/pdf', caption: caption, ...options }, quotedOptions);
 			} else if (mime && mime.includes('image')) {
-				return naze.sendMessage(jid, { image: { url }, caption: caption, ...options }, quotedOptions);
+				return Omaidi.sendMessage(jid, { image: { url }, caption: caption, ...options }, quotedOptions);
 			} else if (mime && mime.includes('video')) {
-				return naze.sendMessage(jid, { video: { url }, caption: caption, mimetype: 'video/mp4', ...options }, quotedOptions);
+				return Omaidi.sendMessage(jid, { video: { url }, caption: caption, mimetype: 'video/mp4', ...options }, quotedOptions);
 			} else if (mime && mime.includes('audio')) {
-				return naze.sendMessage(jid, { audio: { url }, mimetype: 'audio/mpeg', ...options }, quotedOptions);
+				return Omaidi.sendMessage(jid, { audio: { url }, mimetype: 'audio/mpeg', ...options }, quotedOptions);
 			} else {
-				return naze.sendMessage(jid, { document: { url }, caption: caption, mimetype: mime, ...options }, quotedOptions);
+				return Omaidi.sendMessage(jid, { document: { url }, caption: caption, mimetype: mime, ...options }, quotedOptions);
 			}
 		} catch (e) {
-			return naze.sendMessage(jid, { text: url, ...options }, quotedOptions);
+			return Omaidi.sendMessage(jid, { text: url, ...options }, quotedOptions);
 		}
 	}
 	
-	naze.sendGroupInviteV4 = async (jid, participant, inviteCode, inviteExpiration, groupName = 'Unknown Subject', caption = 'Invitation to join my WhatsApp group', jpegThumbnail = null, options = {}) => {
+	Omaidi.sendGroupInviteV4 = async (jid, participant, inviteCode, inviteExpiration, groupName = 'Unknown Subject', caption = 'Invitation to join my WhatsApp group', jpegThumbnail = null, options = {}) => {
 		const msg = proto.Message.create({
 			groupInviteMessage: {
 				inviteCode,
@@ -474,24 +474,24 @@ async function Solving(naze, store) {
 			}
 		});
 		const message = generateWAMessageFromContent(participant, msg, options);
-		const invite = await naze.relayMessage(participant, message.message, { messageId: message.key.id })
+		const invite = await Omaidi.relayMessage(participant, message.message, { messageId: message.key.id })
 		return invite
 	}
 	
-	naze.sendFromOwner = async (jids, text, quoted, options = {}) => {
+	Omaidi.sendFromOwner = async (jids, text, quoted, options = {}) => {
 		for (const a of jids) {
 			const jid = a.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
-			await naze.sendMessage(jid, { text, ...options }, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 })
+			await Omaidi.sendMessage(jid, { text, ...options }, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 })
 		}
 	}
 	
-	naze.sendText = async (jid, text, quoted, options = {}) => naze.sendMessage(jid, { text: text, mentions: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net'), ...options }, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 })
+	Omaidi.sendText = async (jid, text, quoted, options = {}) => Omaidi.sendMessage(jid, { text: text, mentions: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net'), ...options }, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 })
 	
-	naze.sendAsSticker = async (jid, path, quoted, options = {}) => {
+	Omaidi.sendAsSticker = async (jid, path, quoted, options = {}) => {
 		let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? path : Buffer.alloc(0);
 		const result = await writeExif(buff, options);
 		try {
-			let anu = await naze.sendMessage(jid, { sticker: { url: result }, ...options }, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 });
+			let anu = await Omaidi.sendMessage(jid, { sticker: { url: result }, ...options }, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 });
 			return anu;
 		} finally {
 			if (fs.existsSync(path)) fs.unlinkSync(path);
@@ -499,7 +499,7 @@ async function Solving(naze, store) {
 		}
 	}
 	
-	naze.downloadMediaMessage = async (message) => {
+	Omaidi.downloadMediaMessage = async (message) => {
 		const msg = message.msg || message;
 		msg.mediaKey = fixBytes(msg.mediaKey);
 		msg.fileSha256 = fixBytes(msg.fileSha256);
@@ -514,7 +514,7 @@ async function Solving(naze, store) {
 		return buffer
 	}
 	
-	naze.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
+	Omaidi.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
 	    const msg = message.msg || message;
 	    msg.mediaKey = fixBytes(msg.mediaKey);
 	    msg.fileSha256 = fixBytes(msg.fileSha256);
@@ -537,7 +537,7 @@ async function Solving(naze, store) {
 	    });
 	}
 	
-	naze.getFile = async (PATH) => {
+	Omaidi.getFile = async (PATH) => {
 		let filename;
 		let mime = 'application/octet-stream';
 		let ext = 'bin';
@@ -579,22 +579,22 @@ async function Solving(naze, store) {
 		return { filename, mime, ext, isTemp };
 	}
 	
-	naze.appendResponseMessage = async (m, text) => {
-		let apb = await generateWAMessage(m.chat, { text, mentions: m.mentionedJid }, { userJid: naze.user.id, quoted: m.quoted && m.quoted.fakeObj(), ephemeralExpiration: m.expiration || m?.metadata?.ephemeralDuration || store?.messages[m.chat]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 });
+	Omaidi.appendResponseMessage = async (m, text) => {
+		let apb = await generateWAMessage(m.chat, { text, mentions: m.mentionedJid }, { userJid: Omaidi.user.id, quoted: m.quoted && m.quoted.fakeObj(), ephemeralExpiration: m.expiration || m?.metadata?.ephemeralDuration || store?.messages[m.chat]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 });
 		apb.key = m.key
 		apb.key.id = [...Array(32)].map(() => '0123456789ABCDEF'[Math.floor(Math.random() * 16)]).join('');
-		apb.key.fromMe = areJidsSameUser(m.sender, naze.user.id);
+		apb.key.fromMe = areJidsSameUser(m.sender, Omaidi.user.id);
 		if (m.isGroup) apb.participant = m.sender;
-		naze.ev.emit('messages.upsert', {
+		Omaidi.ev.emit('messages.upsert', {
 			...m,
 			messages: [proto.WebMessageInfo.create(apb)],
 			type: 'append'
 		});
 	}
 	
-	naze.sendMedia = async (jid, pathMedia, fileName = '', caption = '', quoted = '', options = {}) => {
-		const { mime, filename, isTemp } = await naze.getFile(pathMedia);
-		const botNumber = naze.decodeJid(naze.user.id);
+	Omaidi.sendMedia = async (jid, pathMedia, fileName = '', caption = '', quoted = '', options = {}) => {
+		const { mime, filename, isTemp } = await Omaidi.getFile(pathMedia);
+		const botNumber = Omaidi.decodeJid(Omaidi.user.id);
 		const isWebpSticker = options.asSticker || /webp/.test(mime);
 		let type = 'document', mimetype = mime, pathFile = filename;
 		let filesToDelete = [];
@@ -613,7 +613,7 @@ async function Solving(naze, store) {
 				type = mime.split('/')[0];
 				mimetype = type == 'video' ? 'video/mp4' : type == 'audio' ? 'audio/mpeg' : mime;
 			}
-			let anu = await naze.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0, ...options });
+			let anu = await Omaidi.sendMessage(jid, { [type]: { url: pathFile }, caption, mimetype, fileName, ...options }, { quoted, ephemeralExpiration: quoted?.expiration || quoted?.metadata?.ephemeralDuration || store?.messages[jid]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0, ...options });
 			return anu;
 		} finally {
 			filesToDelete.forEach(file => {
@@ -622,7 +622,7 @@ async function Solving(naze, store) {
 		}
 	}
 	
-	naze.sendAlbumMessage = async (jid, content = {}, options = {}) => {
+	Omaidi.sendAlbumMessage = async (jid, content = {}, options = {}) => {
 		const { album, mentions, contextInfo, ...others } = content;
 		for (const media of album) {
 			if (!media.image && !media.video) throw new TypeError(`album[i] must have image or video property`);
@@ -634,21 +634,21 @@ async function Solving(naze, store) {
 				expectedVideoCount: album.filter(m => m.video).length,
 			}
 		}, { quoted: options?.quoted || null });
-		await naze.relayMessage(jid, medias.message, { messageId: medias.key.id });
+		await Omaidi.relayMessage(jid, medias.message, { messageId: medias.key.id });
 		for (const media of album) {
-			const msg = await generateWAMessage(jid, { ...others, ...media }, { upload: naze.waUploadToServer });
+			const msg = await generateWAMessage(jid, { ...others, ...media }, { upload: Omaidi.waUploadToServer });
 			msg.message.messageContextInfo = {
 				messageAssociation: {
 					associationType: 1,
 					parentMessageKey: medias.key
 				}
 			}
-			await naze.relayMessage(jid, msg.message, { messageId: msg.key.id });
+			await Omaidi.relayMessage(jid, msg.message, { messageId: msg.key.id });
 		}
 		return medias;
 	}
 	
-	naze.sendListMsg = async (jid, content = {}, options = {}) => {
+	Omaidi.sendListMsg = async (jid, content = {}, options = {}) => {
 		const { text, caption, footer = '', title, subtitle, ai, contextInfo = {}, buttons = [], messageParamsJson = {}, mentions = [], ...media } = content;
 		const msg = await generateWAMessageFromContent(jid, {
 			viewOnceMessage: {
@@ -665,7 +665,7 @@ async function Solving(naze, store) {
 							subtitle,
 							hasMediaAttachment: Object.keys(media).length > 0,
 							...(media && typeof media === 'object' && Object.keys(media).length > 0 ? await generateWAMessageContent(media, {
-								upload: naze.waUploadToServer
+								upload: Omaidi.waUploadToServer
 							}) : {})
 						}),
 						nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
@@ -693,7 +693,7 @@ async function Solving(naze, store) {
 				}
 			}
 		}, {});
-		const hasil = await naze.relayMessage(msg.key.remoteJid, msg.message, {
+		const hasil = await Omaidi.relayMessage(msg.key.remoteJid, msg.message, {
 			messageId: msg.key.id,
 			additionalNodes: [{
 				tag: 'biz',
@@ -717,7 +717,7 @@ async function Solving(naze, store) {
 		return hasil
 	}
 	
-	naze.sendButtonMsg = async (jid, content = {}, options = {}) => {
+	Omaidi.sendButtonMsg = async (jid, content = {}, options = {}) => {
 		const { text, caption, footer = '', headerType = 1, ai, contextInfo = {}, buttons = [], mentions = [], ...media } = content;
 		const msg = await generateWAMessageFromContent(jid, {
 			viewOnceMessage: {
@@ -728,7 +728,7 @@ async function Solving(naze, store) {
 					},
 					buttonsMessage: {
 						...(media && typeof media === 'object' && Object.keys(media).length > 0 ? await generateWAMessageContent(media, {
-							upload: naze.waUploadToServer
+							upload: Omaidi.waUploadToServer
 						}) : {}),
 						contentText: text || caption || '',
 						footerText: footer,
@@ -750,7 +750,7 @@ async function Solving(naze, store) {
 				}
 			}
 		}, {});
-		const hasil = await naze.relayMessage(msg.key.remoteJid, msg.message, {
+		const hasil = await Omaidi.relayMessage(msg.key.remoteJid, msg.message, {
 			messageId: msg.key.id,
 			additionalNodes: [{
 				tag: 'biz',
@@ -774,13 +774,13 @@ async function Solving(naze, store) {
 		return hasil
 	}
 	
-	naze.newsletterMsg = async (key, content = {}, timeout = 5000) => {
+	Omaidi.newsletterMsg = async (key, content = {}, timeout = 5000) => {
 		const { type: rawType = 'INFO', name, description = '', picture = null, react, id, newsletter_id = key, ...media } = content;
 		const type = rawType.toUpperCase();
 		if (react) {
 			if (!(newsletter_id.endsWith('@newsletter') || !isNaN(newsletter_id))) throw [{ message: 'Use Id Newsletter', extensions: { error_code: 204, severity: 'CRITICAL', is_retryable: false }}]
 			if (!id) throw [{ message: 'Use Id Newsletter Message', extensions: { error_code: 204, severity: 'CRITICAL', is_retryable: false }}]
-			const hasil = await naze.query({
+			const hasil = await Omaidi.query({
 				tag: 'message',
 				attrs: {
 					to: key,
@@ -797,8 +797,8 @@ async function Solving(naze, store) {
 			});
 			return hasil
 		} else if (media && typeof media === 'object' && Object.keys(media).length > 0) {
-			const msg = await generateWAMessageContent(media, { upload: naze.waUploadToServer });
-			const anu = await naze.query({
+			const msg = await generateWAMessageContent(media, { upload: Omaidi.waUploadToServer });
+			const anu = await Omaidi.query({
 				tag: 'message',
 				attrs: { to: newsletter_id, type: 'text' in media ? 'text' : 'media' },
 				content: [{
@@ -810,7 +810,7 @@ async function Solving(naze, store) {
 			return anu
 		} else {
 			if ((/(FOLLOW|UNFOLLOW|DELETE)/.test(type)) && !(newsletter_id.endsWith('@newsletter') || !isNaN(newsletter_id))) return [{ message: 'Use Id Newsletter', extensions: { error_code: 204, severity: 'CRITICAL', is_retryable: false }}]
-			const _query = await naze.query({
+			const _query = await Omaidi.query({
 				tag: 'iq',
 				attrs: {
 					to: 's.whatsapp.net',
@@ -833,9 +833,9 @@ async function Solving(naze, store) {
 		}
 	}
 	
-	naze.sendCarouselMsg = async (jid, body = '', footer = '', cards = [], options = {}) => {
+	Omaidi.sendCarouselMsg = async (jid, body = '', footer = '', cards = [], options = {}) => {
 		async function getImageMsg(url) {
-			const { imageMessage } = await generateWAMessageContent({ image: { url } }, { upload: naze.waUploadToServer });
+			const { imageMessage } = await generateWAMessageContent({ image: { url } }, { upload: Omaidi.waUploadToServer });
 			return imageMessage;
 		}
 		const cardPromises = cards.map(async (a) => {
@@ -875,18 +875,18 @@ async function Solving(naze, store) {
 				}
 			}
 		}, {});
-		const hasil = await naze.relayMessage(msg.key.remoteJid, msg.message, { messageId: msg.key.id });
+		const hasil = await Omaidi.relayMessage(msg.key.remoteJid, msg.message, { messageId: msg.key.id });
 		return hasil
 	}
 	
-	if (naze.user && naze.user.id) {
-		const botNumber = naze.decodeJid(naze.user.id);
+	if (Omaidi.user && Omaidi.user.id) {
+		const botNumber = Omaidi.decodeJid(Omaidi.user.id);
 		if (global.db?.data?.settings?.[botNumber]) {
-			naze.public = global.db.set[botNumber].public
-		} else naze.public = true
-	} else naze.public = true
+			Omaidi.public = global.db.set[botNumber].public
+		} else Omaidi.public = true
+	} else Omaidi.public = true
 
-	return naze
+	return Omaidi
 }
 
 /*
@@ -895,9 +895,9 @@ async function Solving(naze, store) {
 	* Whatsapp : https://wa.me/6283853027516
 */
 
-async function Serialize(naze, msg, store) {
-	const botLid = naze.decodeJid(naze.user.lid);
-	const botNumber = naze.decodeJid(naze.user.id);
+async function Serialize(Omaidi, msg, store) {
+	const botLid = Omaidi.decodeJid(Omaidi.user.lid);
+	const botNumber = Omaidi.decodeJid(Omaidi.user.id);
 	const m = { ...msg };
 	if (!m) return m
 	if (m.key) {
@@ -906,13 +906,13 @@ async function Serialize(naze, msg, store) {
 		m.fromMe = m.key.fromMe
 		m.isBot = ['HSK', 'BAE', 'B1E', '3EB0', 'B24E', 'WA'].some(a => m.id.startsWith(a) && [12, 16, 20, 22, 40].includes(m.id.length)) || /(.)\1{5,}|[^a-zA-Z0-9]|[^0-9A-F]/.test(m.id) || false
 		m.isGroup = m.chat.endsWith('@g.us')
-		if (!m.isGroup && m.chat.endsWith('@lid')) m.chat = naze.findJidByLid(m.chat, store) || m.chat;
-		m.sender = naze.decodeJid(m.fromMe && naze.user.id || m.key.participantAlt || m.key.participant || m.chat || '')
+		if (!m.isGroup && m.chat.endsWith('@lid')) m.chat = Omaidi.findJidByLid(m.chat, store) || m.chat;
+		m.sender = Omaidi.decodeJid(m.fromMe && Omaidi.user.id || m.key.participantAlt || m.key.participant || m.chat || '')
 		if (m.isGroup) {
-			if (!store.groupMetadata) store.groupMetadata = await naze.groupFetchAllParticipating().catch(e => ({}));
-			let metadata = store.groupMetadata[m.chat] ? store.groupMetadata[m.chat] : (store.groupMetadata[m.chat] = await naze.groupMetadata(m.chat).catch(e => ({ ...store.groupMetadata[m.chat] })));
+			if (!store.groupMetadata) store.groupMetadata = await Omaidi.groupFetchAllParticipating().catch(e => ({}));
+			let metadata = store.groupMetadata[m.chat] ? store.groupMetadata[m.chat] : (store.groupMetadata[m.chat] = await Omaidi.groupMetadata(m.chat).catch(e => ({ ...store.groupMetadata[m.chat] })));
 			if (!metadata) {
-				metadata = await naze.groupMetadata(m.chat).catch(e => ({ ...store.groupMetadata[m.chat] }));
+				metadata = await Omaidi.groupMetadata(m.chat).catch(e => ({ ...store.groupMetadata[m.chat] }));
 				store.groupMetadata[m.chat] = metadata
 			}
 			m.metadata = metadata
@@ -922,7 +922,7 @@ async function Serialize(naze, msg, store) {
 				m.sender = participant?.phoneNumber || m.key.participantAlt || m.sender;
 				m.metadata.owner = m.metadata?.participants?.find(p => p.id === m.metadata.owner)?.id || m.metadata.owner;
 				m.metadata.subjectOwner = m.metadata?.participants?.find(p => p.id === m.metadata.subjectOwner)?.id || m.metadata.subjectOwner;
-				if(!m.sender.endsWith('@g.us')) store.contacts[m.sender] = { ...(store.contacts[m.sender] || {}), id: jidNormalizedUser(m.fromMe && naze.user.lid || participant?.id || store.contacts[m.sender]?.id || m.sender), phoneNumber: jidNormalizedUser(m.fromMe && naze.user.id || participant?.phoneNumber || store.contacts[m.sender]?.phoneNumber || m.sender), name: (m.fromMe && naze.user.name) || m.pushName };
+				if(!m.sender.endsWith('@g.us')) store.contacts[m.sender] = { ...(store.contacts[m.sender] || {}), id: jidNormalizedUser(m.fromMe && Omaidi.user.lid || participant?.id || store.contacts[m.sender]?.id || m.sender), phoneNumber: jidNormalizedUser(m.fromMe && Omaidi.user.id || participant?.phoneNumber || store.contacts[m.sender]?.phoneNumber || m.sender), name: (m.fromMe && Omaidi.user.name) || m.pushName };
 			}
 			m.admins = m.metadata.participants ? m.metadata.participants.filter(p => p.admin).map(p => ({ id: p.id, phoneNumber: p.phoneNumber, admin: p.admin })) : [];
 			m.isAdmin = m.admins.some(a => a.id === m.sender || a.phoneNumber === m.sender);
@@ -933,7 +933,7 @@ async function Serialize(naze, msg, store) {
 		m.type = getContentType(m.message) || Object.keys(m.message)[0]
 		m.msg = (/viewOnceMessage|viewOnceMessageV2Extension|editedMessage|ephemeralMessage/i.test(m.type) ? m.message[m.type].message[getContentType(m.message[m.type].message)] : (extractMessageContent(m.message[m.type]) || m.message[m.type]))
 		m.body = m.message?.conversation || m.msg?.text || m.msg?.conversation || m.msg?.caption || m.msg?.selectedButtonId || m.msg?.singleSelectReply?.selectedRowId || m.msg?.selectedId || m.msg?.contentText || m.msg?.selectedDisplayText || m.msg?.title || m.msg?.name || ''
-		m.mentionedJid = m.msg?.contextInfo?.mentionedJid?.map(a => naze.findJidByLid(a, store, true)) || []
+		m.mentionedJid = m.msg?.contextInfo?.mentionedJid?.map(a => Omaidi.findJidByLid(a, store, true)) || []
 		m.text = m.msg?.text || m.msg?.caption || m.message?.conversation || m.msg?.contentText || m.msg?.selectedDisplayText || m.msg?.title || '';
 		m.prefix = /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(m.body) ? m.body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : /[\uD800-\uDBFF][\uDC00-\uDFFF]/gi.test(m.body) ? m.body.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]/gi)[0] : ''
 		m.command = m.body && m.body.replace(m.prefix, '').trim().split(/ +/).shift()
@@ -961,21 +961,21 @@ async function Serialize(naze, msg, store) {
 				type: getContentType(qMsg) || Object.keys(qMsg)[0],
 				id: m.msg.contextInfo.stanzaId,
 				chat: m.msg.contextInfo.remoteJid || m.chat,
-				sender: naze.decodeJid(m.msg.contextInfo.participant),
-				fromMe: naze.decodeJid(m.msg.contextInfo.participant) === naze.decodeJid(naze.user.id),
+				sender: Omaidi.decodeJid(m.msg.contextInfo.participant),
+				fromMe: Omaidi.decodeJid(m.msg.contextInfo.participant) === Omaidi.decodeJid(Omaidi.user.id),
 				text: qMsg?.conversation || qMsg?.caption || '',
 			};
 			m.quoted.msg = extractMessageContent(qMsg[m.quoted.type]) || qMsg[m.quoted.type];
 			m.quoted.device = getDevice(m.quoted.id)
 			m.quoted.isBot = m.quoted.id ? ['HSK', 'BAE', 'B1E', '3EB0', 'B24E', 'WA'].some(a => m.quoted.id.startsWith(a) && [12, 16, 20, 22, 40].includes(m.quoted.id.length)) || /(.)\1{5,}|[^a-zA-Z0-9]|[^0-9A-F]/.test(m.quoted.id) : false
-			m.quoted.fromMe = m.quoted.sender === naze.decodeJid(naze.user.id)
-			m.quoted.mentionedJid = m.quoted?.msg?.contextInfo?.mentionedJid?.map(a => naze.findJidByLid(a, store, true)) || []
+			m.quoted.fromMe = m.quoted.sender === Omaidi.decodeJid(Omaidi.user.id)
+			m.quoted.mentionedJid = m.quoted?.msg?.contextInfo?.mentionedJid?.map(a => Omaidi.findJidByLid(a, store, true)) || []
 			m.quoted.body = m.quoted.msg?.text || m.quoted.msg?.caption || m.quoted?.message?.conversation || m.quoted.msg?.selectedButtonId || m.quoted.msg?.singleSelectReply?.selectedRowId || m.quoted.msg?.selectedId || m.quoted.msg?.contentText || m.quoted.msg?.selectedDisplayText || m.quoted.msg?.title || m.quoted?.msg?.name || ''
 			m.getQuotedObj = async () => {
 				if (!m.quoted.id) return null
-				let q = await global.loadMessage(m.chat, m.quoted.id, naze)
+				let q = await global.loadMessage(m.chat, m.quoted.id, Omaidi)
 				if (q) {
-					return await Serialize(naze, q, store)
+					return await Serialize(Omaidi, q, store)
 				} else {
 					return null
 				}
@@ -983,7 +983,7 @@ async function Serialize(naze, msg, store) {
 			m.quoted.key = {
 				remoteJid: m.msg?.contextInfo?.remoteJid || m.chat,
 				participant: m.quoted.sender,
-				fromMe: areJidsSameUser(naze.decodeJid(m.msg?.contextInfo?.participant), naze.decodeJid(naze?.user?.id)),
+				fromMe: areJidsSameUser(Omaidi.decodeJid(m.msg?.contextInfo?.participant), Omaidi.decodeJid(Omaidi?.user?.id)),
 				id: m.msg?.contextInfo?.stanzaId
 			}
 			m.quoted.isGroup = m.quoted.chat.endsWith('@g.us')
@@ -1011,9 +1011,9 @@ async function Serialize(naze, msg, store) {
 				message: m.quoted,
 				...(m.isGroup ? { participant: m.quoted.sender } : {})
 			});
-			m.quoted.download = () => naze.downloadMediaMessage(m.quoted)
+			m.quoted.download = () => Omaidi.downloadMediaMessage(m.quoted)
 			m.quoted.delete = () => {
-				naze.sendMessage(m.quoted.chat, {
+				Omaidi.sendMessage(m.quoted.chat, {
 					delete: {
 						remoteJid: m.quoted.chat,
 						fromMe: m.isBotAdmins ? false : true,
@@ -1025,11 +1025,11 @@ async function Serialize(naze, msg, store) {
 		}
 	}
 	
-	m.download = () => naze.downloadMediaMessage(m)
+	m.download = () => Omaidi.downloadMediaMessage(m)
 	
-	m.copy = () => Serialize(naze, JSON.parse(JSON.stringify(m)), store)
+	m.copy = () => Serialize(Omaidi, JSON.parse(JSON.stringify(m)), store)
 	
-	m.react = (u) => naze.sendMessage(m.chat, { react: { text: u, key: m.key }})
+	m.react = (u) => Omaidi.sendMessage(m.chat, { react: { text: u, key: m.key }})
 	
 	m.reply = async (content, options = {}) => {
 		const { quoted = m, chat = m.chat, caption = '', mentions = [], ephemeralExpiration = m.expiration || m?.metadata?.ephemeralDuration || store?.messages[m.chat]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0, ...validate } = options;
@@ -1038,7 +1038,7 @@ async function Serialize(naze, msg, store) {
 		const extractedMentions = [...textBody.matchAll(/@(\d{5,16})/g)].map(v => v[1] + '@s.whatsapp.net');
 		const fixMentions = [...new Set([...providedMentions, ...extractedMentions])];
 		if (typeof content === 'object') {
-			return naze.sendMessage(chat, content, { ...validate, quoted, ephemeralExpiration })
+			return Omaidi.sendMessage(chat, content, { ...validate, quoted, ephemeralExpiration })
 		} else if (typeof content === 'string') {
 			try {
 				if (/^https?:\/\//.test(content)) {
@@ -1046,15 +1046,15 @@ async function Serialize(naze, msg, store) {
 					const mime = res?.headers['content-type'] || '';
 					if (/gif|image|video|audio|pdf|stream/i.test(mime)) {
 						let type = /image/.test(mime) ? 'image' : /video/.test(mime) ? 'video' : /audio/.test(mime) ? 'audio' : 'document';
-						return naze.sendMessage(chat, { [type]: { url: content }, caption, mimetype: mime, ...validate }, { quoted, ephemeralExpiration })
+						return Omaidi.sendMessage(chat, { [type]: { url: content }, caption, mimetype: mime, ...validate }, { quoted, ephemeralExpiration })
 					} else {
-						return naze.sendMessage(chat, { text: content, mentions: fixMentions, ...validate }, { quoted, ephemeralExpiration })
+						return Omaidi.sendMessage(chat, { text: content, mentions: fixMentions, ...validate }, { quoted, ephemeralExpiration })
 					}
 				} else {
-					return naze.sendMessage(chat, { text: content, mentions: fixMentions, ...validate }, { quoted, ephemeralExpiration })
+					return Omaidi.sendMessage(chat, { text: content, mentions: fixMentions, ...validate }, { quoted, ephemeralExpiration })
 				}
 			} catch (e) {
-				return naze.sendMessage(chat, { text: content, mentions: fixMentions, ...validate }, { quoted, ephemeralExpiration })
+				return Omaidi.sendMessage(chat, { text: content, mentions: fixMentions, ...validate }, { quoted, ephemeralExpiration })
 			}
 		}
 	}

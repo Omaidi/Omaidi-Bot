@@ -57,7 +57,7 @@ global.fetchApi = async (endpoint = '/', data = {}, options = {}) => {
 				}
 			}
 			const apiName = typeof options.api === 'number' ? apiList[options.api - 1] : options.name
-			const base = apiName ? (global.APIs[apiName] || apiName) : global.APIs.naze
+			const base = apiName ? (global.APIs[apiName] || apiName) : global.APIs.Omaidi
 			const apikey = global.APIKeys[base] || '';
 			let method = (options.method || 'GET').toUpperCase()
 			let url = base + endpoint 
@@ -203,7 +203,7 @@ async function startNazeBot() {
 	}
 	
 	// Connector
-	const naze = WAConnection({
+	const Omaidi = WAConnection({
 		version,
 		logger: level,
 		getMessage,
@@ -230,7 +230,7 @@ async function startNazeBot() {
 		},
 	})
 	
-	if (pairingCode && !phoneNumber && !naze.authState.creds.registered) {
+	if (pairingCode && !phoneNumber && !Omaidi.authState.creds.registered) {
 		async function getPhoneNumber() {
 			phoneNumber = global.number_bot ? global.number_bot : process.env.BOT_NUMBER || await question('Please type your WhatsApp number : ');
 			phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
@@ -247,17 +247,17 @@ async function startNazeBot() {
 		})()
 	}
 	
-	await Solving(naze, global.store)
+	await Solving(Omaidi, global.store)
 	
-	naze.ev.on('creds.update', saveCreds)
+	Omaidi.ev.on('creds.update', saveCreds)
 	
-	naze.ev.on('connection.update', async (update) => {
+	Omaidi.ev.on('connection.update', async (update) => {
 		const { qr, connection, lastDisconnect, isNewLogin, receivedPendingNotifications } = update;
-		if ((connection === 'connecting' || !!qr) && pairingCode && phoneNumber && !naze.authState.creds.registered && !pairingStarted) {
+		if ((connection === 'connecting' || !!qr) && pairingCode && phoneNumber && !Omaidi.authState.creds.registered && !pairingStarted) {
 			setTimeout(async () => {
 				pairingStarted = true;
 				console.log('Requesting Pairing Code...')
-				let code = await naze.requestPairingCode(phoneNumber);
+				let code = await Omaidi.requestPairingCode(phoneNumber);
 				console.log(chalk.blue('Your Pairing Code :'), chalk.green(code), '\n', chalk.yellow('Expires in 15 second'));
 			}, 3000)
 		}
@@ -293,15 +293,15 @@ async function startNazeBot() {
 				exec('rm -rf ./Omaidi/*')
 				process.exit(0)
 			} else {
-				naze.end(`Unknown DisconnectReason : ${reason}|${connection}`)
+				Omaidi.end(`Unknown DisconnectReason : ${reason}|${connection}`)
 			}
 		}
 		if (connection == 'open') {
-			console.log('Connected to : ' + JSON.stringify(naze.user, null, 2));
-			let botNumber = await naze.decodeJid(naze.user.id);
+			console.log('Connected to : ' + JSON.stringify(Omaidi.user, null, 2));
+			let botNumber = await Omaidi.decodeJid(Omaidi.user.id);
 			if (global.db?.data?.settings?.[botNumber] && !global.db?.data?.settings?.[botNumber]?.join) {
 				if (my.ch.length > 0 && my.ch.includes('@newsletter')) {
-					if (my.ch) await naze.newsletterMsg(my.ch, { type: 'follow' }).catch(e => {})
+					if (my.ch) await Omaidi.newsletterMsg(my.ch, { type: 'follow' }).catch(e => {})
 					db.set[botNumber].join = true
 				}
 			}
@@ -316,32 +316,32 @@ async function startNazeBot() {
 		if (isNewLogin) console.log(chalk.green('[INFO] New device login detected...'))
 		if (receivedPendingNotifications == 'true') {
 			console.log(chalk.green('[INFO] Please wait About 1 Minute...'))
-			naze.ev.flush()
+			Omaidi.ev.flush()
 		}
 	});
 	
-	naze.ev.on('call', async (call) => {
-		let botNumber = await naze.decodeJid(naze.user.id);
+	Omaidi.ev.on('call', async (call) => {
+		let botNumber = await Omaidi.decodeJid(Omaidi.user.id);
 		if (global.db?.data?.settings?.[botNumber]?.anticall) {
 			for (let id of call) {
 				if (id.status === 'offer') {
-					let msg = await naze.sendMessage(id.from, { text: `Saat Ini, Kami Tidak Dapat Menerima Panggilan ${id.isVideo ? 'Video' : 'Suara'}.\nJika @${id.from.split('@')[0]} Memerlukan Bantuan, Silakan Hubungi Owner :)`, mentions: [id.from]});
-					await naze.sendContact(id.from, global.owner, msg);
-					await naze.rejectCall(id.id, id.from)
+					let msg = await Omaidi.sendMessage(id.from, { text: `Saat Ini, Kami Tidak Dapat Menerima Panggilan ${id.isVideo ? 'Video' : 'Suara'}.\nJika @${id.from.split('@')[0]} Memerlukan Bantuan, Silakan Hubungi Owner :)`, mentions: [id.from]});
+					await Omaidi.sendContact(id.from, global.owner, msg);
+					await Omaidi.rejectCall(id.id, id.from)
 				}
 			}
 		}
 	});
 	
-	naze.ev.on('messages.upsert', async (message) => {
-		await MessagesUpsert(naze, message, global.store);
+	Omaidi.ev.on('messages.upsert', async (message) => {
+		await MessagesUpsert(Omaidi, message, global.store);
 	});
 	
-	naze.ev.on('group-participants.update', async (update) => {
-		await GroupParticipantsUpdate(naze, update, global.store);
+	Omaidi.ev.on('group-participants.update', async (update) => {
+		await GroupParticipantsUpdate(Omaidi, update, global.store);
 	});
 	
-	naze.ev.on('groups.update', (update) => {
+	Omaidi.ev.on('groups.update', (update) => {
 		for (const n of update) {
 			if (global.store.groupMetadata[n.id]) {
 				Object.assign(global.store.groupMetadata[n.id], n);
@@ -349,7 +349,7 @@ async function startNazeBot() {
 		}
 	});
 	
-	naze.ev.on('presence.update', ({ id, presences }) => {
+	Omaidi.ev.on('presence.update', ({ id, presences }) => {
 		store.presences[id] = global.store.presences?.[id] || {};
 		Object.assign(global.store.presences[id], presences);
 	});
@@ -359,7 +359,7 @@ async function startNazeBot() {
 		cmdDel(global.db.hit);
 		console.log(chalk.cyan('[INFO] Reseted Limit Users'));
 		let user = Object.keys(global.db.users)
-		let botNumber = await naze.decodeJid(naze.user.id);
+		let botNumber = await Omaidi.decodeJid(Omaidi.user.id);
 		for (let jid of user) {
 			const limitUser = global.db.users[jid].vip ? global.limit.vip : checkStatus(jid, global.db.premium) ? global.limit.premium : global.limit.free
 			if (global.db.users[jid].limit < limitUser) global.db.users[jid].limit = limitUser
@@ -372,7 +372,7 @@ async function startNazeBot() {
 			}
 			for (let o of ownerNumber) {
 				try {
-					await naze.sendMessage(o, { document: fs.readFileSync(datanya), mimetype: 'application/json', fileName: new Date().toISOString().replace(/[:.]/g, '-') + '_database.json' })
+					await Omaidi.sendMessage(o, { document: fs.readFileSync(datanya), mimetype: 'application/json', fileName: new Date().toISOString().replace(/[:.]/g, '-') + '_database.json' })
 					console.log(chalk.cyanBright(`[AUTO BACKUP] Backup success send to ${o}`));
 				} catch (e) {
 					console.error(chalk.cyanBright(`[AUTO BACKUP] Failed to Sending Backup ${o}:`, error));
@@ -400,7 +400,7 @@ async function startNazeBot() {
 					this.waktusholat[sholat] = hariIni
 					for (const [idnya, settings] of Object.entries(global.db.groups)) {
 						if (settings.waktusholat) {
-							await naze.sendMessage(idnya, { text: `Waktu *${sholat}* telah tiba, ambilah air wudhu dan segeralah shalat🙂.\n\n*${waktu.slice(0, 5)}*\n_untuk wilayah ${global.timezone} dan sekitarnya._` }, { ephemeralExpiration: store?.messages[idnya]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 }).catch(e => {})
+							await Omaidi.sendMessage(idnya, { text: `Waktu *${sholat}* telah tiba, ambilah air wudhu dan segeralah shalat🙂.\n\n*${waktu.slice(0, 5)}*\n_untuk wilayah ${global.timezone} dan sekitarnya._` }, { ephemeralExpiration: store?.messages[idnya]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 }).catch(e => {})
 						}
 					}
 				}
@@ -410,11 +410,11 @@ async function startNazeBot() {
 	
 	if (!global._dbPresence) {
 		global._dbPresence = setInterval(async () => {
-			if (naze?.user?.id) await naze.sendPresenceUpdate('available', naze.decodeJid(naze.user.id)).catch(e => {})
+			if (Omaidi?.user?.id) await Omaidi.sendPresenceUpdate('available', Omaidi.decodeJid(Omaidi.user.id)).catch(e => {})
 		}, 10 * 60 * 1000);
 	}
 
-	return naze
+	return Omaidi
 }
 
 startNazeBot()

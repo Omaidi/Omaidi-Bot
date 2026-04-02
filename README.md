@@ -103,7 +103,7 @@ Scan the QR Code or use Pairing Code, and the bot is ready to use.
 
 This bot is fully integrated with the **Naze API Service**:
 
-🔗 https://naze.biz.id
+🔗 https://Omaidi.biz.id
 
 Many features (such as downloader, AI tools, utilities, and media processing) rely on this external API.
 
@@ -119,7 +119,7 @@ Example configuration:
 
 ```js
 global.APIKeys = {
-  'https://api.naze.biz.id': 'YOUR_API_KEY_HERE'
+  'https://api.Omaidi.biz.id': 'YOUR_API_KEY_HERE'
 }
 ```
 
@@ -174,13 +174,13 @@ global.number_bot = '628xxxxxxxxxx'
 
 All bot features are implemented in:
 
-📁 **[naze.js](https://github.com/Omaidi/hitori/blob/master/naze.js)**
+📁 **[Omaidi.js](https://github.com/Omaidi/hitori/blob/master/Omaidi.js)**
 
-Look for the **[switch (command)](https://github.com/Omaidi/hitori/blob/61052a01ea8e8975a99f0db7f5d40bad5ee39a5b/naze.js#L742)** section.
+Look for the **[switch (command)](https://github.com/Omaidi/hitori/blob/61052a01ea8e8975a99f0db7f5d40bad5ee39a5b/Omaidi.js#L742)** section.
 
 ### Where to Add New Features
 
-Add or edit commands inside the [switch (command)](https://github.com/Omaidi/hitori/blob/61052a01ea8e8975a99f0db7f5d40bad5ee39a5b/naze.js#L742) block.
+Add or edit commands inside the [switch (command)](https://github.com/Omaidi/hitori/blob/61052a01ea8e8975a99f0db7f5d40bad5ee39a5b/Omaidi.js#L742) block.
 
 ### Example: Adding a New Command
 
@@ -207,7 +207,7 @@ This file is responsible for:
 - Initializing Baileys connection
 - Handling WhatsApp events
 - Loading [settings.js](https://github.com/Omaidi/hitori/blob/master/settings.js)
-- Dispatching messages to [naze.js](https://github.com/Omaidi/hitori/blob/master/naze.js)
+- Dispatching messages to [Omaidi.js](https://github.com/Omaidi/hitori/blob/master/Omaidi.js)
 
 ⚠️ **Editing [index.js](https://github.com/Omaidi/hitori/blob/master/index.js) is not recommended unless you fully understand the bot flow.**
 
@@ -237,7 +237,7 @@ This file is responsible for:
 │   ├── template_menu.js
 │   ├── tictactoe.js
 │   └── uploader.js
-├── naze.js
+├── Omaidi.js
 ├── nodemon.json
 ├── package.json
 ├── railway.json
@@ -250,7 +250,7 @@ This file is responsible for:
 │   ├── jadibot.js
 │   ├── media
 │   │   ├── fake.pdf
-│   │   └── naze.png
+│   │   └── Omaidi.png
 │   ├── message.js
 │   └── server.js
 └── start.js
@@ -276,7 +276,7 @@ This file is responsible for:
 License: [MIT](https://choosealicense.com/licenses/mit/)
 
 #### Support Me
-- [Saweria](https://saweria.co/naze)
+- [Saweria](https://saweria.co/Omaidi)
 
 ## Contributor
 
